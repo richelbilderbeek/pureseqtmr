@@ -3,6 +3,7 @@ test_that("use", {
 
   fasta_filename <- system.file("extdata", "pureseqtm.fasta", package = "pureseqtm")
   readLines(fasta_filename)
-  text <- run_pureseqtm(fasta_filename)
-  expect_equal(2, length(text))
+  filenames <- create_pureseqtm_files(fasta_filename)
+  expect_equal(5, length(filenames))
+  expect_true(all(file.exists((filenames))))
 })

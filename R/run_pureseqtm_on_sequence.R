@@ -25,5 +25,5 @@ run_pureseqtm_on_sequence <- function(protein_sequence) {
   filename <- tempfile()
   text <- c(">temp", protein_sequence)
   writeLines(text = text, con = filename)
-  run_pureseqtm(filename)[2]
+  run_pureseqtm(filename)[3]
 }

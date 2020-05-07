@@ -17,7 +17,7 @@ a FASTA filename?
 \examples{
 library(testthat)
 
-expect_true(is_locatome_line("oooooMMMMMiiiii"))
+expect_true(is_locatome_line("000010101011"))
 expect_false(is_locatome_line(">5H2A_CRIGR"))
 expect_false(is_locatome_line("5H2A_CRIGR"))
 expect_false(is_locatome_line(NA))

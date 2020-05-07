@@ -48,19 +48,8 @@ check_pureseqtm_installation <- function(
   }
   testthat::expect_true(file.exists(bin_filename))
 
-  # binary file not executable?
-  if (1 == 2) {
-    if (file.info(bin_filename)$mode == as.octmode("0600")) {
-      stop(
-        "PureseqTM binary disallowed to execute.\n",
-        "PureseqTM binary path: '", bin_filename, "'.\n",
-        "\n",
-        "Tip: from R, run 'pureseqtm::install_pureseqtm()'\n"
-      )
-    }
-    testthat::expect_true(
-      file.info(bin_filename)$mode != as.octmode("0600")
-    )
-  }
-
+  # binary file is executable
+  testthat::expect_true(
+    file.info(bin_filename)$mode != as.octmode("0600")
+  )
 }

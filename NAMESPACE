@@ -2,6 +2,7 @@
 
 export(are_tmhs)
 export(check_pureseqtm_installation)
+export(create_pureseqtm_files)
 export(get_default_pureseqtm_folder)
 export(get_pureseqtm_url)
 export(install_pureseqtm)

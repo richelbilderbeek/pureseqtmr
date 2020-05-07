@@ -19,29 +19,23 @@ run_pureseqtm <- function(
   temp_folder_name = tempfile(pattern = "pureseqt_")
 ) {
   pureseqtm::check_pureseqtm_installation(folder_name = folder_name)
-  pureseqtm_folder <- file.path(folder_name, "PureseqTM_Package")
-  testthat::expect_true(dir.exists(pureseqtm_folder))
-  bin_filename <- file.path(pureseqtm_folder, "PureseqTM.sh")
-  testthat::expect_true(file.exists(bin_filename))
 
-  dir.create(
-    temp_folder_name, showWarnings = FALSE, recursive = TRUE
+  filenames <- pureseq::create_pureseqtm_files(
+    fasta_filename = fasta_filename,
+    folder_name = folder_name,
+    temp_folder_name = temp_folder_name
   )
-  testthat::expect_true(dir.exists(temp_folder_name))
-
-  text <- system2(
-    command = bin_filename,
-    args = c(
-      "-i", fasta_filename,
-      "-o", temp_folder_name
-    ),
-    stdout = TRUE,
-    stderr = TRUE
-  )
-
-  if (length(text) != 0) {
-    stop("Warning or error: '", text, "'")
-  }
-  filenames <- list.files(temp_folder_name, recursive = TRUE, full.names = TRUE)
+  # [1] "/tmp/RtmpsfA4tg/pureseqt_838661d1571/pureseqtm.fasta"
+  # [2] "/tmp/RtmpsfA4tg/pureseqt_838661d1571/pureseqtm.fasta_raw"
+  # [3] "/tmp/RtmpsfA4tg/pureseqt_838661d1571/pureseqtm.pred_mode"
+  # [4] "/tmp/RtmpsfA4tg/pureseqt_838661d1571/pureseqtm.prob"
+  # [5] "/tmp/RtmpsfA4tg/pureseqt_838661d1571/pureseqtm.top"
+  #readLines(fasta_filename)
+  text_1 <- readLines(filenames[1])
+  text_2 <- readLines(filenames[2])
+  text_3 <- readLines(filenames[3])
+  text_4 <- readLines(filenames[4])
+  text_5 <- readLines(filenames[5])
+  locatome <- readLines(filenames[5])
   readLines(filenames[5])
 }
