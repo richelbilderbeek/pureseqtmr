@@ -12,6 +12,12 @@
 #' @param protein_sequences one or more protein sequences
 #' @param pureseqtm_filename filename to write the PureseqTM results to
 #' @param pureseqtm_result the result of a PureseqTM run
+#' @param temp_folder_name path of a temporary folder.
+#'   The folder does not need to exist.
+#'   Files that are out in this folder are not automatically
+#'   deleted, which is not a problem, as the default
+#'   path given by \link{tempdir} is automatically cleaned
+#'   by the operating system
 #' @param verbose set to TRUE for more output
 #' @author Richèl J.C. Bilderbeek
 #' @note This is an internal function, so it should be marked with
@@ -26,6 +32,7 @@ default_params_doc <- function(
   protein_sequences,
   pureseqtm_filename,
   pureseqtm_result,
+  temp_folder_name,
   verbose
 ) {
   # Nothing

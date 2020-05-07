@@ -14,6 +14,7 @@ default_params_doc(
   protein_sequences,
   pureseqtm_filename,
   pureseqtm_result,
+  temp_folder_name,
   verbose
 )
 }
@@ -37,6 +38,13 @@ and the locations of its amino acids}
 \item{pureseqtm_filename}{filename to write the PureseqTM results to}
 
 \item{pureseqtm_result}{the result of a PureseqTM run}
+
+\item{temp_folder_name}{path of a temporary folder.
+The folder does not need to exist.
+Files that are out in this folder are not automatically
+deleted, which is not a problem, as the default
+path given by \link{tempdir} is automatically cleaned
+by the operating system}
 
 \item{verbose}{set to TRUE for more output}
 }

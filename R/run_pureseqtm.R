@@ -42,5 +42,6 @@ run_pureseqtm <- function(
   if (length(text) != 0) {
     stop("Warning or error: '", text, "'")
   }
-  list.files(temp_folder_name, recursive = TRUE, full.names = TRUE)
+  filenames <- list.files(temp_folder_name, recursive = TRUE, full.names = TRUE)
+  readLines(filenames[5])
 }

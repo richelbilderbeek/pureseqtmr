@@ -17,6 +17,13 @@ run_pureseqtm(
 The superfolder's name is \code{/home/[user_name]/.local/share}
 by default, as can be obtained by
 \link{get_default_pureseqtm_folder}}
+
+\item{temp_folder_name}{path of a temporary folder.
+The folder does not need to exist.
+Files that are out in this folder are not automatically
+deleted, which is not a problem, as the default
+path given by \link{tempdir} is automatically cleaned
+by the operating system}
 }
 \value{
 full path to the files created
