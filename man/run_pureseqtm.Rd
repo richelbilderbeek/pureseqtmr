@@ -42,6 +42,10 @@ if (1 == 2 && is_pureseqtm_installed()) {
   cat(locatome, sep = "\n")
 }
 }
+\seealso{
+use \link{create_pureseqtm_files} to
+only create the PureseqTM output files
+}
 \author{
 Richèl J.C. Bilderbeek
 }
