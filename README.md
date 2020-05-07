@@ -5,4 +5,9 @@ Branch   |[![Travis CI logo](pics/TravisCI.png)](https://travis-ci.org)|[![Codec
 `master `|[![Build Status](https://travis-ci.org/richelbilderbeek/pureseqtm.svg?branch=master)](https://travis-ci.org/richelbilderbeek/pureseqtm) |[![codecov.io](https://codecov.io/github/richelbilderbeek/pureseqtm/coverage.svg?branch=master)](https://codecov.io/github/richelbilderbeek/pureseqtm/branch/master)
 `develop`|[![Build Status](https://travis-ci.org/richelbilderbeek/pureseqtm.svg?branch=develop)](https://travis-ci.org/richelbilderbeek/pureseqtm)|[![codecov.io](https://codecov.io/github/richelbilderbeek/pureseqtm/coverage.svg?branch=develop)](https://codecov.io/github/richelbilderbeek/pureseqtm/branch/develop)
 
-R package to work with PureseqTM
+R package to work with PureseqTM.
+
+## Links
+
+ * [PureseqTM GitHub repo](https://github.com/PureseqTM/pureseqTM_package)
+ * [PureseqTM server](http://pureseqtm.predmp.com/)
