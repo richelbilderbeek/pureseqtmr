@@ -1,6 +1,6 @@
 #' Run PureseqTM
 #' @inheritParams default_params_doc
-#' @return a character vector with the locatome
+#' @return full path to the files created
 #' @author Richèl J.C. Bilderbeek
 #' @examples
 #' library(testthat)
@@ -19,37 +19,28 @@ run_pureseqtm <- function(
   temp_folder_name = tempfile(pattern = "pureseqt_")
 ) {
   pureseqtm::check_pureseqtm_installation(folder_name = folder_name)
-  pureseqtm_folder <- file.path(folder_name, "PureseqTM_Package-master")
+  pureseqtm_folder <- file.path(folder_name, "PureseqTM_Package")
   testthat::expect_true(dir.exists(pureseqtm_folder))
   bin_filename <- file.path(pureseqtm_folder, "PureseqTM.sh")
   testthat::expect_true(file.exists(bin_filename))
 
-  # Work in  temporary folder
-  cur_wd <- getwd()
   dir.create(
     temp_folder_name, showWarnings = FALSE, recursive = TRUE
   )
-  expect_true(dir.exists(temp_folder_name))
-  setwd(temp_folder_name)
-
-  # /home/richel/.local/share/PureseqTM_Package-master/PureseqTM.sh -i   # /home/richel/GitHubs/pureseqtm/inst/extdata/pureseqtm.fasta
-  x <- system2(
-    command = bin_filename,
-    args = c("-i", fasta_filename),
-    stdout = TRUE,
-    stderr = TRUE
-  )
-  x
-
-  setwd(cur_wd)
+  testthat::expect_true(dir.exists(temp_folder_name))
 
   text <- system2(
     command = bin_filename,
     args = c(
-      "-i", fasta_filename),
+      "-i", fasta_filename,
+      "-o", temp_folder_name
+    ),
     stdout = TRUE,
-    stderr = NULL
+    stderr = TRUE
   )
-  text <- text[text != ""]
-  stringr::str_remove(string = text, pattern = "^\\?0 ")
+
+  if (length(text) != 0) {
+    stop("Warning or error: '", text, "'")
+  }
+  list.files(temp_folder_name, recursive = TRUE, full.names = TRUE)
 }

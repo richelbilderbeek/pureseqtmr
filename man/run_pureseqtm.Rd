@@ -4,7 +4,11 @@
 \alias{run_pureseqtm}
 \title{Run PureseqTM}
 \usage{
-run_pureseqtm(fasta_filename, folder_name = get_default_pureseqtm_folder())
+run_pureseqtm(
+  fasta_filename,
+  folder_name = get_default_pureseqtm_folder(),
+  temp_folder_name = tempfile(pattern = "pureseqt_")
+)
 }
 \arguments{
 \item{fasta_filename}{path to a FASTA file}
@@ -15,7 +19,7 @@ by default, as can be obtained by
 \link{get_default_pureseqtm_folder}}
 }
 \value{
-a character vector with the locatome
+full path to the files created
 }
 \description{
 Run PureseqTM

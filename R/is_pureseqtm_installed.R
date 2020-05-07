@@ -12,6 +12,6 @@
 is_pureseqtm_installed <- function(
   folder_name = get_default_pureseqtm_folder()
 ) {
-  bin_file_path <- file.path(folder_name, "PureseqTM_Package-master", "PureseqTM.sh")
+  bin_file_path <- file.path(folder_name, "PureseqTM_Package", "PureseqTM.sh")
   file.exists(bin_file_path)
 }

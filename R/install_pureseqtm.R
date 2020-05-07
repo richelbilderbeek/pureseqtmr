@@ -16,24 +16,19 @@ install_pureseqtm <- function(
     stop("PureseqTMis already installed")
   }
 
-  # Download zip if needed
-  zip_filename_path <- file.path(folder_name, "PureseqTM_Package.zip")
-  if (!file.exists(zip_filename_path)) {
-    utils::download.file(
-      url = "https://github.com/PureseqTM/PureseqTM_Package/archive/master.zip",
-      destfile = zip_filename_path,
-      quiet = TRUE
-    )
-  }
-  testthat::expect_true(file.exists(zip_filename_path))
-
   # Extract zip if needed
-  pureseqtm_folder <- file.path(folder_name, "PureseqTM_Package-master")
+  pureseqtm_folder <- file.path(folder_name, "PureseqTM_Package")
   if (!dir.exists(pureseqtm_folder)) {
-    utils::unzip(
-      zipfile = zip_filename_path,
-      exdir = folder_name
+    curwd <- getwd()
+    setwd(folder_name)
+    system2(
+      command = "git",
+      args = c(
+        "clone",
+        "https://github.com/PureseqTM/PureseqTM_Package.git"
+      )
     )
+    setwd(curwd)
   }
   testthat::expect_true(dir.exists(pureseqtm_folder))
 
@@ -48,7 +43,7 @@ install_pureseqtm <- function(
   testthat::expect_true(file.exists(bin_filename))
 
   # Is the binary file executable?
-  if (file.info(bin_filename)$mode == as.octmode("0600")) {
+  if (1 == 2 && file.info(bin_filename)$mode == as.octmode("0600")) {
     Sys.chmod(bin_filename, mode = as.octmode("0700"))
   }
   testthat::expect_true(file.info(bin_filename)$mode != as.octmode("0600"))
@@ -60,13 +55,16 @@ install_pureseqtm <- function(
     "util/Proc_runJT",
     "util/pureseq_dump",
     "bin/DeepCNF_FeatMake",
-    "util/TM2_Trans"
+    "util/TM2_Trans",
+    "util/GnuPlot_Script"
   )
-  for (rel_filename in other_bin_paths) {
-    filename <- file.path(pureseqtm_folder, rel_filename)
-    testthat::expect_true(file.exists(filename))
-    if (file.info(filename)$mode == as.octmode("0600")) {
-      Sys.chmod(filename, mode = as.octmode("0700"))
+  if (1 == 2) {
+    for (rel_filename in other_bin_paths) {
+      filename <- file.path(pureseqtm_folder, rel_filename)
+      testthat::expect_true(file.exists(filename))
+      if (file.info(filename)$mode == as.octmode("0600")) {
+        Sys.chmod(filename, mode = as.octmode("0700"))
+      }
     }
   }
 }
