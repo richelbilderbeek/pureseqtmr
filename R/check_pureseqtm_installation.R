@@ -53,5 +53,7 @@ check_pureseqtm_installation <- function(
       "Tip: from R, run 'pureseqtm::install_pureseqtm()'\n"
     )
   }
-  expect_true(file.info(bin_filename)$mode != as.octmode("0600"))
+  testthat::expect_true(
+    file.info(bin_filename)$mode != as.octmode("0600")
+  )
 }
