@@ -10,6 +10,10 @@
 install_pureseqtm <- function(
   folder_name = get_default_pureseqtm_folder()
 ) {
+  if (is_pureseqtm_installed()) {
+    stop("PureseqTMis already installed")
+  }
+
   # Download zip if needed
   zip_filename_path <- file.path(folder_name, "PureseqTM_Package.zip")
   if (!file.exists(zip_filename_path)) {

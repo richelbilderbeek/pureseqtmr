@@ -1,4 +1,5 @@
 test_that("use", {
+  skip("WIP")
   if (!is_pureseqtm_installed()) return()
 
   testthat::expect_true(is_pureseqtm_installed())

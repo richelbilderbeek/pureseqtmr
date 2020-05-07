@@ -19,8 +19,9 @@ test_that("use", {
 
 test_that("re-install must fails", {
   if (!is_pureseqtm_installed()) return()
+
   expect_error(
-    install_pureseqtm_bin(),
-    "PureseqTM binary is already installed"
+    install_pureseqtm(),
+    "PureseqTMis already installed"
   )
 })

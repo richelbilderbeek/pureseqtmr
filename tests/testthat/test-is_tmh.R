@@ -1,4 +1,5 @@
 test_that("use", {
+  skip("WIP")
   if (!is_pureseqtm_installed()) return()
 
   expect_true(is_tmh("VVIILTIAGNILVIMAVSLE"))

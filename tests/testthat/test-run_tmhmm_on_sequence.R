@@ -1,4 +1,5 @@
 test_that("use", {
+  skip("WIP")
   if (!is_pureseqtm_installed()) return()
 
   protein_sequence <- "QEKNWSALLTAVVIILTIAGNILVIMAVSLEKKLQNATNYFLMSLAIADMLLGFLVMPVSMLTILYGYRWP" # nolint indeed long

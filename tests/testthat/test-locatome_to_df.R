@@ -1,4 +1,5 @@
 test_that("use", {
+  skip("WIP")
   if (!is_pureseqtm_installed()) return()
 
   fasta_filename <- system.file("extdata", "pureseqtm.fasta", package = "pureseqtm")
@@ -11,7 +12,7 @@ test_that("use", {
 })
 
 test_that("use", {
-
+  skip("WIP")
   if (!is_pureseqtm_installed()) return()
 
   fasta_filename <- system.file("extdata", "example_2.fasta", package = "pureseqtm")
