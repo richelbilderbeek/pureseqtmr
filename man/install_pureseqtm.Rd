@@ -18,8 +18,10 @@ Install PureseqTM to a local folder
 \examples{
 library(testthat)
 
-install_pureseqtm()
-expect_true(is_pureseqtm_installed())
+if (1 == 2) {
+  install_pureseqtm()
+  expect_true(is_pureseqtm_installed())
+}
 }
 \author{
 Richèl J.C. Bilderbeek

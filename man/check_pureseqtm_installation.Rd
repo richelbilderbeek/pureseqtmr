@@ -23,8 +23,11 @@ Throws a helpful error message if incomplete,
 else does nothing
 }
 \examples{
-  install_pureseqtm()
-  check_pureseqtm_installation()
+library(testthat)
+
+if (1 == 2) {
+  expect_silent(check_pureseqtm_installation())
+}
 }
 \author{
 Richèl J.C. Bilderbeek

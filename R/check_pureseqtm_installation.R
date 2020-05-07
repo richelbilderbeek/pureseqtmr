@@ -4,8 +4,11 @@
 #' @inheritParams default_params_doc
 #' @return Nothing
 #' @examples
-#'   install_pureseqtm()
-#'   check_pureseqtm_installation()
+#' library(testthat)
+#'
+#' if (1 == 2) {
+#'   expect_silent(check_pureseqtm_installation())
+#' }
 #' @author Richèl J.C. Bilderbeek
 #' @export
 check_pureseqtm_installation <- function(

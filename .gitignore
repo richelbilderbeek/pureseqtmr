@@ -39,3 +39,4 @@ vignettes/*.pdf
 .Renviron
 .Rproj.user
 pureseqtm_PureTM/
+file*_PureTM/

@@ -3,8 +3,10 @@
 #' @examples
 #' library(testthat)
 #'
-#' install_pureseqtm()
-#' expect_true(is_pureseqtm_installed())
+#' if (1 == 2) {
+#'   install_pureseqtm()
+#'   expect_true(is_pureseqtm_installed())
+#' }
 #' @author Richèl J.C. Bilderbeek
 #' @export
 install_pureseqtm <- function(
@@ -49,7 +51,7 @@ install_pureseqtm <- function(
   if (file.info(bin_filename)$mode == as.octmode("0600")) {
     Sys.chmod(bin_filename, mode = as.octmode("0700"))
   }
-  expect_true(file.info(bin_filename)$mode != as.octmode("0600"))
+  testthat::expect_true(file.info(bin_filename)$mode != as.octmode("0600"))
 
   other_bin_paths <- c(
     "util/Verify_FASTA",

@@ -15,9 +15,11 @@ Are the sequences TMHs?
 \examples{
 library(testthat)
 
-sequences <- c(
-  "VVIILTIAGNILVIMAVSLE",
-  "VVIILTIRGNILVIMAVSLE"
-)
-expect_equal(c(TRUE, FALSE), are_tmhs(sequences))
+if (1 == 2 && is_pureseqtm_installed()) {
+  sequences <- c(
+    "VVIILTIAGNILVIMAVSLE",
+    "VVIILTIRGNILVIMAVSLE"
+  )
+  expect_equal(c(TRUE, FALSE), are_tmhs(sequences))
+}
 }

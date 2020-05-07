@@ -3,8 +3,10 @@
 #' @examples
 #' library(testthat)
 #'
-#' expect_true(is_tmh("VVIILTIAGNILVIMAVSLE"))
-#' expect_false(is_tmh("VVIILTIRGNILVIMAVSLE"))
+#' if (1 == 2) {
+#'   expect_true(is_tmh("VVIILTIAGNILVIMAVSLE"))
+#'   expect_false(is_tmh("VVIILTIRGNILVIMAVSLE"))
+#' }
 #' @export
 is_tmh <- function(protein_sequence) {
   pureseqtm::check_pureseqtm_installation()

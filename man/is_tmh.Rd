@@ -15,6 +15,8 @@ Determine if the protein sequence contains at least one TMH.
 \examples{
 library(testthat)
 
-expect_true(is_tmh("VVIILTIAGNILVIMAVSLE"))
-expect_false(is_tmh("VVIILTIRGNILVIMAVSLE"))
+if (1 == 2) {
+  expect_true(is_tmh("VVIILTIAGNILVIMAVSLE"))
+  expect_false(is_tmh("VVIILTIRGNILVIMAVSLE"))
+}
 }
