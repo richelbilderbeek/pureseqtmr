@@ -34,13 +34,17 @@ Create the PureseqTM output files, by running PureseqTM
 \examples{
 library(testthat)
 
-if (1 == 2 && is_pureseqtm_installed()) {
+if (is_pureseqtm_installed()) {
   fasta_filename <- system.file(
     "extdata", "pureseqtm.fasta", package = "pureseqtm"
   )
   filenames <- create_pureseqtm_files(fasta_filename)
   expect_equal(5, length(filenames))
 }
+}
+\seealso{
+use \link{run_pureseqtm} to received
+also the parsed output
 }
 \author{
 Richèl J.C. Bilderbeek

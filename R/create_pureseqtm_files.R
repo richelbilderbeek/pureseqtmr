@@ -5,7 +5,7 @@
 #' @examples
 #' library(testthat)
 #'
-#' if (1 == 2 && is_pureseqtm_installed()) {
+#' if (is_pureseqtm_installed()) {
 #'   fasta_filename <- system.file(
 #'     "extdata", "pureseqtm.fasta", package = "pureseqtm"
 #'   )
@@ -13,6 +13,8 @@
 #'   expect_equal(5, length(filenames))
 #"   expect_true(all(file.exists((filenames))))
 #' }
+#' @seealso use \link{run_pureseqtm} to received
+#'   also the parsed output
 #' @export
 create_pureseqtm_files <- function(
   fasta_filename,
