@@ -2,7 +2,7 @@
 % Please edit documentation in R/run_pureseqtm.R
 \name{run_pureseqtm}
 \alias{run_pureseqtm}
-\title{Run PureseqTM}
+\title{Runs PureseqTM and returns the parsed results}
 \usage{
 run_pureseqtm(
   fasta_filename,
@@ -29,7 +29,7 @@ by the operating system}
 full path to the files created
 }
 \description{
-Run PureseqTM
+Runs PureseqTM and returns the parsed results
 }
 \examples{
 library(testthat)

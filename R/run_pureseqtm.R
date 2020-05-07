@@ -1,4 +1,4 @@
-#' Run PureseqTM
+#' Runs PureseqTM and returns the parsed results
 #' @inheritParams default_params_doc
 #' @return full path to the files created
 #' @author Richèl J.C. Bilderbeek
@@ -22,7 +22,7 @@ run_pureseqtm <- function(
 ) {
   pureseqtm::check_pureseqtm_installation(folder_name = folder_name)
 
-  filenames <- pureseq::create_pureseqtm_files(
+  filenames <- pureseqtm::create_pureseqtm_files(
     fasta_filename = fasta_filename,
     folder_name = folder_name,
     temp_folder_name = temp_folder_name
