@@ -51,7 +51,7 @@ check_pureseqtm_installation <- function(
   if (file.info(bin_filename)$mode == as.octmode("0600")) {
     stop(
       "PureseqTM binary disallowed to execute.\n",
-      "PureseqTM binary pathe: '", bin_filename, "'.\n",
+      "PureseqTM binary path: '", bin_filename, "'.\n",
       "\n",
       "Tip: from R, run 'pureseqtm::install_pureseqtm()'\n"
     )
