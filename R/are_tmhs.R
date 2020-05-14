@@ -12,7 +12,7 @@
 #' }
 #' @export
 are_tmhs <- function(protein_sequences) {
-  pureseqtm::check_pureseqtm_installation()
+  check_pureseqtm_installation()
 
   results <- rep(NA, length(protein_sequences))
   for (i in seq_along(protein_sequences)) {

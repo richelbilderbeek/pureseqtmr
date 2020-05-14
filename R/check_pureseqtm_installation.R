@@ -21,7 +21,7 @@ check_pureseqtm_installation <- function(
       stop(
         "Cannot find PureseqTM zip file at '", zip_filename_path, "'\n",
         "\n",
-        "Tip: from R, run 'pureseqtm::install_pureseqtm()'\n"
+        "Tip: from R, run 'install_pureseqtm()'\n"
       )
     }
     testthat::expect_true(file.exists(zip_filename_path))
@@ -32,7 +32,7 @@ check_pureseqtm_installation <- function(
     stop(
       "Cannot find the PureseqTM folder '", pureseqtm_folder, "'\n",
       "\n",
-      "Tip: from R, run 'pureseqtm::install_pureseqtm()'\n"
+      "Tip: from R, run 'install_pureseqtm()'\n"
     )
   }
   testthat::expect_true(dir.exists(pureseqtm_folder))
@@ -43,7 +43,7 @@ check_pureseqtm_installation <- function(
     stop(
       "Cannot find the PureseqTM binary at '", bin_filename, "'\n",
       "\n",
-      "Tip: from R, run 'pureseqtm::install_pureseqtm()'\n"
+      "Tip: from R, run 'install_pureseqtm()'\n"
     )
   }
   testthat::expect_true(file.exists(bin_filename))

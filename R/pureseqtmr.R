@@ -1,4 +1,4 @@
-#' pureseqtm: estimate the topoplogy of membrane proteins
+#' pureseqtmr: estimate the topoplogy of membrane proteins
 #'
 #' Proteins reside in either the cell plasma of in the
 #' cell membrane. A membrane protein goes through the
@@ -11,7 +11,8 @@
 #' library(testthat)
 #'
 #' if (1 == 2 && is_pureseqtm_installed()) {
-#'   fasta_filename <- system.file("extdata", "pureseqtm.fasta", package = "pureseqtm")
+#'   fasta_filename <- system.file(
+#'     "extdata", "pureseqtm.fasta", package = "pureseqtmr")
 #'   locatome <- run_pureseqtm(fasta_filename)
 #'
 #'   # Show as text
@@ -24,5 +25,5 @@
 #'   plot_locatome(locatome)
 #' }
 #' @docType package
-#' @name pureseqtm
+#' @name pureseqtmr
 NULL

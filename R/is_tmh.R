@@ -9,9 +9,9 @@
 #' }
 #' @export
 is_tmh <- function(protein_sequence) {
-  pureseqtm::check_pureseqtm_installation()
+  check_pureseqtm_installation()
 
-  locatome <- pureseqtm::run_pureseqtm_on_sequence(protein_sequence)
+  locatome <- run_pureseqtm_on_sequence(protein_sequence)
   stringr::str_count(string = locatome, pattern = "(M|m)") > 0
 }
 

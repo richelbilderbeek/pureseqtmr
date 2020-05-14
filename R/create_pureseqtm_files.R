@@ -7,7 +7,7 @@
 #'
 #' if (is_pureseqtm_installed()) {
 #'   fasta_filename <- system.file(
-#'     "extdata", "pureseqtm.fasta", package = "pureseqtm"
+#'     "extdata", "pureseqtm.fasta", package = "pureseqtmr"
 #'   )
 #'   filenames <- create_pureseqtm_files(fasta_filename)
 #'   expect_equal(5, length(filenames))
@@ -21,7 +21,7 @@ create_pureseqtm_files <- function(
   folder_name = get_default_pureseqtm_folder(),
   temp_folder_name = tempfile(pattern = "pureseqt_")
 ) {
-  pureseqtm::check_pureseqtm_installation(folder_name = folder_name)
+  check_pureseqtm_installation(folder_name = folder_name)
   pureseqtm_folder <- file.path(folder_name, "PureseqTM_Package")
   testthat::expect_true(dir.exists(pureseqtm_folder))
   bin_filename <- file.path(pureseqtm_folder, "PureseqTM.sh")

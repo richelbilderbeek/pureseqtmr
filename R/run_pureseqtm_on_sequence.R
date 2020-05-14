@@ -20,7 +20,7 @@
 #' }
 #' @export
 run_pureseqtm_on_sequence <- function(protein_sequence) {
-  pureseqtm::check_pureseqtm_installation()
+  check_pureseqtm_installation()
 
   filename <- tempfile()
   text <- c(">temp", protein_sequence)

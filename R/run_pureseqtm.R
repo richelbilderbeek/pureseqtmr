@@ -7,7 +7,7 @@
 #'
 #' if (1 == 2 && is_pureseqtm_installed()) {
 #'   fasta_filename <- system.file(
-#'     "extdata", "pureseqtm.fasta", package = "pureseqtm"
+#'     "extdata", "pureseqtm.fasta", package = "pureseqtmr"
 #'   )
 #'   locatome <- run_pureseqtm(fasta_filename)
 #'   cat(locatome, sep = "\n")
@@ -20,9 +20,9 @@ run_pureseqtm <- function(
   folder_name = get_default_pureseqtm_folder(),
   temp_folder_name = tempfile(pattern = "pureseqt_")
 ) {
-  pureseqtm::check_pureseqtm_installation(folder_name = folder_name)
+  check_pureseqtm_installation(folder_name = folder_name)
 
-  filenames <- pureseqtm::create_pureseqtm_files(
+  filenames <- create_pureseqtm_files(
     fasta_filename = fasta_filename,
     folder_name = folder_name,
     temp_folder_name = temp_folder_name
