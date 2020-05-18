@@ -36,7 +36,7 @@ library(testthat)
 
 if (1 == 2 && is_pureseqtm_installed()) {
   fasta_filename <- system.file(
-    "extdata", "pureseqtm.fasta", package = "pureseqtm"
+    "extdata", "pureseqtm.fasta", package = "pureseqtmr"
   )
   locatome <- run_pureseqtm(fasta_filename)
   cat(locatome, sep = "\n")

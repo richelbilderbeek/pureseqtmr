@@ -1,4 +1,4 @@
 library(testthat)
-library(pureseqtm)
+library(pureseqtmr)
 
-test_check("pureseqtm")
+test_check("pureseqtmr")

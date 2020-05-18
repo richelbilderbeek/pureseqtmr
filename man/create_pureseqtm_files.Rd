@@ -36,7 +36,7 @@ library(testthat)
 
 if (is_pureseqtm_installed()) {
   fasta_filename <- system.file(
-    "extdata", "pureseqtm.fasta", package = "pureseqtm"
+    "extdata", "pureseqtm.fasta", package = "pureseqtmr"
   )
   filenames <- create_pureseqtm_files(fasta_filename)
   expect_equal(5, length(filenames))

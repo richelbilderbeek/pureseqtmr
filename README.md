@@ -2,8 +2,8 @@
 
 Branch   |[![Travis CI logo](pics/TravisCI.png)](https://travis-ci.org)|[![Codecov logo](pics/Codecov.png)](https://www.codecov.io)
 ---------|----------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-`master `|[![Build Status](https://travis-ci.org/richelbilderbeek/pureseqtm.svg?branch=master)](https://travis-ci.org/richelbilderbeek/pureseqtm) |[![codecov.io](https://codecov.io/github/richelbilderbeek/pureseqtm/coverage.svg?branch=master)](https://codecov.io/github/richelbilderbeek/pureseqtm/branch/master)
-`develop`|[![Build Status](https://travis-ci.org/richelbilderbeek/pureseqtm.svg?branch=develop)](https://travis-ci.org/richelbilderbeek/pureseqtm)|[![codecov.io](https://codecov.io/github/richelbilderbeek/pureseqtm/coverage.svg?branch=develop)](https://codecov.io/github/richelbilderbeek/pureseqtm/branch/develop)
+`master `|[![Build Status](https://travis-ci.org/richelbilderbeek/pureseqtmr.svg?branch=master)](https://travis-ci.org/richelbilderbeek/pureseqtmr) |[![codecov.io](https://codecov.io/github/richelbilderbeek/pureseqtmr/coverage.svg?branch=master)](https://codecov.io/github/richelbilderbeek/pureseqtmr/branch/master)
+`develop`|[![Build Status](https://travis-ci.org/richelbilderbeek/pureseqtmr.svg?branch=develop)](https://travis-ci.org/richelbilderbeek/pureseqtmr)|[![codecov.io](https://codecov.io/github/richelbilderbeek/pureseqtmr/coverage.svg?branch=develop)](https://codecov.io/github/richelbilderbeek/pureseqtmr/branch/develop)
 
 R package to work with PureseqTM.
 
