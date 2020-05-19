@@ -1,6 +1,14 @@
 #' Create the output file of a PureseqTM proteome run
 #' @inheritParams default_params_doc
 #' @return the filename
+#' @examples
+#' library(testthat)
+#'
+#' fasta_filename <- get_example_filename("test_proteome.fasta")
+#' topology_filename <- create_pureseqtm_proteome_file(fasta_filename)
+#' expect_equal(1, length(topology_filename))
+#' expect_true(file.exists((topology_filename)))
+#' expect_equal(0, length(readLines(topology_filename)) %% 3)
 #' @author Richèl J.C. Bilderbeek
 #' @export
 create_pureseqtm_proteome_file <- function(
@@ -18,18 +26,14 @@ create_pureseqtm_proteome_file <- function(
   #  dirname(topology_filename), showWarnings = FALSE, recursive = TRUE
   #)
 
-  text <- system2(
+  system2(
     command = bin_filename,
     args = c(
       "-i", fasta_filename,
       "-o", topology_filename
     ),
-    stdout = TRUE,
-    stderr = TRUE
+    stdout = NULL,
+    stderr = NULL
   )
-
-  if (text != "0\r") {
-    stop("Warning or error: '", text, "'")
-  }
   topology_filename
 }

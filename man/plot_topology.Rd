@@ -4,11 +4,11 @@
 \alias{plot_topology}
 \title{Plot the topology}
 \usage{
-plot_topology(locatome)
+plot_topology(topology)
 }
 \arguments{
-\item{locatome}{text similar to a FASTA file, with protein names
-and the locations of its amino acids}
+\item{topology}{the topology as a \link[tibble]{tibble}
+as returned by \link{predict_proteome_topology}}
 }
 \description{
 Plot the topology

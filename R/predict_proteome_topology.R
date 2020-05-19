@@ -4,11 +4,11 @@
 #' @examples
 #' library(testthat)
 #'
-#' fasta_filename <- get_example_filename("1bhaA.fasta")
+#' fasta_filename <- get_example_filename("test_proteome.fasta")
 #' topology <- predict_proteome_topology(fasta_filename)
 #' expect_true("name" %in% names(topology))
 #' expect_true("topology" %in% names(topology))
-#' expect_equal(1, nrow(topology))
+#' expect_equal(3, nrow(topology))
 #' @author Richèl J.C. Bilderbeek
 #' @export
 predict_proteome_topology <- function(
@@ -16,11 +16,6 @@ predict_proteome_topology <- function(
   folder_name = get_default_pureseqtm_folder(),
   topology_filename = tempfile(fileext = ".top")
 ) {
-  filename <- pureseqtmr::create_pureseqtm_proteome_file(
-    fasta_filename = fasta_filename,
-    topology_filename = topology_filename,
-    folder_name = folder_name
-  )
   topology_text <- pureseqtmr::run_pureseqtm_proteome(
     fasta_filename,
     folder_name = get_default_pureseqtm_folder(),
@@ -32,8 +27,10 @@ predict_proteome_topology <- function(
   gene_line_indices <- seq(from = 1, to = n_lines, by = 3)
   topology_line_indices <- seq(from = 3, to = n_lines, by = 3)
   testthat::expect_equal(length(gene_line_indices), length(topology_line_indices))
+
+
   tibble::tibble(
-    name = topology_text[gene_line_indices],
+    name = substring(topology_text[gene_line_indices], 2),
     topology = topology_text[topology_line_indices]
   )
 }

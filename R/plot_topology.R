@@ -2,25 +2,23 @@
 #' @inheritParams default_params_doc
 #' @author Richèl J.C. Bilderbeek
 #' @export
-plot_topology <- function(locatome) {
+plot_topology <- function(topology) {
 
   x <- NULL; rm(x) # nolint, fixes warning: no visible binding for global variable
   loc <- NULL; rm(loc) # nolint, fixes warning: no visible binding for global variable
 
-  df_locatome <- locatome_to_df(locatome)
-
-  n_locs <- sum(nchar(df_locatome$locatome))
+  n_locs <- sum(nchar(topology$topology))
 
   # Tidy
   df <- tibble::tibble(name = rep("", n_locs), x = -12.34, loc = "")
 
   row_index <- 1 # write to df
 
-  for (i in seq(1, nrow(df_locatome))) {
+  for (i in seq(1, nrow(topology))) {
     name <- stringr::str_split(
-      string = df_locatome$name[i], pattern = " "
+      string = topology$name[i], pattern = " "
     )[[1]][1]
-    locs <- df_locatome$locatome[i]
+    locs <- topology$topology[i]
     n_locs <- nchar(locs)
     range <- row_index:(row_index + n_locs - 1)
     df$name[range] <- name

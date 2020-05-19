@@ -16,6 +16,7 @@ default_params_doc(
   pureseqtm_filename,
   pureseqtm_result,
   temp_folder_name,
+  topology,
   topology_filename,
   verbose
 )
@@ -49,6 +50,9 @@ Files that are out in this folder are not automatically
 deleted, which is not a problem, as the default
 path given by \link{tempdir} is automatically cleaned
 by the operating system}
+
+\item{topology}{the topology as a \link[tibble]{tibble}
+as returned by \link{predict_proteome_topology}}
 
 \item{topology_filename}{name of the file to save a protein's
 topology to}

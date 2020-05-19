@@ -19,6 +19,8 @@
 #'   deleted, which is not a problem, as the default
 #'   path given by \link{tempdir} is automatically cleaned
 #'   by the operating system
+#' @param topology the topology as a \link[tibble]{tibble}
+#'   as returned by \link{predict_proteome_topology}
 #' @param topology_filename name of the file to save a protein's
 #'   topology to
 #' @param verbose set to TRUE for more output
@@ -37,6 +39,7 @@ default_params_doc <- function(
   pureseqtm_filename,
   pureseqtm_result,
   temp_folder_name,
+  topology,
   topology_filename,
   verbose
 ) {
