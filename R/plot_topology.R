@@ -1,7 +1,7 @@
-#' Plot the locatome
+#' Plot the topology
 #' @inheritParams default_params_doc
 #' @export
-plot_locatome <- function(locatome) {
+plot_topology <- function(locatome) {
 
   x <- NULL; rm(x) # nolint, fixes warning: no visible binding for global variable
   loc <- NULL; rm(loc) # nolint, fixes warning: no visible binding for global variable

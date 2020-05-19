@@ -34,10 +34,12 @@ Runs PureseqTM for one gene and returns the parsed results
 \examples{
 library(testthat)
 
-if (1 == 2 && is_pureseqtm_installed()) {
+if (is_pureseqtm_installed()) {
   fasta_filename <- get_example_filename("1bhaA.fasta")
-  topology <- run_pureseqtm(fasta_filename)
-  cat(topology, sep = "\n")
+  topology_text <- run_pureseqtm_proteome(fasta_filename)
+  proteome_text <- readLines(fasta_filename)
+  expect_equal(3, length(topology_text))
+  expect_equal(proteome_text[1], topology_text[1])
 }
 }
 \seealso{

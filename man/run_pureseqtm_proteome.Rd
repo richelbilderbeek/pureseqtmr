@@ -4,11 +4,49 @@
 \alias{run_pureseqtm_proteome}
 \title{Run PureseqTM on a proteome}
 \usage{
-run_pureseqtm_proteome()
+run_pureseqtm_proteome(
+  fasta_filename,
+  folder_name = get_default_pureseqtm_folder(),
+  topology_filename = tempfile(fileext = ".top")
+)
+}
+\arguments{
+\item{fasta_filename}{path to a FASTA file}
+
+\item{folder_name}{superfolder of PureseqTM.
+The superfolder's name is \code{/home/[user_name]/.local/share}
+by default, as can be obtained by
+\link{get_default_pureseqtm_folder}}
+
+\item{topology_filename}{name of the file to save a protein's
+topology to}
 }
 \value{
 the topology of the proteome
 }
 \description{
 Run PureseqTM on a proteome
+}
+\examples{
+library(testthat)
+
+if (is_pureseqtm_installed()) {
+  fasta_filename <- get_example_filename("1bhaA.fasta")
+  topology <- run_pureseqtm_proteome(fasta_filename)
+  cat(topology, sep = "\n")
+}
+}
+\seealso{
+\itemize{
+\item{
+Use \link{create_pureseqtm_files} to only create the PureseqTM
+output files
+}
+\item{
+Use \link{run_pureseqtm} to run PureseqTM on one gene in more detail
+}
+}
+}
+\author{
+Richèl J.C. Bilderbeek
 }
