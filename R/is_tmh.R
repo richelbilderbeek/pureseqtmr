@@ -12,6 +12,5 @@ is_tmh <- function(protein_sequence) {
   check_pureseqtm_installation()
 
   locatome <- run_pureseqtm_on_sequence(protein_sequence)
-  stringr::str_count(string = locatome, pattern = "(M|m)") > 0
+  stringr::str_count(string = locatome, pattern = "1") > 0
 }
-

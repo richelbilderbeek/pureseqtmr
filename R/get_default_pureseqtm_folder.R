@@ -18,4 +18,3 @@
 get_default_pureseqtm_folder <- function() {
   rappdirs::user_data_dir()
 }
-

@@ -20,4 +20,3 @@ are_tmhs <- function(protein_sequences) {
   }
   results
 }
-

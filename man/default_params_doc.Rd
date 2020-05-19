@@ -10,6 +10,7 @@ default_params_doc(
   fasta_filename,
   folder_name,
   locatome,
+  mode,
   protein_sequence,
   protein_sequences,
   pureseqtm_filename,
@@ -30,6 +31,12 @@ by default, as can be obtained by
 
 \item{locatome}{text similar to a FASTA file, with protein names
 and the locations of its amino acids}
+
+\item{mode}{one of the PureseqTM modes:
+\itemize{
+\item \code{proteome} obtain the topology of one or more proteins
+\item \code{protein} obtain detailed information about one protein
+}}
 
 \item{protein_sequence}{a protein sequence}
 

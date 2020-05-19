@@ -6,12 +6,19 @@
 \usage{
 run_pureseqtm(
   fasta_filename,
+  mode = "proteome",
   folder_name = get_default_pureseqtm_folder(),
   temp_folder_name = tempfile(pattern = "pureseqt_")
 )
 }
 \arguments{
 \item{fasta_filename}{path to a FASTA file}
+
+\item{mode}{one of the PureseqTM modes:
+\itemize{
+\item \code{proteome} obtain the topology of one or more proteins
+\item \code{protein} obtain detailed information about one protein
+}}
 
 \item{folder_name}{superfolder of PureseqTM.
 The superfolder's name is \code{/home/[user_name]/.local/share}

@@ -16,7 +16,9 @@ plot_locatome <- function(locatome) {
   row_index <- 1 # write to df
 
   for (i in seq(1, nrow(df_locatome))) {
-    name <- stringr::str_split(string = df_locatome$name[i], pattern = " ")[[1]][1]
+    name <- stringr::str_split(
+      string = df_locatome$name[i], pattern = " "
+    )[[1]][1]
     locs <- df_locatome$locatome[i]
     n_locs <- nchar(locs)
     range <- row_index:(row_index + n_locs - 1)

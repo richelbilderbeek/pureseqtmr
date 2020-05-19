@@ -3,7 +3,9 @@ test_that("use", {
 
   pureseqtm_filename <- tempfile()
   run_pureseqtm_to_file(
-    fasta_filename = system.file("extdata", "pureseqtm.fasta", package = "pureseqtmr"),
+    fasta_filename = system.file(
+      "extdata", "pureseqtm.fasta", package = "pureseqtmr"
+    ),
     pureseqtm_filename = pureseqtm_filename
   )
   expect_true(file.exists(pureseqtm_filename))

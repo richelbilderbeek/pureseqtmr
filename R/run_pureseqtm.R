@@ -17,22 +17,19 @@
 #' @export
 run_pureseqtm <- function(
   fasta_filename,
+  mode = "proteome",
   folder_name = get_default_pureseqtm_folder(),
   temp_folder_name = tempfile(pattern = "pureseqt_")
 ) {
-  check_pureseqtm_installation(folder_name = folder_name)
+  pureseqtmr::check_pureseqtm_installation(folder_name = folder_name)
+  pureseqtmr::check_pureseqtm_mode(mode = mode)
 
   filenames <- create_pureseqtm_files(
     fasta_filename = fasta_filename,
     folder_name = folder_name,
-    temp_folder_name = temp_folder_name
+    temp_folder_name = temp_folder_name,
+    mode = mode
   )
-  # [1] "/tmp/RtmpsfA4tg/pureseqt_838661d1571/pureseqtm.fasta"
-  # [2] "/tmp/RtmpsfA4tg/pureseqt_838661d1571/pureseqtm.fasta_raw"
-  # [3] "/tmp/RtmpsfA4tg/pureseqt_838661d1571/pureseqtm.pred_mode"
-  # [4] "/tmp/RtmpsfA4tg/pureseqt_838661d1571/pureseqtm.prob"
-  # [5] "/tmp/RtmpsfA4tg/pureseqt_838661d1571/pureseqtm.top"
-  #readLines(fasta_filename)
   text_1 <- readLines(filenames[1])
   text_2 <- readLines(filenames[2])
   text_3 <- readLines(filenames[3])
