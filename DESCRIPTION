@@ -21,3 +21,6 @@ Imports:
     tibble
 Suggests: 
     testthat
+URL: https://github.com/richelbilderbeek/pureseqtmr
+BugReports: https://github.com/richelbilderbeek/pureseqtmr
+

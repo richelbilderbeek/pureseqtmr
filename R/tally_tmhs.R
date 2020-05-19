@@ -29,7 +29,7 @@ tally_tmhs <- function(
   for (i in seq_len(n_rows)) {
     t <- topology$topology[i]
     n_tmhs <- stringr::str_count(t, "01")
-    if (t[1] == "1") n_tmhs <- n_tmhs + 1
+    if (substring(t, 1, 1) == "1") n_tmhs <- n_tmhs + 1
     tally$n_tmhs[i] <- n_tmhs
   }
   tally
