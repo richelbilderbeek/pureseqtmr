@@ -20,7 +20,7 @@ by default, as can be obtained by
 \link{get_default_pureseqtm_folder}}
 }
 \value{
-the locatome
+a topology as a string of zeroes and ones
 }
 \description{
 Run PureseqTM directy on a protein sequence
@@ -34,10 +34,7 @@ if (is_pureseqtm_installed()) {
     "SLAIADMLLGFLVMPVSMLTILYGYRWP"
   )
   topology <- predict_topology_from_sequence(protein_sequence)
-  expect_equal(
-    topology,
-    "00000000111111111111111111110000000000000111111111111111111111100000000"
-  )
+  expect_true(is_topology_line(topology))
 }
 }
 \author{

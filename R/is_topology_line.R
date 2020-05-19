@@ -1,4 +1,4 @@
-#' Is the line of text the locatome, as used within
+#' Is the line of text the topology, as used within
 #' a FASTA filename?
 #' @param line line of text from a FASTA filename
 #' @examples

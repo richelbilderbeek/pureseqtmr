@@ -10,15 +10,18 @@
 #' @examples
 #' library(testthat)
 #'
-#' if (1 == 2 && is_pureseqtm_installed()) {
+#' if (is_pureseqtm_installed()) {
+#'   # Obtain an example filename
 #'   fasta_filename <- get_example_filename("1bhaA.fasta")
-#'   locatome <- run_pureseqtm(fasta_filename)
 #'
-#'   # Show as text
-#'   cat(locatome, sep = "\n")
+#'   # Get the topology as a tibble
+#'   topology <- predict_proteome_topology(fasta_filename)
+#'   expect_true("name" %in% names(topology))
+#'   expect_true("topology" %in% names(topology))
+#'   expect_equal(1, nrow(topology))
 #'
-#'   # Show as plot
-#'   plot_locatome(locatome)
+#'   # show the topology
+#'   plot_topology(topology)
 #' }
 #' @author Richèl J.C. Bilderbeek
 #' @docType package

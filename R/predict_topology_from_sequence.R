@@ -3,7 +3,7 @@
 #'   the amino acids as capitals, for
 #'   example `MEILCEDNTSLSSIPNSL`
 #' @inheritParams default_params_doc
-#' @return the locatome
+#' @return a topology as a string of zeroes and ones
 #' @examples
 #' library(testthat)
 #'
@@ -13,10 +13,7 @@
 #'     "SLAIADMLLGFLVMPVSMLTILYGYRWP"
 #'   )
 #'   topology <- predict_topology_from_sequence(protein_sequence)
-#'   expect_equal(
-#'     topology,
-#'     "00000000111111111111111111110000000000000111111111111111111111100000000"
-#'   )
+#'   expect_true(is_topology_line(topology))
 #' }
 #' @author Richèl J.C. Bilderbeek
 #' @export

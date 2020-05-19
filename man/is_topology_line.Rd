@@ -2,7 +2,7 @@
 % Please edit documentation in R/is_topology_line.R
 \name{is_topology_line}
 \alias{is_topology_line}
-\title{Is the line of text the locatome, as used within
+\title{Is the line of text the topology, as used within
 a FASTA filename?}
 \usage{
 is_topology_line(line)
@@ -11,7 +11,7 @@ is_topology_line(line)
 \item{line}{line of text from a FASTA filename}
 }
 \description{
-Is the line of text the locatome, as used within
+Is the line of text the topology, as used within
 a FASTA filename?
 }
 \examples{
