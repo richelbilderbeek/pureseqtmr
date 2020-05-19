@@ -37,3 +37,6 @@ if (is_pureseqtm_installed()) {
   expect_true(file.exists(pureseqtm_filename))
 }
 }
+\author{
+Richèl J.C. Bilderbeek
+}

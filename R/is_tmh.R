@@ -7,6 +7,7 @@
 #'   expect_true(is_tmh("QEKNWSALLTAVVIILTIAGNILVIMAVSLEKKLQNATNYFLM"))
 #'   expect_false(is_tmh("VVIILTIRGNILVIMAVSLE"))
 #' }
+#' @author Richèl J.C. Bilderbeek
 #' @export
 is_tmh <- function(
   protein_sequence,

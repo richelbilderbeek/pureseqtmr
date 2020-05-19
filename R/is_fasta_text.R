@@ -1,5 +1,6 @@
 #' Is the text a FASTA file text?
 #' @inheritParams default_params_doc
+#' @author Richèl J.C. Bilderbeek
 #' @export
 is_fasta_text <- function(fasta_file_text) {
   if (class(fasta_file_text) != "character") return(FALSE)

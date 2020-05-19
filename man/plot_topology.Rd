@@ -13,3 +13,6 @@ and the locations of its amino acids}
 \description{
 Plot the topology
 }
+\author{
+Richèl J.C. Bilderbeek
+}

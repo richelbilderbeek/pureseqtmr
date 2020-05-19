@@ -1,7 +1,6 @@
 #' Runs PureseqTM for one gene and returns the parsed results
 #' @inheritParams default_params_doc
 #' @return full path to the files created
-#' @author Richèl J.C. Bilderbeek
 #' @examples
 #' library(testthat)
 #'
@@ -22,6 +21,7 @@
 #'     Use \link{run_pureseqtm_proteome} to run PureseqTM on multiple genes
 #'   }
 #' }
+#' @author Richèl J.C. Bilderbeek
 #' @export
 run_pureseqtm <- function(
   fasta_filename,

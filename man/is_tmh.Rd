@@ -25,3 +25,6 @@ if (is_pureseqtm_installed()) {
   expect_false(is_tmh("VVIILTIRGNILVIMAVSLE"))
 }
 }
+\author{
+Richèl J.C. Bilderbeek
+}

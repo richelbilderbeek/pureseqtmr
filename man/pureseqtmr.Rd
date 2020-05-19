@@ -29,3 +29,6 @@ if (1 == 2 && is_pureseqtm_installed()) {
   plot_locatome(locatome)
 }
 }
+\author{
+Richèl J.C. Bilderbeek
+}

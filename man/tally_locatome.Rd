@@ -13,3 +13,6 @@ and the locations of its amino acids}
 \description{
 Tally each location in a locatome
 }
+\author{
+Richèl J.C. Bilderbeek
+}

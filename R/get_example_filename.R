@@ -9,6 +9,7 @@
 #' }
 #' @seealso use \link{get_example_filenames} to get all PureseqTM
 #'   example filenames
+#' @author Richèl J.C. Bilderbeek
 #' @export
 get_example_filename <- function(
   filename,

@@ -10,6 +10,7 @@
 #' expect_false(is_protein_name_line(NA))
 #' expect_false(is_protein_name_line(NULL))
 #' expect_false(is_protein_name_line(""))
+#' @author Richèl J.C. Bilderbeek
 #' @export
 is_protein_name_line <- function(line) {
   if (!is.character(line)) return(FALSE)

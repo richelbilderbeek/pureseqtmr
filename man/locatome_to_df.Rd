@@ -13,3 +13,6 @@ and the locations of its amino acids}
 \description{
 Convert a multi-line locatome to a tidy data frame
 }
+\author{
+Richèl J.C. Bilderbeek
+}

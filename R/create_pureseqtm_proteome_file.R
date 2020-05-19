@@ -1,6 +1,7 @@
 #' Create the output file of a PureseqTM proteome run
 #' @inheritParams default_params_doc
 #' @return the filename
+#' @author Richèl J.C. Bilderbeek
 #' @export
 create_pureseqtm_proteome_file <- function(
   fasta_filename,

@@ -27,3 +27,6 @@ the filename
 \description{
 Create the output file of a PureseqTM proteome run
 }
+\author{
+Richèl J.C. Bilderbeek
+}

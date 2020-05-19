@@ -18,6 +18,7 @@
 #'     "00000000111111111111111111110000000000000111111111111111111111100000000"
 #'   )
 #' }
+#' @author Richèl J.C. Bilderbeek
 #' @export
 predict_topology_from_sequence <- function(
   protein_sequence,

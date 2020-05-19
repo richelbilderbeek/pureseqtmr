@@ -24,3 +24,6 @@ expect_false(is_locatome_line(NA))
 expect_false(is_locatome_line(NULL))
 expect_false(is_locatome_line(""))
 }
+\author{
+Richèl J.C. Bilderbeek
+}

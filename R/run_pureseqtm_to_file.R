@@ -12,6 +12,7 @@
 #'   )
 #'   expect_true(file.exists(pureseqtm_filename))
 #' }
+#' @author Richèl J.C. Bilderbeek
 #' @export
 run_pureseqtm_to_file <- function(
   fasta_filename,

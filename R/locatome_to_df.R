@@ -1,5 +1,6 @@
 #' Convert a multi-line locatome to a tidy data frame
 #' @inheritParams default_params_doc
+#' @author Richèl J.C. Bilderbeek
 #' @export
 locatome_to_df <- function(locatome) {
 

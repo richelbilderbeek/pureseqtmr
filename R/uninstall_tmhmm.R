@@ -18,12 +18,4 @@ uninstall_pureseqtm <- function(
     unlink(pureseqtm_folder, recursive = TRUE, force = TRUE)
   }
   testthat::expect_false(dir.exists(pureseqtm_folder))
-  if (1 == 2) {
-    # Download zip if needed
-    zip_filename_path <- file.path(folder_name, "PureseqTM_Package.zip")
-    if (file.exists(zip_filename_path)) {
-      file.remove(zip_filename_path)
-    }
-    testthat::expect_false(file.exists(zip_filename_path))
-  }
 }

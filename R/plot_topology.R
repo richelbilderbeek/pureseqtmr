@@ -1,5 +1,6 @@
 #' Plot the topology
 #' @inheritParams default_params_doc
+#' @author Richèl J.C. Bilderbeek
 #' @export
 plot_topology <- function(locatome) {
 

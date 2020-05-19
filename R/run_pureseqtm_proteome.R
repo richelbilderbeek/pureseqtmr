@@ -1,17 +1,41 @@
 #' Run PureseqTM on a proteome
 #' @inheritParams default_params_doc
-#' @return the topology of the proteome
-#' @author Richèl J.C. Bilderbeek
+#' @return the topology of the proteome, using the same output as PureseqTM.
+#' Use \link{predict_proteome_topology} to get the topology as a
 #' @examples
 #' library(testthat)
 #'
 #' if (is_pureseqtm_installed()) {
 #'   fasta_filename <- get_example_filename("1bhaA.fasta")
 #'   topology <- run_pureseqtm_proteome(fasta_filename)
-#'   cat(topology, sep = "\n")
+#'
+#'   # First line is the protein name
+#'   expect_equal(topology[1], ">1bhaA")
+#'
+#'   # Second line is the protein's amino acid sequence
+#'   expect_equal(
+#'     topology[2],
+#'     paste0(
+#'       "QAQITGRPEWIWLALGTALMGLGTLYFLVKGMGVS",
+#'       "DPDAKKFYAITTLVPAIAFTMYLSMLLGYGLTMVPF"
+#'     )
+#'   )
+#'
+#'   # Third line is the protein's topology
+#'   expect_equal(
+#'     topology[3],
+#'     paste0(
+#'       "00000000001111111111111111110000000",
+#'       "000000001111111111111111111100000000"
+#'     )
+#'   )
 #' }
 #' @seealso
 #' \itemize{
+#'   \item{
+#'     Use \link{predict_proteome_topology} to predict the topology
+#'     of a proteome
+#'   }
 #'   \item{
 #'     Use \link{create_pureseqtm_files} to only create the PureseqTM
 #'     output files
@@ -20,6 +44,7 @@
 #'     Use \link{run_pureseqtm} to run PureseqTM on one gene in more detail
 #'   }
 #' }
+#' @author Richèl J.C. Bilderbeek
 #' @export
 run_pureseqtm_proteome <- function(
   fasta_filename,

@@ -28,3 +28,6 @@ if (is_pureseqtm_installed()) {
 use \link{get_example_filenames} to get all PureseqTM
 example filenames
 }
+\author{
+Richèl J.C. Bilderbeek
+}

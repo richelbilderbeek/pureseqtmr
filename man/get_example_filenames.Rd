@@ -30,3 +30,6 @@ if (is_pureseqtm_installed()) {
 use \link{get_example_filename} to get the full
 path to a PureseqTM example file
 }
+\author{
+Richèl J.C. Bilderbeek
+}

@@ -10,6 +10,7 @@
 #' expect_false(is_locatome_line(NA))
 #' expect_false(is_locatome_line(NULL))
 #' expect_false(is_locatome_line(""))
+#' @author Richèl J.C. Bilderbeek
 #' @export
 is_locatome_line <- function(line) {
   if (!is.character(line)) return(FALSE)

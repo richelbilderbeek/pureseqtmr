@@ -10,6 +10,7 @@
 #' }
 #' @seealso use \link{get_example_filename} to get the full
 #'   path to a PureseqTM example file
+#' @author Richèl J.C. Bilderbeek
 #' @export
 get_example_filenames <- function(
   folder_name = get_default_pureseqtm_folder()

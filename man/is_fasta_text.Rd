@@ -12,3 +12,6 @@ is_fasta_text(fasta_file_text)
 \description{
 Is the text a FASTA file text?
 }
+\author{
+Richèl J.C. Bilderbeek
+}

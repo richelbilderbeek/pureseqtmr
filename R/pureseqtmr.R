@@ -23,6 +23,7 @@
 #'   # Show as plot
 #'   plot_locatome(locatome)
 #' }
+#' @author Richèl J.C. Bilderbeek
 #' @docType package
 #' @name pureseqtmr
 NULL
