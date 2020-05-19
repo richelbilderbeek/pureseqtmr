@@ -3,7 +3,7 @@ test_that("use", {
 
   pureseqtm_filename <- tempfile()
   run_pureseqtm_to_file(
-    fasta_filename = get_pureseqtm_example_filename("1bhaA.fasta"),
+    fasta_filename = get_example_filename("1bhaA.fasta"),
     pureseqtm_filename = pureseqtm_filename
   )
   expect_true(file.exists(pureseqtm_filename))

@@ -6,7 +6,7 @@
 #' library(testthat)
 #'
 #' if (1 == 2 && is_pureseqtm_installed()) {
-#'   fasta_filename <- get_pureseqtm_example_filename("1bhaA.fasta")
+#'   fasta_filename <- get_example_filename("1bhaA.fasta")
 #'   topology <- run_pureseqtm(fasta_filename)
 #'   cat(topology, sep = "\n")
 #' }

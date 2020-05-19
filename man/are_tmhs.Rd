@@ -4,10 +4,15 @@
 \alias{are_tmhs}
 \title{Are the sequences TMHs?}
 \usage{
-are_tmhs(protein_sequences)
+are_tmhs(protein_sequences, folder_name = get_default_pureseqtm_folder())
 }
 \arguments{
 \item{protein_sequences}{one or more protein sequences}
+
+\item{folder_name}{superfolder of PureseqTM.
+The superfolder's name is \code{/home/[user_name]/.local/share}
+by default, as can be obtained by
+\link{get_default_pureseqtm_folder}}
 }
 \description{
 Are the sequences TMHs?
@@ -15,9 +20,9 @@ Are the sequences TMHs?
 \examples{
 library(testthat)
 
-if (1 == 2 && is_pureseqtm_installed()) {
+if (is_pureseqtm_installed()) {
   sequences <- c(
-    "VVIILTIAGNILVIMAVSLE",
+    "QEKNWSALLTAVVIILTIAGNILVIMAVSLEKKLQNATNYFLM",
     "VVIILTIRGNILVIMAVSLE"
   )
   expect_equal(c(TRUE, FALSE), are_tmhs(sequences))

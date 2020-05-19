@@ -3,14 +3,20 @@
 #' @examples
 #' library(testthat)
 #'
-#' if (1 == 2) {
-#'   expect_true(is_tmh("VVIILTIAGNILVIMAVSLE"))
+#' if (is_pureseqtm_installed()) {
+#'   expect_true(is_tmh("QEKNWSALLTAVVIILTIAGNILVIMAVSLEKKLQNATNYFLM"))
 #'   expect_false(is_tmh("VVIILTIRGNILVIMAVSLE"))
 #' }
 #' @export
-is_tmh <- function(protein_sequence) {
-  check_pureseqtm_installation()
+is_tmh <- function(
+  protein_sequence,
+  folder_name = get_default_pureseqtm_folder()
+) {
+  check_pureseqtm_installation(folder_name)
 
-  locatome <- run_pureseqtm_on_sequence(protein_sequence)
-  stringr::str_count(string = locatome, pattern = "1") > 0
+  topology <- predict_topology_from_sequence(
+    protein_sequence,
+    folder_name
+  )
+  stringr::str_count(string = topology, pattern = "1") > 0
 }

@@ -1,16 +1,17 @@
-#' Get the full path to a PureseqTM example files
-#' @param filename name of the example file, without the path
+#' Get the full path to all PureseqTM example files
 #' @inheritParams default_params_doc
+#' @return a character vector with all PureseqTM example files
 #' @examples
 #' library(testthat)
 #'
-#' expect_true(file.exists(get_pureseqtm_example_filename("1bhaA.fasta")))
-#' expect_true(file.exists(get_pureseqtm_example_filename("human_20416.fasta")))
-#' @seealso use \link{get_pureseqtm_example_filenames} to get all PureseqTM
-#'   example filenames
+#' if (is_pureseqtm_installed()) {
+#'   filenames <- get_example_filenames()
+#'   expect_true(all(file.exists(filenames)))
+#' }
+#' @seealso use \link{get_example_filename} to get the full
+#'   path to a PureseqTM example file
 #' @export
-get_pureseqtm_example_filename <- function(
-  filename,
+get_example_filenames <- function(
   folder_name = get_default_pureseqtm_folder()
 ) {
   pureseqtmr::check_pureseqtm_installation(folder_name)
@@ -18,9 +19,7 @@ get_pureseqtm_example_filename <- function(
   testthat::expect_true(dir.exists(pureseqtm_folder))
   pureseqtm_examples_folder <- file.path(pureseqtm_folder, "example")
   testthat::expect_true(dir.exists(pureseqtm_examples_folder))
-
   list.files(
-    pattern = filename,
     pureseqtm_examples_folder,
     full.names = TRUE
   )

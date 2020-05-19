@@ -6,27 +6,16 @@
 #' @examples
 #' library(testthat)
 #'
-#' if (1 == 2) {
+#' if (is_pureseqtm_installed()) {
 #'   expect_silent(check_pureseqtm_installation())
+#' } else {
+#'   expect_error(check_pureseqtm_installation())
 #' }
 #' @author Richèl J.C. Bilderbeek
 #' @export
 check_pureseqtm_installation <- function(
   folder_name = get_default_pureseqtm_folder()
 ) {
-  if (1 == 2) {
-    # Download zip if needed
-    zip_filename_path <- file.path(folder_name, "PureseqTM_Package.zip")
-    if (!file.exists(zip_filename_path)) {
-      stop(
-        "Cannot find PureseqTM zip file at '", zip_filename_path, "'\n",
-        "\n",
-        "Tip: from R, run 'install_pureseqtm()'\n"
-      )
-    }
-    testthat::expect_true(file.exists(zip_filename_path))
-  }
-  # Extract zip if needed
   pureseqtm_folder <- file.path(folder_name, "PureseqTM_Package")
   if (!dir.exists(pureseqtm_folder)) {
     stop(

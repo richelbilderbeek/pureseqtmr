@@ -5,12 +5,21 @@
 \title{Creates a FASTA-like file, that has the locations
 of the amino acids.}
 \usage{
-run_pureseqtm_to_file(fasta_filename, pureseqtm_filename)
+run_pureseqtm_to_file(
+  fasta_filename,
+  pureseqtm_filename,
+  folder_name = get_default_pureseqtm_folder()
+)
 }
 \arguments{
 \item{fasta_filename}{path to a FASTA file}
 
 \item{pureseqtm_filename}{filename to write the PureseqTM results to}
+
+\item{folder_name}{superfolder of PureseqTM.
+The superfolder's name is \code{/home/[user_name]/.local/share}
+by default, as can be obtained by
+\link{get_default_pureseqtm_folder}}
 }
 \description{
 Creates a FASTA-like file, that has the locations
@@ -19,10 +28,10 @@ of the amino acids.
 \examples{
 library(testthat)
 
-if (1 == 2 && is_pureseqtm_installed()) {
+if (is_pureseqtm_installed()) {
   pureseqtm_filename <- tempfile()
   run_pureseqtm_to_file(
-    fasta_filename = get_pureseqtm_example_filename("1bhaA.fasta"),
+    fasta_filename = get_example_filename("1bhaA.fasta"),
     pureseqtm_filename = pureseqtm_filename
   )
   expect_true(file.exists(pureseqtm_filename))

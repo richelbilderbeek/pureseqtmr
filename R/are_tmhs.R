@@ -3,21 +3,24 @@
 #' @examples
 #' library(testthat)
 #'
-#' if (1 == 2 && is_pureseqtm_installed()) {
+#' if (is_pureseqtm_installed()) {
 #'   sequences <- c(
-#'     "VVIILTIAGNILVIMAVSLE",
+#'     "QEKNWSALLTAVVIILTIAGNILVIMAVSLEKKLQNATNYFLM",
 #'     "VVIILTIRGNILVIMAVSLE"
 #'   )
 #'   expect_equal(c(TRUE, FALSE), are_tmhs(sequences))
 #' }
 #' @author Richèl J.C. Bilderbeek
 #' @export
-are_tmhs <- function(protein_sequences) {
-  check_pureseqtm_installation()
+are_tmhs <- function(
+  protein_sequences,
+  folder_name = get_default_pureseqtm_folder()
+) {
+  pureseqtmr::check_pureseqtm_installation(folder_name)
 
   results <- rep(NA, length(protein_sequences))
   for (i in seq_along(protein_sequences)) {
-    results[i] <- is_tmh(protein_sequences[i])
+    results[i] <- pureseqtmr::is_tmh(protein_sequences[i])
   }
   results
 }

@@ -4,10 +4,15 @@
 \alias{is_tmh}
 \title{Determine if the protein sequence contains at least one TMH.}
 \usage{
-is_tmh(protein_sequence)
+is_tmh(protein_sequence, folder_name = get_default_pureseqtm_folder())
 }
 \arguments{
 \item{protein_sequence}{a protein sequence}
+
+\item{folder_name}{superfolder of PureseqTM.
+The superfolder's name is \code{/home/[user_name]/.local/share}
+by default, as can be obtained by
+\link{get_default_pureseqtm_folder}}
 }
 \description{
 Determine if the protein sequence contains at least one TMH.
@@ -15,8 +20,8 @@ Determine if the protein sequence contains at least one TMH.
 \examples{
 library(testthat)
 
-if (1 == 2) {
-  expect_true(is_tmh("VVIILTIAGNILVIMAVSLE"))
+if (is_pureseqtm_installed()) {
+  expect_true(is_tmh("QEKNWSALLTAVVIILTIAGNILVIMAVSLEKKLQNATNYFLM"))
   expect_false(is_tmh("VVIILTIRGNILVIMAVSLE"))
 }
 }

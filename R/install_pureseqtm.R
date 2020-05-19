@@ -3,7 +3,7 @@
 #' @examples
 #' library(testthat)
 #'
-#' if (1 == 2) {
+#' if (is_on_travis() && !is_pureseqtm_installed()) {
 #'   install_pureseqtm()
 #'   expect_true(is_pureseqtm_installed())
 #' }

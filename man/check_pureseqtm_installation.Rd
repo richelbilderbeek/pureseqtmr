@@ -25,8 +25,10 @@ else does nothing
 \examples{
 library(testthat)
 
-if (1 == 2) {
+if (is_pureseqtm_installed()) {
   expect_silent(check_pureseqtm_installation())
+} else {
+  expect_error(check_pureseqtm_installation())
 }
 }
 \author{
