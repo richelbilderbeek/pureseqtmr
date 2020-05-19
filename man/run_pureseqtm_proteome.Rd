@@ -35,8 +35,7 @@ if (is_pureseqtm_installed()) {
   fasta_filename <- get_example_filename("1bhaA.fasta")
   topology <- run_pureseqtm_proteome(fasta_filename)
 
-  # First line is the protein name
-  expect_equal(topology[1], ">1bhaA")
+  expect_true(is_protein_name_line(topology[1]))
 
   # Second line is the protein's amino acid sequence
   expect_equal(
@@ -46,12 +45,7 @@ if (is_pureseqtm_installed()) {
       "DPDAKKFYAITTLVPAIAFTMYLSMLLGYGLTMVPF"
     )
   )
-
-  # Third line is the protein's topology
-  expect_equal(
-    substring(topology[3], first = 1, last = 28),
-    "0000000000111111111111111111"
-  )
+  expect_true(is_topology_line(topology[3]))
 }
 }
 \seealso{

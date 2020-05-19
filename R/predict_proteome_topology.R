@@ -28,7 +28,9 @@ predict_proteome_topology <- function(
   testthat::expect_equal(n_lines %% 3, 0)
   gene_line_indices <- seq(from = 1, to = n_lines, by = 3)
   topology_line_indices <- seq(from = 3, to = n_lines, by = 3)
-  testthat::expect_equal(length(gene_line_indices), length(topology_line_indices))
+  testthat::expect_equal(
+    length(gene_line_indices), length(topology_line_indices)
+  )
 
 
   tibble::tibble(

@@ -35,11 +35,5 @@ run_pureseqtm <- function(
     folder_name = folder_name,
     temp_folder_name = temp_folder_name
   )
-  text_1 <- readLines(filenames[1])
-  text_2 <- readLines(filenames[2])
-  text_3 <- readLines(filenames[3])
-  text_4 <- readLines(filenames[4])
-  text_5 <- readLines(filenames[5])
-  locatome <- readLines(filenames[5])
   readLines(filenames[5])
 }
