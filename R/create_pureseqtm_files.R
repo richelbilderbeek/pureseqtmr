@@ -30,19 +30,16 @@ create_pureseqtm_files <- function(
   )
   testthat::expect_true(dir.exists(temp_folder_name))
 
-  text <- system2(
+  system2(
     command = bin_filename,
     args = c(
       "-i", fasta_filename,
       "-o", temp_folder_name
     ),
-    stdout = TRUE,
-    stderr = TRUE
+    stdout = NULL,
+    stderr = NULL
   )
 
-  if (length(text) != 0) {
-    stop("Warning or error: '", text, "'")
-  }
   list.files(
     temp_folder_name,
     recursive = TRUE,
