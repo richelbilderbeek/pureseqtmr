@@ -30,7 +30,7 @@ Create the output file of a PureseqTM proteome run
 \examples{
 library(testthat)
 
-fasta_filename <- get_example_filename("test_proteome.fasta")
+fasta_filename <- get_example_filename("1bhaA.fasta")
 topology_filename <- create_pureseqtm_proteome_file(fasta_filename)
 expect_equal(1, length(topology_filename))
 expect_true(file.exists((topology_filename)))

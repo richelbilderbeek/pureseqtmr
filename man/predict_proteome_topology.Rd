@@ -30,7 +30,7 @@ Predict the topology of a proteome
 \examples{
 library(testthat)
 
-fasta_filename <- get_example_filename("test_proteome.fasta")
+fasta_filename <- get_example_filename("1bhaA.fasta")
 topology <- predict_proteome_topology(fasta_filename)
 expect_true("name" \%in\% names(topology))
 expect_true("topology" \%in\% names(topology))
