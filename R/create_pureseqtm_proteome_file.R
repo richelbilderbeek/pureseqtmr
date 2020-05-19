@@ -4,11 +4,13 @@
 #' @examples
 #' library(testthat)
 #'
-#' fasta_filename <- get_example_filename("1bhaA.fasta")
-#' topology_filename <- create_pureseqtm_proteome_file(fasta_filename)
-#' expect_equal(1, length(topology_filename))
-#' expect_true(file.exists((topology_filename)))
-#' expect_equal(0, length(readLines(topology_filename)) %% 3)
+#' if (is_pureseqtm_installed()) {
+#'   fasta_filename <- get_example_filename("1bhaA.fasta")
+#'   topology_filename <- create_pureseqtm_proteome_file(fasta_filename)
+#'   expect_equal(1, length(topology_filename))
+#'   expect_true(file.exists((topology_filename)))
+#'   expect_equal(0, length(readLines(topology_filename)) %% 3)
+#' }
 #' @author Richèl J.C. Bilderbeek
 #' @export
 create_pureseqtm_proteome_file <- function(
