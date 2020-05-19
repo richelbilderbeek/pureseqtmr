@@ -9,7 +9,7 @@
 #'   topology <- predict_proteome_topology(fasta_filename)
 #'   expect_true("name" %in% names(topology))
 #'   expect_true("topology" %in% names(topology))
-#'   expect_equal(3, nrow(topology))
+#'   expect_equal(1, nrow(topology))
 #' }
 #' @author Richèl J.C. Bilderbeek
 #' @export
