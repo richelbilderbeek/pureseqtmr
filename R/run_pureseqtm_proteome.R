@@ -23,11 +23,8 @@
 #'
 #'   # Third line is the protein's topology
 #'   expect_equal(
-#'     topology[3],
-#'     paste0(
-#'       "00000000001111111111111111110000000",
-#'       "000000001111111111111111111100000000"
-#'     )
+#'     substring(topology[3], first = 1, last = 28),
+#'     "0000000000111111111111111111"
 #'   )
 #' }
 #' @seealso

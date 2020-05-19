@@ -3,9 +3,8 @@ test_that("use", {
 
   if (is_pureseqtm_installed()) {
     uninstall_pureseqtm()
-    expect_false(is_pureseqtm_set_up())
     expect_false(is_pureseqtm_installed())
-    install_pureseqtm(download_url = get_pureseqtm_url())
+    install_pureseqtm()
     expect_true(is_pureseqtm_installed())
   } else  {
     expect_true(!is_pureseqtm_installed())
