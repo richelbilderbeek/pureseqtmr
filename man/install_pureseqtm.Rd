@@ -4,13 +4,18 @@
 \alias{install_pureseqtm}
 \title{Install PureseqTM to a local folder}
 \usage{
-install_pureseqtm(folder_name = get_default_pureseqtm_folder())
+install_pureseqtm(
+  folder_name = get_default_pureseqtm_folder(),
+  pureseqtm_url = get_pureseqtm_url()
+)
 }
 \arguments{
 \item{folder_name}{superfolder of PureseqTM.
 The superfolder's name is \code{/home/[user_name]/.local/share}
 by default, as can be obtained by
 \link{get_default_pureseqtm_folder}}
+
+\item{pureseqtm_url}{URL of the PureseqTM git repository}
 }
 \description{
 Install PureseqTM to a local folder

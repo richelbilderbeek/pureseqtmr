@@ -15,6 +15,7 @@ default_params_doc(
   protein_sequences,
   pureseqtm_filename,
   pureseqtm_result,
+  pureseqtm_url,
   temp_folder_name,
   topology,
   topology_filename,
@@ -43,6 +44,8 @@ and the locations of its amino acids}
 \item{pureseqtm_filename}{filename to write the PureseqTM results to}
 
 \item{pureseqtm_result}{the result of a PureseqTM run}
+
+\item{pureseqtm_url}{URL of the PureseqTM git repository}
 
 \item{temp_folder_name}{path of a temporary folder.
 The folder does not need to exist.

@@ -10,14 +10,15 @@
 #' @author Richèl J.C. Bilderbeek
 #' @export
 install_pureseqtm <- function(
-  folder_name = get_default_pureseqtm_folder()
+  folder_name = get_default_pureseqtm_folder(),
+  pureseqtm_url = get_pureseqtm_url()
 ) {
   if (is_pureseqtm_installed()) {
     stop("PureseqTMis already installed")
   }
 
-  # Extract zip if needed
-  pureseqtm_folder <- file.path(folder_name, "PureseqTM_Package")
+  # Check if already cloned
+  pureseqtm_folder <- file.path(folder_name, basename(pureseqtm_url))
   if (!dir.exists(pureseqtm_folder)) {
     curwd <- getwd()
     setwd(folder_name)
@@ -25,7 +26,7 @@ install_pureseqtm <- function(
       command = "git",
       args = c(
         "clone",
-        "https://github.com/PureseqTM/PureseqTM_Package.git"
+        paste0(pureseqtm_url, ".git")
       )
     )
     setwd(curwd)

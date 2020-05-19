@@ -13,6 +13,7 @@
 #' @param protein_sequences one or more protein sequences
 #' @param pureseqtm_filename filename to write the PureseqTM results to
 #' @param pureseqtm_result the result of a PureseqTM run
+#' @param pureseqtm_url URL of the PureseqTM git repository
 #' @param temp_folder_name path of a temporary folder.
 #'   The folder does not need to exist.
 #'   Files that are out in this folder are not automatically
@@ -38,6 +39,7 @@ default_params_doc <- function(
   protein_sequences,
   pureseqtm_filename,
   pureseqtm_result,
+  pureseqtm_url,
   temp_folder_name,
   topology,
   topology_filename,
