@@ -10,7 +10,6 @@ default_params_doc(
   fasta_filename,
   fasta_file_text,
   folder_name,
-  locatome,
   protein_sequence,
   protein_sequences,
   pureseqtm_filename,
@@ -33,9 +32,6 @@ default_params_doc(
 The superfolder's name is \code{/home/[user_name]/.local/share}
 by default, as can be obtained by
 \link{get_default_pureseqtm_folder}}
-
-\item{locatome}{text similar to a FASTA file, with protein names
-and the locations of its amino acids}
 
 \item{protein_sequence}{a protein sequence}
 
