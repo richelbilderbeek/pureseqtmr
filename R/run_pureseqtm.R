@@ -1,4 +1,4 @@
-#' Runs PureseqTM and returns the parsed results
+#' Runs PureseqTM for one gene and returns the parsed results
 #' @inheritParams default_params_doc
 #' @return full path to the files created
 #' @author Richèl J.C. Bilderbeek
@@ -6,29 +6,32 @@
 #' library(testthat)
 #'
 #' if (1 == 2 && is_pureseqtm_installed()) {
-#'   fasta_filename <- system.file(
-#'     "extdata", "pureseqtm.fasta", package = "pureseqtmr"
-#'   )
-#'   locatome <- run_pureseqtm(fasta_filename)
-#'   cat(locatome, sep = "\n")
+#'   fasta_filename <- get_pureseqtm_example_filename("1bhaA.fasta")
+#'   topology <- run_pureseqtm(fasta_filename)
+#'   cat(topology, sep = "\n")
 #' }
-#' @seealso use \link{create_pureseqtm_files} to
-#'   only create the PureseqTM output files
+#' @seealso
+#' \itemize{
+#'   \item{
+#'     Use \link{create_pureseqtm_files} to only create the PureseqTM
+#'     output files
+#'   }
+#'   \item{
+#'     Use \link{run_pureseqtm_proteome} to run PureseqTM on multiple genes
+#'   }
+#' }
 #' @export
 run_pureseqtm <- function(
   fasta_filename,
-  mode = "proteome",
   folder_name = get_default_pureseqtm_folder(),
   temp_folder_name = tempfile(pattern = "pureseqt_")
 ) {
-  pureseqtmr::check_pureseqtm_installation(folder_name = folder_name)
-  pureseqtmr::check_pureseqtm_mode(mode = mode)
+  pureseqtmr::check_pureseqtm_installation(folder_name)
 
   filenames <- create_pureseqtm_files(
     fasta_filename = fasta_filename,
     folder_name = folder_name,
-    temp_folder_name = temp_folder_name,
-    mode = mode
+    temp_folder_name = temp_folder_name
   )
   text_1 <- readLines(filenames[1])
   text_2 <- readLines(filenames[2])

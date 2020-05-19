@@ -1,38 +1,28 @@
-#' Create the one or more PureseqTM output files,
-#' by running PureseqTM.
+#' Create the five PureseqTM output files, by running PureseqTM.
 #' @inheritParams default_params_doc
 #' @return full path to the files created
-#' @author Richèl J.C. Bilderbeek
 #' @examples
 #' library(testthat)
 #'
 #' if (is_pureseqtm_installed()) {
-#'   fasta_filename <- system.file(
-#'     "extdata", "pureseqtm.fasta", package = "pureseqtmr"
-#'   )
-#'   filename <- create_pureseqtm_files(fasta_filename)
-#'   expect_equal(1, length(filename))
-#"   expect_true(file.exists((filename)))
+#'   fasta_filename <- get_pureseqtm_example_filename("1bhaA.fasta")
+#'   filenames <- create_pureseqtm_files(fasta_filename)
+#'   expect_equal(5, length(filenames))
+#"   expect_true(all(file.exists((filenames))))
 #' }
 #' @seealso use \link{run_pureseqtm} to received
 #'   also the parsed output
+#' @author Richèl J.C. Bilderbeek
 #' @export
 create_pureseqtm_files <- function(
   fasta_filename,
-  mode = "proteome",
   folder_name = get_default_pureseqtm_folder(),
   temp_folder_name = tempfile(pattern = "pureseqt_")
 ) {
   pureseqtmr::check_pureseqtm_installation(folder_name = folder_name)
   pureseqtm_folder <- file.path(folder_name, "PureseqTM_Package")
   testthat::expect_true(dir.exists(pureseqtm_folder))
-  pureseqtmr::check_pureseqtm_mode(mode)
-  bin_filename <- ""
-  if (mode == "protein") {
-    bin_filename <- file.path(pureseqtm_folder, "PureseqTM.sh")
-  } else {
-    bin_filename <- file.path(pureseqtm_folder, "PureseqTM_proteome.sh")
-  }
+  bin_filename <- file.path(pureseqtm_folder, "PureseqTM.sh")
   testthat::expect_true(file.exists(bin_filename))
 
   dir.create(

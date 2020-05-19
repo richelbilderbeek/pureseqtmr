@@ -2,7 +2,7 @@
 % Please edit documentation in R/create_pureseqtm_files.R
 \name{create_pureseqtm_files}
 \alias{create_pureseqtm_files}
-\title{Create the PureseqTM output files, by running PureseqTM}
+\title{Create the five PureseqTM output files, by running PureseqTM.}
 \usage{
 create_pureseqtm_files(
   fasta_filename,
@@ -29,15 +29,13 @@ by the operating system}
 full path to the files created
 }
 \description{
-Create the PureseqTM output files, by running PureseqTM
+Create the five PureseqTM output files, by running PureseqTM.
 }
 \examples{
 library(testthat)
 
 if (is_pureseqtm_installed()) {
-  fasta_filename <- system.file(
-    "extdata", "pureseqtm.fasta", package = "pureseqtmr"
-  )
+  fasta_filename <- get_pureseqtm_example_filename("1bhaA.fasta")
   filenames <- create_pureseqtm_files(fasta_filename)
   expect_equal(5, length(filenames))
 }

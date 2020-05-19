@@ -3,7 +3,7 @@ test_that("use", {
 
   fasta_filename <- get_pureseqtm_example_filename("1bhaA.fasta")
   readLines(fasta_filename)
-  filenames <- create_pureseqtm_files(fasta_filename)
-  expect_equal(5, length(filenames))
-  expect_true(all(file.exists((filenames))))
+  filename <- create_pureseqtm_proteome_file(fasta_filename)
+  expect_equal(1, length(filename))
+  expect_true(file.exists((filename)))
 })

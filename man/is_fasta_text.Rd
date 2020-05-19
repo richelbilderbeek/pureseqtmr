@@ -6,6 +6,9 @@
 \usage{
 is_fasta_text(fasta_file_text)
 }
+\arguments{
+\item{fasta_file_text}{text of a FASTA file}
+}
 \description{
 Is the text a FASTA file text?
 }

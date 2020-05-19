@@ -2,23 +2,16 @@
 % Please edit documentation in R/run_pureseqtm.R
 \name{run_pureseqtm}
 \alias{run_pureseqtm}
-\title{Runs PureseqTM and returns the parsed results}
+\title{Runs PureseqTM for one gene and returns the parsed results}
 \usage{
 run_pureseqtm(
   fasta_filename,
-  mode = "proteome",
   folder_name = get_default_pureseqtm_folder(),
   temp_folder_name = tempfile(pattern = "pureseqt_")
 )
 }
 \arguments{
 \item{fasta_filename}{path to a FASTA file}
-
-\item{mode}{one of the PureseqTM modes:
-\itemize{
-\item \code{proteome} obtain the topology of one or more proteins
-\item \code{protein} obtain detailed information about one protein
-}}
 
 \item{folder_name}{superfolder of PureseqTM.
 The superfolder's name is \code{/home/[user_name]/.local/share}
@@ -36,22 +29,27 @@ by the operating system}
 full path to the files created
 }
 \description{
-Runs PureseqTM and returns the parsed results
+Runs PureseqTM for one gene and returns the parsed results
 }
 \examples{
 library(testthat)
 
 if (1 == 2 && is_pureseqtm_installed()) {
-  fasta_filename <- system.file(
-    "extdata", "pureseqtm.fasta", package = "pureseqtmr"
-  )
-  locatome <- run_pureseqtm(fasta_filename)
-  cat(locatome, sep = "\n")
+  fasta_filename <- get_pureseqtm_example_filename("1bhaA.fasta")
+  topology <- run_pureseqtm(fasta_filename)
+  cat(topology, sep = "\n")
 }
 }
 \seealso{
-use \link{create_pureseqtm_files} to
-only create the PureseqTM output files
+\itemize{
+\item{
+Use \link{create_pureseqtm_files} to only create the PureseqTM
+output files
+}
+\item{
+Use \link{run_pureseqtm_proteome} to run PureseqTM on multiple genes
+}
+}
 }
 \author{
 Richèl J.C. Bilderbeek

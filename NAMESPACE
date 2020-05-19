@@ -2,9 +2,11 @@
 
 export(are_tmhs)
 export(check_pureseqtm_installation)
-export(check_pureseqtm_mode)
 export(create_pureseqtm_files)
+export(create_pureseqtm_proteome_file)
 export(get_default_pureseqtm_folder)
+export(get_pureseqtm_example_filename)
+export(get_pureseqtm_example_filenames)
 export(get_pureseqtm_url)
 export(install_pureseqtm)
 export(is_fasta_text)

@@ -10,6 +10,7 @@
 #'   )
 #'   expect_equal(c(TRUE, FALSE), are_tmhs(sequences))
 #' }
+#' @author Richèl J.C. Bilderbeek
 #' @export
 are_tmhs <- function(protein_sequences) {
   check_pureseqtm_installation()

@@ -23,3 +23,6 @@ if (1 == 2 && is_pureseqtm_installed()) {
   expect_equal(c(TRUE, FALSE), are_tmhs(sequences))
 }
 }
+\author{
+Richèl J.C. Bilderbeek
+}

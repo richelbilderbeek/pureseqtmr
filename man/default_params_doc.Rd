@@ -8,14 +8,15 @@ documentation.}
 default_params_doc(
   download_url,
   fasta_filename,
+  fasta_file_text,
   folder_name,
   locatome,
-  mode,
   protein_sequence,
   protein_sequences,
   pureseqtm_filename,
   pureseqtm_result,
   temp_folder_name,
+  topology_filename,
   verbose
 )
 }
@@ -24,6 +25,8 @@ default_params_doc(
 
 \item{fasta_filename}{path to a FASTA file}
 
+\item{fasta_file_text}{text of a FASTA file}
+
 \item{folder_name}{superfolder of PureseqTM.
 The superfolder's name is \code{/home/[user_name]/.local/share}
 by default, as can be obtained by
@@ -31,12 +34,6 @@ by default, as can be obtained by
 
 \item{locatome}{text similar to a FASTA file, with protein names
 and the locations of its amino acids}
-
-\item{mode}{one of the PureseqTM modes:
-\itemize{
-\item \code{proteome} obtain the topology of one or more proteins
-\item \code{protein} obtain detailed information about one protein
-}}
 
 \item{protein_sequence}{a protein sequence}
 
@@ -52,6 +49,9 @@ Files that are out in this folder are not automatically
 deleted, which is not a problem, as the default
 path given by \link{tempdir} is automatically cleaned
 by the operating system}
+
+\item{topology_filename}{name of the file to save a protein's
+topology to}
 
 \item{verbose}{set to TRUE for more output}
 }
