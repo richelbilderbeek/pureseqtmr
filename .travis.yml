@@ -8,8 +8,9 @@ matrix:
     os: linux
   - r: devel
     os: linux
-  - r: release
-    os: osx
+  # Mac is not supported by PureseqTM
+  #- r: release
+  #  os: osx
 
 r_github_packages:
   - jimhester/covr
