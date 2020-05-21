@@ -7,3 +7,4 @@ scripts/
 scripts/
 CONTRIBUTING.md
 NEWS.md
+.appveyor.yml

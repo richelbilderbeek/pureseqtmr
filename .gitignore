@@ -41,5 +41,3 @@ vignettes/*.pdf
 pureseqtm_PureTM/
 file*_PureTM/
 inst/doc
-appveyor.yml
-.appveyor.yml
