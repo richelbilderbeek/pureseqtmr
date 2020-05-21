@@ -1,5 +1,5 @@
 test_that("use", {
-  if (!is_on_travis()) return()
+  if (!is_on_ci()) return()
 
   if (is_pureseqtm_installed()) {
     uninstall_pureseqtm()

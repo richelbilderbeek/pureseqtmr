@@ -23,7 +23,7 @@ Install PureseqTM to a local folder
 \examples{
 library(testthat)
 
-if (is_on_travis() && !is_pureseqtm_installed()) {
+if (is_on_ci() && !is_pureseqtm_installed()) {
   install_pureseqtm()
   expect_true(is_pureseqtm_installed())
 }
