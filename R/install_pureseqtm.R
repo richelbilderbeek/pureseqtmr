@@ -39,8 +39,20 @@ install_pureseqtm <- function(
   }
   testthat::expect_true(dir.exists(pureseqtm_folder))
 
-  # Does the binary exist? Yes, it is in the GitHub repo
+  # Does the binary exist?
   bin_filename <- file.path(pureseqtm_folder, "PureseqTM.sh")
+  testthat::expect_true(file.exists(bin_filename))
+
+  # Force make
+  file.remove(bin_filename)
+  testthat::expect_true(!file.exists(bin_filename))
+
+  if (!file.exists(bin_filename)) {
+    make_foldername <- file.path(pureseqtm_folder, "source_code")
+    make_filename <- file.path(make_foldername, "Makefile")
+    testthat::expect_true(file.exists(make_filename))
+    system2("make", make_filename)
+  }
   testthat::expect_true(file.exists(bin_filename))
 
   # binary file is executable
