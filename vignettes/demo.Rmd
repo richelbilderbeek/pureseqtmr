@@ -115,3 +115,9 @@ if (is_pureseqtm_installed()) {
   plot_topology(topology)
 }
 ```
+
+And tally the number of transmembrane helices per protein:
+
+```{r}
+kable(tally_tmhs(topology))
+```

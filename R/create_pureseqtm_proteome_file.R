@@ -23,11 +23,6 @@ create_pureseqtm_proteome_file <- function(
   testthat::expect_true(dir.exists(pureseqtm_folder))
   bin_filename <- file.path(pureseqtm_folder, "PureseqTM_proteome.sh")
   testthat::expect_true(file.exists(bin_filename))
-
-  #dir.create(
-  #  dirname(topology_filename), showWarnings = FALSE, recursive = TRUE
-  #)
-
   system2(
     command = bin_filename,
     args = c(

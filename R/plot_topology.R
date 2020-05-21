@@ -27,7 +27,11 @@ plot_topology <- function(topology) {
     row_index <- row_index + n_locs
   }
   df$loc <- as.factor(df$loc)
-  df$loc <- plyr::revalue(df$loc, c("0" = "out", "1" = "in"))
+  df$loc <- plyr::revalue(
+    x = df$loc,
+    replace = c("0" = "out", "1" = "in"),
+    warn_missing = FALSE
+  )
 
   ggplot2::ggplot(df, ggplot2::aes(x = x, y = name, color = loc)) +
     ggplot2::geom_point() +

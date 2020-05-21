@@ -23,8 +23,8 @@ predict_topology_from_sequence <- function(
 ) {
   pureseqtmr::check_pureseqtm_installation(folder_name)
 
-  filename <- tempfile()
+  fasta_filename <- tempfile()
   text <- c(">temp", protein_sequence)
-  writeLines(text = text, con = filename)
-  pureseqtmr::run_pureseqtm(filename)[3]
+  writeLines(text = text, con = fasta_filename)
+  predict_topology(fasta_filename)$topology
 }
