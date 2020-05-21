@@ -9,7 +9,7 @@ check_topology(topology)
 }
 \arguments{
 \item{topology}{the topology as a \link[tibble]{tibble}
-as returned by \link{predict_proteome_topology}}
+as returned by \link{predict_topology}}
 }
 \description{
 Check if the topology is valid.
@@ -20,7 +20,7 @@ library(testthat)
 
 if (is_pureseqtm_installed()) {
   fasta_filename <- get_example_filename("1bhaA.fasta")
-  topology <- predict_proteome_topology(fasta_filename)
+  topology <- predict_topology(fasta_filename)
   expect_silent(check_topology(topology))
 }
 }

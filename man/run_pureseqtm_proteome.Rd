@@ -23,7 +23,7 @@ topology to}
 }
 \value{
 the topology of the proteome, using the same output as PureseqTM.
-Use \link{predict_proteome_topology} to get the topology as a
+Use \link{predict_topology} to get the topology as a
 }
 \description{
 Run PureseqTM on a proteome
@@ -51,7 +51,7 @@ if (is_pureseqtm_installed()) {
 \seealso{
 \itemize{
 \item{
-Use \link{predict_proteome_topology} to predict the topology
+Use \link{predict_topology} to predict the topology
 of a proteome
 }
 \item{

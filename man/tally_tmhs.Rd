@@ -8,7 +8,7 @@ tally_tmhs(topology)
 }
 \arguments{
 \item{topology}{the topology as a \link[tibble]{tibble}
-as returned by \link{predict_proteome_topology}}
+as returned by \link{predict_topology}}
 }
 \value{
 a \link[tibble]{tibble} with the number of
@@ -21,7 +21,7 @@ Count the number of TMHs in a topology
 library(testthat)
 
 if (is_pureseqtm_installed()) {
-  topology <- predict_proteome_topology(
+  topology <- predict_topology(
     get_example_filename("1bhaA.fasta")
   )
   tally <- tally_tmhs(topology)

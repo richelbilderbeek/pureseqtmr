@@ -20,7 +20,7 @@ if (is_pureseqtm_installed()) {
   fasta_filename <- get_example_filename("1bhaA.fasta")
 
   # Get the topology as a tibble
-  topology <- predict_proteome_topology(fasta_filename)
+  topology <- predict_topology(fasta_filename)
   expect_true("name" \%in\% names(topology))
   expect_true("topology" \%in\% names(topology))
   expect_equal(1, nrow(topology))

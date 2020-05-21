@@ -8,7 +8,7 @@ plot_topology(topology)
 }
 \arguments{
 \item{topology}{the topology as a \link[tibble]{tibble}
-as returned by \link{predict_proteome_topology}}
+as returned by \link{predict_topology}}
 }
 \description{
 Plot the topology

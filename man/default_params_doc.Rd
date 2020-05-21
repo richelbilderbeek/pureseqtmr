@@ -51,7 +51,7 @@ path given by \link{tempdir} is automatically cleaned
 by the operating system}
 
 \item{topology}{the topology as a \link[tibble]{tibble}
-as returned by \link{predict_proteome_topology}}
+as returned by \link{predict_topology}}
 
 \item{topology_filename}{name of the file to save a protein's
 topology to}

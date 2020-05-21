@@ -1,0 +1,67 @@
+---
+title: "Demo"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Demo}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(pureseqtmr)
+```
+
+`pureseqtmr` is a package to call PureseqTM from R.
+PureseqTM predicts the topology of a membrane protein, where the topology can
+be either inside, or not inside the membrane.
+
+To be able to call PureseqTM, it needs to be installed:
+
+```
+pureseqtmr::install_pureseqtm()
+```
+
+Note that this code is not actually run, to comply with CRAN guidelines.
+
+PureseqTM supplies some example files. Use `get_example_filenames` to
+get the path to all these files:
+
+```{r}
+if (is_pureseqtm_installed()) {
+  get_example_filenames()
+}
+```
+
+In this example, `1bhaA.fasta` will be used. To obtain the full path,
+use `get_example_filename`. `get_example_filename` will also
+
+```{r}
+if (is_pureseqtm_installed()) {
+  fasta_filename <- get_example_filename("1bhaA.fasta")
+
+}
+```
+
+Getting the topology of this protein:
+
+```{r}
+if (is_pureseqtm_installed()) {
+  topology <- predict_topology(fasta_filename)
+  knitr::kable(topology)
+}
+```
+
+Or show the topology as a plot:
+
+```{r}
+if (is_pureseqtm_installed()) {
+  plot_topology(topology)
+}
+```

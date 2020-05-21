@@ -6,14 +6,14 @@
 #'
 #' if (is_pureseqtm_installed()) {
 #'   fasta_filename <- get_example_filename("1bhaA.fasta")
-#'   topology <- predict_proteome_topology(fasta_filename)
+#'   topology <- predict_topology(fasta_filename)
 #'   expect_true("name" %in% names(topology))
 #'   expect_true("topology" %in% names(topology))
 #'   expect_equal(1, nrow(topology))
 #' }
 #' @author Richèl J.C. Bilderbeek
 #' @export
-predict_proteome_topology <- function(
+predict_topology <- function(
   fasta_filename,
   folder_name = get_default_pureseqtm_folder(),
   topology_filename = tempfile(fileext = ".top")

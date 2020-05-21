@@ -20,7 +20,9 @@ Imports:
     stringr,
     tibble
 Suggests: 
-    testthat
+    testthat,
+    knitr,
+    rmarkdown
 URL: https://github.com/richelbilderbeek/pureseqtmr
 BugReports: https://github.com/richelbilderbeek/pureseqtmr
-
+VignetteBuilder: knitr

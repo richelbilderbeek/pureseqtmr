@@ -20,10 +20,13 @@ get_example_filename <- function(
   testthat::expect_true(dir.exists(pureseqtm_folder))
   pureseqtm_examples_folder <- file.path(pureseqtm_folder, "example")
   testthat::expect_true(dir.exists(pureseqtm_examples_folder))
-
-  list.files(
-    pattern = filename,
-    pureseqtm_examples_folder,
-    full.names = TRUE
-  )
+  filename <- file.path(pureseqtm_examples_folder, filename)
+  if (!file.exists(filename)) {
+    stop(
+      "'filename' not found.\n",
+      "Value of 'filename': ", filename, "\n",
+      "Tip: use 'get_example_filenames' to get a list of all possible filenames"
+    )
+  }
+  filename
 }

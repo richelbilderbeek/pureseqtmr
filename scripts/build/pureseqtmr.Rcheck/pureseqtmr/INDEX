@@ -1,0 +1,47 @@
+are_tmhs                Are the sequences TMHs?
+check_pureseqtm_installation
+                        Checks the installation of PureseqTM. Throws a
+                        helpful error message if incomplete, else does
+                        nothing
+check_topology          Check if the topology is valid. Will stop if
+                        not.
+create_pureseqtm_files
+                        Create the five PureseqTM output files, by
+                        running PureseqTM.
+create_pureseqtm_proteome_file
+                        Create the output file of a PureseqTM proteome
+                        run
+default_params_doc      This function does nothing. It is intended to
+                        inherit is parameters' documentation.
+get_default_pureseqtm_folder
+                        Get the path to the folder where this package
+                        installs PureseqTM by default
+get_example_filename    Get the full path to a PureseqTM example files
+get_example_filenames   Get the full path to all PureseqTM example
+                        files
+get_pureseqtm_url       Get the URL of the PureseqTM source code
+install_pureseqtm       Install PureseqTM to a local folder
+is_on_travis            Determines if the environment is Travis CI
+is_protein_name_line    Is the line of text the name of a protein, as
+                        used within a FASTA filename?
+is_pureseqtm_installed
+                        Measure if PureseqTM is installed locally
+is_tmh                  Determine if the protein sequence contains at
+                        least one TMH.
+is_topology_line        Is the line of text the topology, as used
+                        within a FASTA filename?
+plot_topology           Plot the topology
+predict_proteome_topology
+                        Predict the topology of a proteome
+predict_topology_from_sequence
+                        Run PureseqTM directy on a protein sequence
+pureseqtmr              pureseqtmr: estimate the topoplogy of membrane
+                        proteins
+run_pureseqtm           Runs PureseqTM for one gene and returns the
+                        parsed results
+run_pureseqtm_proteome
+                        Run PureseqTM on a proteome
+run_pureseqtm_to_file   Creates a FASTA-like file, that has the
+                        locations of the amino acids.
+tally_tmhs              Count the number of TMHs in a topology
+uninstall_pureseqtm     Uninstall PureseqTM

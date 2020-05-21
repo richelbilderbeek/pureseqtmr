@@ -40,3 +40,4 @@ vignettes/*.pdf
 .Rproj.user
 pureseqtm_PureTM/
 file*_PureTM/
+inst/doc

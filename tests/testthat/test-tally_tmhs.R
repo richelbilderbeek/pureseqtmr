@@ -1,5 +1,5 @@
 test_that("one protein with two TMHs", {
-  topology <- predict_proteome_topology(
+  topology <- predict_topology(
     get_example_filename("1bhaA.fasta")
   )
   tally <- tally_tmhs(topology)
@@ -11,7 +11,7 @@ test_that("one protein with two TMHs", {
 })
 
 test_that("one protein with two TMHs, one at the start", {
-  topology <- predict_proteome_topology(
+  topology <- predict_topology(
     get_example_filename("1bhaA.fasta")
   )
   topology$topology[1] <- "111111111111100000011111111"
@@ -24,7 +24,7 @@ test_that("one protein with two TMHs, one at the start", {
 })
 
 test_that("three non-TMHs", {
-  topology <- predict_proteome_topology(
+  topology <- predict_topology(
     get_example_filename("test_proteome.fasta")
   )
   tally <- tally_tmhs(topology)

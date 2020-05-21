@@ -1,0 +1,258 @@
+Hmm ... looks like a package
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./Rd2.tex
+LaTeX2e <2020-02-02> patch level 2
+L3 programming layer <2020-02-14>
+(/usr/share/texlive/texmf-dist/tex/latex/base/book.cls
+Document Class: book 2019/12/20 v1.4l Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/bk10.clo))
+(/usr/share/R/share/texmf/tex/latex/Rd.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/bm.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/alltt.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/verbatim.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/times.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def)
+No file Rd2.aux.
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ptm.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1phv.fd)
+No file Rd2.toc.
+
+Overfull \hbox (42.78088pt too wide) in paragraph at lines 47--47
+ []\T1/pcr/m/n/10 are_tmhs(protein_sequences, folder_name = get_default_pureseq
+tm_folder()) 
+[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+Overfull \hbox (74.46902pt too wide) in paragraph at lines 55--59
+[]\T1/ptm/m/n/10 superfolder of Pure-se-qTM. The su-per-folder's name is \T1/pc
+r/m/n/10 /home/[user_name]/.local/share
+
+Overfull \hbox (48.78088pt too wide) in paragraph at lines 90--90
+ []\T1/pcr/m/n/10 check_pureseqtm_installation(folder_name = get_default_purese
+qtm_folder()) 
+
+Overfull \hbox (74.46902pt too wide) in paragraph at lines 96--100
+[]\T1/ptm/m/n/10 superfolder of Pure-se-qTM. The su-per-folder's name is \T1/pc
+r/m/n/10 /home/[user_name]/.local/share
+[2] [3]
+Overfull \hbox (74.46902pt too wide) in paragraph at lines 175--179
+[]\T1/ptm/m/n/10 superfolder of Pure-se-qTM. The su-per-folder's name is \T1/pc
+r/m/n/10 /home/[user_name]/.local/share
+[4]
+Overfull \hbox (74.46902pt too wide) in paragraph at lines 237--241
+[]\T1/ptm/m/n/10 superfolder of Pure-se-qTM. The su-per-folder's name is \T1/pc
+r/m/n/10 /home/[user_name]/.local/share
+[5]
+Overfull \hbox (74.46902pt too wide) in paragraph at lines 301--305
+[]\T1/ptm/m/n/10 superfolder of Pure-se-qTM. The su-per-folder's name is \T1/pc
+r/m/n/10 /home/[user_name]/.local/share
+[6] [7]
+Overfull \hbox (60.78088pt too wide) in paragraph at lines 388--388
+ []\T1/pcr/m/n/10 get_example_filename(filename, folder_name = get_default_pure
+seqtm_folder()) 
+
+Overfull \hbox (74.46902pt too wide) in paragraph at lines 396--400
+[]\T1/ptm/m/n/10 superfolder of Pure-se-qTM. The su-per-folder's name is \T1/pc
+r/m/n/10 /home/[user_name]/.local/share
+
+Overfull \hbox (6.78088pt too wide) in paragraph at lines 430--430
+ []\T1/pcr/m/n/10 get_example_filenames(folder_name = get_default_pureseqtm_fol
+der()) 
+
+Overfull \hbox (74.46902pt too wide) in paragraph at lines 436--440
+[]\T1/ptm/m/n/10 superfolder of Pure-se-qTM. The su-per-folder's name is \T1/pc
+r/m/n/10 /home/[user_name]/.local/share
+[8] [9]
+Overfull \hbox (74.46902pt too wide) in paragraph at lines 509--513
+[]\T1/ptm/m/n/10 superfolder of Pure-se-qTM. The su-per-folder's name is \T1/pc
+r/m/n/10 /home/[user_name]/.local/share
+[10] [11]
+Overfull \hbox (12.78088pt too wide) in paragraph at lines 597--597
+ []\T1/pcr/m/n/10 is_pureseqtm_installed(folder_name = get_default_pureseqtm_fo
+lder()) 
+
+Overfull \hbox (74.46902pt too wide) in paragraph at lines 603--607
+[]\T1/ptm/m/n/10 superfolder of Pure-se-qTM. The su-per-folder's name is \T1/pc
+r/m/n/10 /home/[user_name]/.local/share
+
+Overfull \hbox (24.78088pt too wide) in paragraph at lines 636--636
+ []\T1/pcr/m/n/10 is_tmh(protein_sequence, folder_name = get_default_pureseqtm_
+folder()) 
+[12]
+Overfull \hbox (74.46902pt too wide) in paragraph at lines 644--648
+[]\T1/ptm/m/n/10 superfolder of Pure-se-qTM. The su-per-folder's name is \T1/pc
+r/m/n/10 /home/[user_name]/.local/share
+[13] [14]
+Overfull \hbox (74.46902pt too wide) in paragraph at lines 745--749
+[]\T1/ptm/m/n/10 superfolder of Pure-se-qTM. The su-per-folder's name is \T1/pc
+r/m/n/10 /home/[user_name]/.local/share
+
+Overfull \hbox (45.42824pt too wide) in paragraph at lines 794--797
+[]\T1/ptm/m/n/10 a pro-tein se-quence, with the amino acids as cap-i-tals, for 
+ex-am-ple \T1/pcr/m/n/10 MEILCEDNTSLSSIPNSL 
+
+Overfull \hbox (74.46902pt too wide) in paragraph at lines 798--802
+[]\T1/ptm/m/n/10 superfolder of Pure-se-qTM. The su-per-folder's name is \T1/pc
+r/m/n/10 /home/[user_name]/.local/share
+[15] [16]
+Overfull \hbox (74.46902pt too wide) in paragraph at lines 883--887
+[]\T1/ptm/m/n/10 superfolder of Pure-se-qTM. The su-per-folder's name is \T1/pc
+r/m/n/10 /home/[user_name]/.local/share
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd) [17]
+Overfull \hbox (74.46902pt too wide) in paragraph at lines 954--958
+[]\T1/ptm/m/n/10 superfolder of Pure-se-qTM. The su-per-folder's name is \T1/pc
+r/m/n/10 /home/[user_name]/.local/share
+
+Overfull \hbox (0.43748pt too wide) in paragraph at lines 965--967
+[]\T1/ptm/m/n/10 the topol-ogy of the pro-teome, us-ing the same out-put as Pur
+e-se-qTM. Use pre-dict_proteome_topology
+[18] (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1pcr.fd)
+Overfull \hbox (74.46902pt too wide) in paragraph at lines 1038--1042
+[]\T1/ptm/m/n/10 superfolder of Pure-se-qTM. The su-per-folder's name is \T1/pc
+r/m/n/10 /home/[user_name]/.local/share
+[19] [20] [21] (./Rd2.aux) )
+(see the transcript file for additional information){/usr/share/texlive/texmf-d
+ist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/urw/
+courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr
+8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/urw/times/utmri8a.pfb>
+Output written on Rd2.pdf (21 pages, 98220 bytes).
+Transcript written on Rd2.log.
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./Rd2.tex
+LaTeX2e <2020-02-02> patch level 2
+L3 programming layer <2020-02-14>
+(/usr/share/texlive/texmf-dist/tex/latex/base/book.cls
+Document Class: book 2019/12/20 v1.4l Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/bk10.clo))
+(/usr/share/R/share/texmf/tex/latex/Rd.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/bm.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/alltt.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/verbatim.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/times.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def)
+(./Rd2.aux) (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ptm.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1phv.fd) (./Rd2.toc [1{/var/li
+b/texmf/fonts/map/pdftex/updmap/pdftex.map}])
+Overfull \hbox (42.78088pt too wide) in paragraph at lines 47--47
+ []\T1/pcr/m/n/10 are_tmhs(protein_sequences, folder_name = get_default_pureseq
+tm_folder()) 
+
+Overfull \hbox (74.46902pt too wide) in paragraph at lines 55--59
+[]\T1/ptm/m/n/10 superfolder of Pure-se-qTM. The su-per-folder's name is \T1/pc
+r/m/n/10 /home/[user_name]/.local/share
+[2]
+Overfull \hbox (48.78088pt too wide) in paragraph at lines 90--90
+ []\T1/pcr/m/n/10 check_pureseqtm_installation(folder_name = get_default_purese
+qtm_folder()) 
+
+Overfull \hbox (74.46902pt too wide) in paragraph at lines 96--100
+[]\T1/ptm/m/n/10 superfolder of Pure-se-qTM. The su-per-folder's name is \T1/pc
+r/m/n/10 /home/[user_name]/.local/share
+[3]
+Overfull \hbox (74.46902pt too wide) in paragraph at lines 175--179
+[]\T1/ptm/m/n/10 superfolder of Pure-se-qTM. The su-per-folder's name is \T1/pc
+r/m/n/10 /home/[user_name]/.local/share
+[4] [5]
+Overfull \hbox (74.46902pt too wide) in paragraph at lines 237--241
+[]\T1/ptm/m/n/10 superfolder of Pure-se-qTM. The su-per-folder's name is \T1/pc
+r/m/n/10 /home/[user_name]/.local/share
+[6]
+Overfull \hbox (74.46902pt too wide) in paragraph at lines 301--305
+[]\T1/ptm/m/n/10 superfolder of Pure-se-qTM. The su-per-folder's name is \T1/pc
+r/m/n/10 /home/[user_name]/.local/share
+[7]
+Overfull \hbox (60.78088pt too wide) in paragraph at lines 388--388
+ []\T1/pcr/m/n/10 get_example_filename(filename, folder_name = get_default_pure
+seqtm_folder()) 
+
+Overfull \hbox (74.46902pt too wide) in paragraph at lines 396--400
+[]\T1/ptm/m/n/10 superfolder of Pure-se-qTM. The su-per-folder's name is \T1/pc
+r/m/n/10 /home/[user_name]/.local/share
+[8]
+Overfull \hbox (6.78088pt too wide) in paragraph at lines 430--430
+ []\T1/pcr/m/n/10 get_example_filenames(folder_name = get_default_pureseqtm_fol
+der()) 
+
+Overfull \hbox (74.46902pt too wide) in paragraph at lines 436--440
+[]\T1/ptm/m/n/10 superfolder of Pure-se-qTM. The su-per-folder's name is \T1/pc
+r/m/n/10 /home/[user_name]/.local/share
+[9]
+Overfull \hbox (74.46902pt too wide) in paragraph at lines 509--513
+[]\T1/ptm/m/n/10 superfolder of Pure-se-qTM. The su-per-folder's name is \T1/pc
+r/m/n/10 /home/[user_name]/.local/share
+[10] [11]
+Overfull \hbox (12.78088pt too wide) in paragraph at lines 597--597
+ []\T1/pcr/m/n/10 is_pureseqtm_installed(folder_name = get_default_pureseqtm_fo
+lder()) 
+
+Overfull \hbox (74.46902pt too wide) in paragraph at lines 603--607
+[]\T1/ptm/m/n/10 superfolder of Pure-se-qTM. The su-per-folder's name is \T1/pc
+r/m/n/10 /home/[user_name]/.local/share
+[12]
+Overfull \hbox (24.78088pt too wide) in paragraph at lines 636--636
+ []\T1/pcr/m/n/10 is_tmh(protein_sequence, folder_name = get_default_pureseqtm_
+folder()) 
+
+Overfull \hbox (74.46902pt too wide) in paragraph at lines 644--648
+[]\T1/ptm/m/n/10 superfolder of Pure-se-qTM. The su-per-folder's name is \T1/pc
+r/m/n/10 /home/[user_name]/.local/share
+[13] [14]
+Overfull \hbox (74.46902pt too wide) in paragraph at lines 745--749
+[]\T1/ptm/m/n/10 superfolder of Pure-se-qTM. The su-per-folder's name is \T1/pc
+r/m/n/10 /home/[user_name]/.local/share
+[15]
+Overfull \hbox (45.42824pt too wide) in paragraph at lines 794--797
+[]\T1/ptm/m/n/10 a pro-tein se-quence, with the amino acids as cap-i-tals, for 
+ex-am-ple \T1/pcr/m/n/10 MEILCEDNTSLSSIPNSL 
+
+Overfull \hbox (74.46902pt too wide) in paragraph at lines 798--802
+[]\T1/ptm/m/n/10 superfolder of Pure-se-qTM. The su-per-folder's name is \T1/pc
+r/m/n/10 /home/[user_name]/.local/share
+[16] [17]
+Overfull \hbox (74.46902pt too wide) in paragraph at lines 883--887
+[]\T1/ptm/m/n/10 superfolder of Pure-se-qTM. The su-per-folder's name is \T1/pc
+r/m/n/10 /home/[user_name]/.local/share
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd) [18]
+Overfull \hbox (74.46902pt too wide) in paragraph at lines 954--958
+[]\T1/ptm/m/n/10 superfolder of Pure-se-qTM. The su-per-folder's name is \T1/pc
+r/m/n/10 /home/[user_name]/.local/share
+
+Overfull \hbox (0.43748pt too wide) in paragraph at lines 965--967
+[]\T1/ptm/m/n/10 the topol-ogy of the pro-teome, us-ing the same out-put as Pur
+e-se-qTM. Use pre-dict_proteome_topology
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1pcr.fd) [19]
+Overfull \hbox (74.46902pt too wide) in paragraph at lines 1038--1042
+[]\T1/ptm/m/n/10 superfolder of Pure-se-qTM. The su-per-folder's name is \T1/pc
+r/m/n/10 /home/[user_name]/.local/share
+[20] [21] [22] (./Rd2.aux) )
+(see the transcript file for additional information){/usr/share/texlive/texmf-d
+ist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/urw/
+courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr
+8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/urw/times/utmri8a.pfb>
+Output written on Rd2.pdf (22 pages, 98966 bytes).
+Transcript written on Rd2.log.
+Saving output to ‘pureseqtmr-manual.pdf’ ...
+Done
+You may want to clean up by 'rm -Rf /tmp/RtmpzDKQ0W/Rd2pdf22fb8426a0444'

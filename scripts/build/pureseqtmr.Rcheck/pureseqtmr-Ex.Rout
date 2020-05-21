@@ -1,0 +1,679 @@
+
+R version 3.6.3 (2020-02-29) -- "Holding the Windsock"
+Copyright (C) 2020 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> pkgname <- "pureseqtmr"
+> source(file.path(R.home("share"), "R", "examples-header.R"))
+> options(warn = 1)
+> base::assign(".ExTimings", "pureseqtmr-Ex.timings", pos = 'CheckExEnv')
+> base::cat("name\tuser\tsystem\telapsed\n", file=base::get(".ExTimings", pos = 'CheckExEnv'))
+> base::assign(".format_ptime",
++ function(x) {
++   if(!is.na(x[4L])) x[1L] <- x[1L] + x[4L]
++   if(!is.na(x[5L])) x[2L] <- x[2L] + x[5L]
++   options(OutDec = '.')
++   format(x[1L:3L], digits = 7L)
++ },
++ pos = 'CheckExEnv')
+> 
+> ### * </HEADER>
+> library('pureseqtmr')
+> 
+> base::assign(".oldSearch", base::search(), pos = 'CheckExEnv')
+> base::assign(".old_wd", base::getwd(), pos = 'CheckExEnv')
+> cleanEx()
+> nameEx("are_tmhs")
+> ### * are_tmhs
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: are_tmhs
+> ### Title: Are the sequences TMHs?
+> ### Aliases: are_tmhs
+> 
+> ### ** Examples
+> 
+> library(testthat)
+> 
+> if (is_pureseqtm_installed()) {
++   sequences <- c(
++     "QEKNWSALLTAVVIILTIAGNILVIMAVSLEKKLQNATNYFLM",
++     "VVIILTIRGNILVIMAVSLE"
++   )
++   expect_equal(c(TRUE, FALSE), are_tmhs(sequences))
++ }
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("are_tmhs", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> cleanEx()
+
+detaching ‘package:testthat’
+
+> nameEx("check_pureseqtm_installation")
+> ### * check_pureseqtm_installation
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: check_pureseqtm_installation
+> ### Title: Checks the installation of PureseqTM. Throws a helpful error
+> ###   message if incomplete, else does nothing
+> ### Aliases: check_pureseqtm_installation
+> 
+> ### ** Examples
+> 
+> library(testthat)
+> 
+> if (is_pureseqtm_installed()) {
++   expect_silent(check_pureseqtm_installation())
++ } else {
++   expect_error(check_pureseqtm_installation())
++ }
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("check_pureseqtm_installation", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> cleanEx()
+
+detaching ‘package:testthat’
+
+> nameEx("check_topology")
+> ### * check_topology
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: check_topology
+> ### Title: Check if the topology is valid. Will stop if not.
+> ### Aliases: check_topology
+> 
+> ### ** Examples
+> 
+> library(testthat)
+> 
+> if (is_pureseqtm_installed()) {
++   fasta_filename <- get_example_filename("1bhaA.fasta")
++   topology <- predict_proteome_topology(fasta_filename)
++   expect_silent(check_topology(topology))
++ }
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("check_topology", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> cleanEx()
+
+detaching ‘package:testthat’
+
+> nameEx("create_pureseqtm_files")
+> ### * create_pureseqtm_files
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: create_pureseqtm_files
+> ### Title: Create the five PureseqTM output files, by running PureseqTM.
+> ### Aliases: create_pureseqtm_files
+> 
+> ### ** Examples
+> 
+> library(testthat)
+> 
+> if (is_pureseqtm_installed()) {
++   fasta_filename <- get_example_filename("1bhaA.fasta")
++   filenames <- create_pureseqtm_files(fasta_filename)
++   expect_equal(5, length(filenames))
++ }
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("create_pureseqtm_files", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> cleanEx()
+
+detaching ‘package:testthat’
+
+> nameEx("create_pureseqtm_proteome_file")
+> ### * create_pureseqtm_proteome_file
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: create_pureseqtm_proteome_file
+> ### Title: Create the output file of a PureseqTM proteome run
+> ### Aliases: create_pureseqtm_proteome_file
+> 
+> ### ** Examples
+> 
+> library(testthat)
+> 
+> if (is_pureseqtm_installed()) {
++   fasta_filename <- get_example_filename("1bhaA.fasta")
++   topology_filename <- create_pureseqtm_proteome_file(fasta_filename)
++   expect_equal(1, length(topology_filename))
++   expect_true(file.exists((topology_filename)))
++   expect_equal(0, length(readLines(topology_filename)) %% 3)
++ }
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("create_pureseqtm_proteome_file", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> cleanEx()
+
+detaching ‘package:testthat’
+
+> nameEx("get_default_pureseqtm_folder")
+> ### * get_default_pureseqtm_folder
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: get_default_pureseqtm_folder
+> ### Title: Get the path to the folder where this package installs PureseqTM
+> ###   by default
+> ### Aliases: get_default_pureseqtm_folder
+> 
+> ### ** Examples
+> 
+> library(testthat)
+> 
+> if (rappdirs::app_dir()$os == "unix") {
++   expect_true(
++     grepl(
++       "/home/[A-Za-z0-9_]*/.local/share",
++       get_default_pureseqtm_folder()
++     )
++   )
++ }
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("get_default_pureseqtm_folder", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> cleanEx()
+
+detaching ‘package:testthat’
+
+> nameEx("get_example_filename")
+> ### * get_example_filename
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: get_example_filename
+> ### Title: Get the full path to a PureseqTM example files
+> ### Aliases: get_example_filename
+> 
+> ### ** Examples
+> 
+> library(testthat)
+> 
+> if (is_pureseqtm_installed()) {
++   expect_true(file.exists(get_example_filename("1bhaA.fasta")))
++ }
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("get_example_filename", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> cleanEx()
+
+detaching ‘package:testthat’
+
+> nameEx("get_example_filenames")
+> ### * get_example_filenames
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: get_example_filenames
+> ### Title: Get the full path to all PureseqTM example files
+> ### Aliases: get_example_filenames
+> 
+> ### ** Examples
+> 
+> library(testthat)
+> 
+> if (is_pureseqtm_installed()) {
++   filenames <- get_example_filenames()
++   expect_true(all(file.exists(filenames)))
++ }
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("get_example_filenames", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> cleanEx()
+
+detaching ‘package:testthat’
+
+> nameEx("get_pureseqtm_url")
+> ### * get_pureseqtm_url
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: get_pureseqtm_url
+> ### Title: Get the URL of the PureseqTM source code
+> ### Aliases: get_pureseqtm_url
+> 
+> ### ** Examples
+> 
+> library(testthat)
+> 
+> url <- get_pureseqtm_url()
+> expect_equal(1, length(url))
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("get_pureseqtm_url", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> cleanEx()
+
+detaching ‘package:testthat’
+
+> nameEx("install_pureseqtm")
+> ### * install_pureseqtm
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: install_pureseqtm
+> ### Title: Install PureseqTM to a local folder
+> ### Aliases: install_pureseqtm
+> 
+> ### ** Examples
+> 
+> library(testthat)
+> 
+> if (is_on_travis() && !is_pureseqtm_installed()) {
++   install_pureseqtm()
++   expect_true(is_pureseqtm_installed())
++ }
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("install_pureseqtm", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> cleanEx()
+
+detaching ‘package:testthat’
+
+> nameEx("is_protein_name_line")
+> ### * is_protein_name_line
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: is_protein_name_line
+> ### Title: Is the line of text the name of a protein, as used within a
+> ###   FASTA filename?
+> ### Aliases: is_protein_name_line
+> 
+> ### ** Examples
+> 
+> library(testthat)
+> 
+> expect_true(is_protein_name_line(">5H2A_CRIGR"))
+> expect_false(is_protein_name_line("5H2A_CRIGR"))
+> expect_false(is_protein_name_line("000001111100000"))
+> expect_false(is_protein_name_line(NA))
+> expect_false(is_protein_name_line(NULL))
+> expect_false(is_protein_name_line(""))
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("is_protein_name_line", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> cleanEx()
+
+detaching ‘package:testthat’
+
+> nameEx("is_pureseqtm_installed")
+> ### * is_pureseqtm_installed
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: is_pureseqtm_installed
+> ### Title: Measure if PureseqTM is installed locally
+> ### Aliases: is_pureseqtm_installed
+> 
+> ### ** Examples
+> 
+> library(testthat)
+> 
+> is_installed <- is_pureseqtm_installed()
+> expect_true(is_installed == TRUE || is_installed == FALSE)
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("is_pureseqtm_installed", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> cleanEx()
+
+detaching ‘package:testthat’
+
+> nameEx("is_tmh")
+> ### * is_tmh
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: is_tmh
+> ### Title: Determine if the protein sequence contains at least one TMH.
+> ### Aliases: is_tmh
+> 
+> ### ** Examples
+> 
+> library(testthat)
+> 
+> if (is_pureseqtm_installed()) {
++   expect_true(is_tmh("QEKNWSALLTAVVIILTIAGNILVIMAVSLEKKLQNATNYFLM"))
++   expect_false(is_tmh("VVIILTIRGNILVIMAVSLE"))
++ }
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("is_tmh", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> cleanEx()
+
+detaching ‘package:testthat’
+
+> nameEx("is_topology_line")
+> ### * is_topology_line
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: is_topology_line
+> ### Title: Is the line of text the topology, as used within a FASTA
+> ###   filename?
+> ### Aliases: is_topology_line
+> 
+> ### ** Examples
+> 
+> library(testthat)
+> 
+> expect_true(is_topology_line("000010101011"))
+> expect_false(is_topology_line(">5H2A_CRIGR"))
+> expect_false(is_topology_line("5H2A_CRIGR"))
+> expect_false(is_topology_line(NA))
+> expect_false(is_topology_line(NULL))
+> expect_false(is_topology_line(""))
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("is_topology_line", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> cleanEx()
+
+detaching ‘package:testthat’
+
+> nameEx("predict_proteome_topology")
+> ### * predict_proteome_topology
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: predict_proteome_topology
+> ### Title: Predict the topology of a proteome
+> ### Aliases: predict_proteome_topology
+> 
+> ### ** Examples
+> 
+> library(testthat)
+> 
+> if (is_pureseqtm_installed()) {
++   fasta_filename <- get_example_filename("1bhaA.fasta")
++   topology <- predict_proteome_topology(fasta_filename)
++   expect_true("name" %in% names(topology))
++   expect_true("topology" %in% names(topology))
++   expect_equal(1, nrow(topology))
++ }
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("predict_proteome_topology", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> cleanEx()
+
+detaching ‘package:testthat’
+
+> nameEx("predict_topology_from_sequence")
+> ### * predict_topology_from_sequence
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: predict_topology_from_sequence
+> ### Title: Run PureseqTM directy on a protein sequence
+> ### Aliases: predict_topology_from_sequence
+> 
+> ### ** Examples
+> 
+> library(testthat)
+> 
+> if (is_pureseqtm_installed()) {
++   protein_sequence <- paste0(
++     "QEKNWSALLTAVVIILTIAGNILVIMAVSLEKKLQNATNYFLM",
++     "SLAIADMLLGFLVMPVSMLTILYGYRWP"
++   )
++   topology <- predict_topology_from_sequence(protein_sequence)
++   expect_true(is_topology_line(topology))
++ }
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("predict_topology_from_sequence", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> cleanEx()
+
+detaching ‘package:testthat’
+
+> nameEx("pureseqtmr")
+> ### * pureseqtmr
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: pureseqtmr
+> ### Title: pureseqtmr: estimate the topoplogy of membrane proteins
+> ### Aliases: pureseqtmr
+> 
+> ### ** Examples
+> 
+> library(testthat)
+> 
+> if (is_pureseqtm_installed()) {
++   # Obtain an example filename
++   fasta_filename <- get_example_filename("1bhaA.fasta")
++ 
++   # Get the topology as a tibble
++   topology <- predict_proteome_topology(fasta_filename)
++   expect_true("name" %in% names(topology))
++   expect_true("topology" %in% names(topology))
++   expect_equal(1, nrow(topology))
++ 
++   # show the topology
++   plot_topology(topology)
++ }
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("pureseqtmr", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> cleanEx()
+
+detaching ‘package:testthat’
+
+> nameEx("run_pureseqtm")
+> ### * run_pureseqtm
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: run_pureseqtm
+> ### Title: Runs PureseqTM for one gene and returns the parsed results
+> ### Aliases: run_pureseqtm
+> 
+> ### ** Examples
+> 
+> library(testthat)
+> 
+> if (is_pureseqtm_installed()) {
++   fasta_filename <- get_example_filename("1bhaA.fasta")
++   topology_text <- run_pureseqtm_proteome(fasta_filename)
++   proteome_text <- readLines(fasta_filename)
++   expect_equal(3, length(topology_text))
++   expect_equal(proteome_text[1], topology_text[1])
++ }
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("run_pureseqtm", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> cleanEx()
+
+detaching ‘package:testthat’
+
+> nameEx("run_pureseqtm_proteome")
+> ### * run_pureseqtm_proteome
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: run_pureseqtm_proteome
+> ### Title: Run PureseqTM on a proteome
+> ### Aliases: run_pureseqtm_proteome
+> 
+> ### ** Examples
+> 
+> library(testthat)
+> 
+> if (is_pureseqtm_installed()) {
++   fasta_filename <- get_example_filename("1bhaA.fasta")
++   topology <- run_pureseqtm_proteome(fasta_filename)
++ 
++   expect_true(is_protein_name_line(topology[1]))
++ 
++   # Second line is the protein's amino acid sequence
++   expect_equal(
++     topology[2],
++     paste0(
++       "QAQITGRPEWIWLALGTALMGLGTLYFLVKGMGVS",
++       "DPDAKKFYAITTLVPAIAFTMYLSMLLGYGLTMVPF"
++     )
++   )
++   expect_true(is_topology_line(topology[3]))
++ }
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("run_pureseqtm_proteome", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> cleanEx()
+
+detaching ‘package:testthat’
+
+> nameEx("run_pureseqtm_to_file")
+> ### * run_pureseqtm_to_file
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: run_pureseqtm_to_file
+> ### Title: Creates a FASTA-like file, that has the locations of the amino
+> ###   acids.
+> ### Aliases: run_pureseqtm_to_file
+> 
+> ### ** Examples
+> 
+> library(testthat)
+> 
+> if (is_pureseqtm_installed()) {
++   pureseqtm_filename <- tempfile()
++   run_pureseqtm_to_file(
++     fasta_filename = get_example_filename("1bhaA.fasta"),
++     pureseqtm_filename = pureseqtm_filename
++   )
++   expect_true(file.exists(pureseqtm_filename))
++ }
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("run_pureseqtm_to_file", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> cleanEx()
+
+detaching ‘package:testthat’
+
+> nameEx("tally_tmhs")
+> ### * tally_tmhs
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: tally_tmhs
+> ### Title: Count the number of TMHs in a topology
+> ### Aliases: tally_tmhs
+> 
+> ### ** Examples
+> 
+> library(testthat)
+> 
+> if (is_pureseqtm_installed()) {
++   topology <- predict_proteome_topology(
++     get_example_filename("1bhaA.fasta")
++   )
++   tally <- tally_tmhs(topology)
++   expect_true("name" %in% names(tally))
++   expect_true("n_tmhs" %in% names(tally))
++   expect_equal(nrow(topology), nrow(tally))
++   expect_equal(1, nrow(tally))
++   expect_equal(2, tally$n_tmhs[1])
++ }
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("tally_tmhs", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> ### * <FOOTER>
+> ###
+> cleanEx()
+
+detaching ‘package:testthat’
+
+> options(digits = 7L)
+> base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
+Time elapsed:  1.6 0.04 8.666 18.984 0.601 
+> grDevices::dev.off()
+null device 
+          1 
+> ###
+> ### Local variables: ***
+> ### mode: outline-minor ***
+> ### outline-regexp: "\\(> \\)?### [*]+" ***
+> ### End: ***
+> quit('no')
