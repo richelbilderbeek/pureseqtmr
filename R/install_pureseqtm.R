@@ -24,6 +24,7 @@ install_pureseqtm <- function(
   pureseqtm_folder <- file.path(folder_name, basename(pureseqtm_url))
   if (!dir.exists(pureseqtm_folder)) {
     curwd <- getwd()
+    on.exit(setwd(curwd))
     setwd(folder_name)
     system2(
       command = "git",
