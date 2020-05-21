@@ -43,13 +43,16 @@ install_pureseqtm <- function(
   bin_filename <- file.path(pureseqtm_folder, "PureseqTM.sh")
   testthat::expect_true(file.exists(bin_filename))
 
-  make_foldername <- file.path(pureseqtm_folder, "source_code")
-  make_filename <- file.path(make_foldername, "Makefile")
-  testthat::expect_true(file.exists(make_filename))
-  curwd <- getwd()
-  setwd(make_foldername)
-  system2("make")
-  setwd(curwd)
+  # Binaries are made for Linux, recompile on other OSes
+  if (rappdirs::app_dir()$os != "linux") {
+    make_foldername <- file.path(pureseqtm_folder, "source_code")
+    make_filename <- file.path(make_foldername, "Makefile")
+    testthat::expect_true(file.exists(make_filename))
+    curwd <- getwd()
+    setwd(make_foldername)
+    system2("make")
+    setwd(curwd)
+  }
 
   # binary file is executable
   testthat::expect_true(
