@@ -5,10 +5,11 @@ Authors@R: c(
     person("Richèl J.C.", "Bilderbeek", email = "richel@richelbilderbeek.nl", role = c("aut", "cre"), comment = c(ORCID = "0000-0003-1107-7049")))
 Description: Proteins reside in either the cell plasma of in the
     cell membrane. A membrane protein goes through the 
-    membrane at least once. There are multiple ways to span this 
-    hydrophobic layer. One common structure is the transmembrane (alpha)
-    helix (TMH). Given the amino acid sequence of a membrane protein, this
-    package predicts which parts of the protein are TMHs.
+    membrane at least once. Given the amino acid sequence of a
+    membrane protein, the tool
+    'PureseqTM' (<https://github.com/PureseqTM/pureseqTM_package>)
+    can predict the topology of a membrane protein. This package
+    allows one to use 'PureseqTM' from R.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
@@ -27,3 +28,4 @@ Suggests:
 URL: https://github.com/richelbilderbeek/pureseqtmr
 BugReports: https://github.com/richelbilderbeek/pureseqtmr
 VignetteBuilder: knitr
+SystemRequirements: PureseqTM (https://github.com/PureseqTM/pureseqTM_package)
