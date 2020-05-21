@@ -9,21 +9,30 @@ R package to work with PureseqTM.
 
 ## Example
 
-```
+```r
 library(pureseqtmr)
 
-# Obtain an example filename
-fasta_filename <- get_example_filename("1bhaA.fasta")
+# Use an example proteome
+fasta_filename <- system.file(
+  "extdata", 
+  "UP000464024.fasta", 
+  package = "pureseqtmr"
+)
 
-# Get the topology as a tibble
+# Predict the topology
 topology <- predict_topology(fasta_filename)
-expect_true("name" %in% names(topology))
-expect_true("topology" %in% names(topology))
-expect_equal(1, nrow(topology))
 
-# show the topology
+# Simplify the protein names
+topology$name <- stringr::str_match(
+  string = topology$name,
+  pattern = "..\\|.*\\|(.*)_SARS2"
+)[,2]
+
+# Plot the topology
 plot_topology(topology)
 ```
+
+![COVID-19 topology](man/figures/covid_19_topology.png)
 
 ## Install
 
