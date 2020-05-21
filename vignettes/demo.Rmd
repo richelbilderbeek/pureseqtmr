@@ -100,10 +100,12 @@ Instead of directly showing the raw data, the protein names
 are shortened first:
 
 ```{r}
-topology$name <- stringr::str_match(
-  string = topology$name,
-  pattern = "..\\|.*\\|(.*)_SARS2"
-)[,2]
+if (is_pureseqtm_installed()) {
+  topology$name <- stringr::str_match(
+    string = topology$name,
+    pattern = "..\\|.*\\|(.*)_SARS2"
+  )[,2]
+}
 ```
 
 Show the topology as a plot:
