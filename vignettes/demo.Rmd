@@ -16,6 +16,8 @@ knitr::opts_chunk$set(
 
 ```{r setup}
 library(pureseqtmr)
+library(testthat)
+library(knitr)
 ```
 
 `pureseqtmr` is a package to call PureseqTM from R.
@@ -40,27 +42,73 @@ if (is_pureseqtm_installed()) {
 ```
 
 In this example, `1bhaA.fasta` will be used. To obtain the full path,
-use `get_example_filename`. `get_example_filename` will also
+use `get_example_filename`. `get_example_filename` will give an
+error if the file is not found.
 
 ```{r}
 if (is_pureseqtm_installed()) {
   fasta_filename <- get_example_filename("1bhaA.fasta")
-
+  head(readLines(fasta_filename))
 }
 ```
 
 Getting the topology of this protein:
 
-```{r}
+```{r cache=TRUE}
 if (is_pureseqtm_installed()) {
   topology <- predict_topology(fasta_filename)
-  knitr::kable(topology)
+  kable(topology)
 }
 ```
 
 Or show the topology as a plot:
 
+```{r fig.width=7}
+if (is_pureseqtm_installed()) {
+  plot_topology(topology)
+}
+```
+
+One needs the exact same code for a full proteome.
+Here we use a `pureseqtmr` example file,
+which is the COVID-19 reference proteome,
+as downloaded from [https://www.uniprot.org/proteomes/UP000464024](https://www.uniprot.org/proteomes/UP000464024):
+
 ```{r}
+fasta_filename <- system.file(
+  "extdata", 
+  "UP000464024.fasta", 
+  package = "pureseqtmr"
+)
+expect_true(file.exists(fasta_filename))
+```
+Show the (top of the) proteome:
+
+```{r}
+head(readLines(fasta_filename))
+```
+
+Getting the topology of this protein:
+
+```{r cache=TRUE}
+if (is_pureseqtm_installed()) {
+  topology <- predict_topology(fasta_filename)
+}
+```
+
+Instead of directly showing the raw data, the protein names
+are shortened first:
+
+```{r}
+topology$name <- stringr::str_match(
+  string = topology$name,
+  pattern = "..\\|.*\\|(.*)_SARS2"
+)[,2]
+```
+
+Show the topology as a plot:
+
+```{r fig.width=7}
 if (is_pureseqtm_installed()) {
   plot_topology(topology)
 }

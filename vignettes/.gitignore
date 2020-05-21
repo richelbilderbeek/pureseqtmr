@@ -1,2 +1,5 @@
 *.html
 *.R
+jt_info.txt
+Demo_cache/
+demo_cache/
