@@ -7,6 +7,8 @@ Branch   |[![Travis CI logo](man/figures/TravisCI.png)](https://travis-ci.org)  
 
 R package to work with PureseqTM.
 
+Because PureseqTM does not work on Windows, `pureseqtmr` does not work on Windows.
+
 ## Example
 
 ```r
