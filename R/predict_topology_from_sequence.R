@@ -26,5 +26,5 @@ predict_topology_from_sequence <- function(
   fasta_filename <- tempfile()
   text <- c(">temp", protein_sequence)
   writeLines(text = text, con = fasta_filename)
-  predict_topology(fasta_filename)$topology
+  pureseqtmr::predict_topology(fasta_filename)$topology
 }
