@@ -27,10 +27,13 @@ plot_topology <- function(topology) {
     row_index <- row_index + n_locs
   }
   df$loc <- as.factor(df$loc)
+  df$loc <- plyr::revalue(df$loc, c("0" = "out", "1" = "in"))
 
   ggplot2::ggplot(df, ggplot2::aes(x = x, y = name, color = loc)) +
     ggplot2::geom_point() +
-    ggplot2::xlab(
-      "Relative position"
+    ggplot2::xlab("Relative position") +
+    ggplot2::ylab("Protein name") +
+    ggplot2::labs(
+      color = "Location"
     )
 }
