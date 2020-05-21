@@ -15,6 +15,17 @@ by default, as can be obtained by
 \description{
 Get the PureseqTM version
 }
+\examples{
+library(testthat)
+
+if (is_pureseqtm_installed()) {
+  version <- get_pureseqtm_version()
+  expect_equal("character", class(version))
+  expect_true(nchar(version) > 1)
+}
+}
 \author{
+Richèl J.C. Bilderbeek
+
 Richèl J.C. Bilderbeek
 }

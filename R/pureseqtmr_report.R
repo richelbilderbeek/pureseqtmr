@@ -1,5 +1,9 @@
 #' Create a \link{pureseqtmr} report, to be used when reporting bugs
 #' @inheritParams default_params_doc
+#' @examples
+#' library(testthat)
+#'
+#' expect_output(pureseqtmr_report())
 #' @author Richèl J.C. Bilderbeek
 #' @export
 pureseqtmr_report <- function(

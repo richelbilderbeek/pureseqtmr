@@ -1,6 +1,16 @@
 #' Get the PureseqTM version
 #' @author Richèl J.C. Bilderbeek
 #' @inheritParams default_params_doc
+#' @examples
+#' library(testthat)
+#'
+#' if (is_pureseqtm_installed()) {
+#'   version <- get_pureseqtm_version()
+#'   expect_equal("character", class(version))
+#'   expect_true(nchar(version) > 1)
+#' }
+#' @author Richèl J.C. Bilderbeek
+#' @export
 get_pureseqtm_version <- function(
   folder_name = get_default_pureseqtm_folder()
 ) {

@@ -58,9 +58,6 @@ of a proteome
 Use \link{create_pureseqtm_files} to only create the PureseqTM
 output files
 }
-\item{
-Use \link{run_pureseqtm} to run PureseqTM on one gene in more detail
-}
 }
 }
 \author{
