@@ -72,7 +72,7 @@ if (is_pureseqtm_installed()) {
 One needs the exact same code for a full proteome.
 Here we use a `pureseqtmr` example file,
 which is the COVID-19 reference proteome,
-as downloaded from [https://www.uniprot.org/proteomes/UP000464024](https://www.uniprot.org/proteomes/UP000464024):
+as downloaded from `https://www.uniprot.org/proteomes/UP000464024`.
 
 ```{r}
 fasta_filename <- system.file(
