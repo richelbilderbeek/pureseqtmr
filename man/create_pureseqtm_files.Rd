@@ -40,10 +40,6 @@ if (is_pureseqtm_installed()) {
   expect_equal(5, length(filenames))
 }
 }
-\seealso{
-use \link{run_pureseqtm} to received
-also the parsed output
-}
 \author{
 Richèl J.C. Bilderbeek
 }

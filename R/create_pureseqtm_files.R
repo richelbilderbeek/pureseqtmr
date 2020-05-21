@@ -10,8 +10,6 @@
 #'   expect_equal(5, length(filenames))
 #"   expect_true(all(file.exists((filenames))))
 #' }
-#' @seealso use \link{run_pureseqtm} to received
-#'   also the parsed output
 #' @author Richèl J.C. Bilderbeek
 #' @export
 create_pureseqtm_files <- function(
