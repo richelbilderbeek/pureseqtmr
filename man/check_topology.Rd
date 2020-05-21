@@ -24,3 +24,6 @@ if (is_pureseqtm_installed()) {
   expect_silent(check_topology(topology))
 }
 }
+\author{
+Richèl J.C. Bilderbeek
+}

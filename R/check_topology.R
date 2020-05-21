@@ -9,6 +9,7 @@
 #'   topology <- predict_topology(fasta_filename)
 #'   expect_silent(check_topology(topology))
 #' }
+#' @author Richèl J.C. Bilderbeek
 #' @export
 check_topology <- function(topology) {
   if (!tibble::is_tibble(topology)) {
