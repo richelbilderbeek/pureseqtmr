@@ -6,8 +6,10 @@ matrix:
   include:
   - r: release
     os: linux
+    env: INSTALL_PURESEQTM=true
   - r: devel
     os: linux
+    env: INSTALL_PURESEQTM=false
   # Mac is not supported by PureseqTM
   #- r: release
   #  os: osx
@@ -17,10 +19,13 @@ r_github_packages:
   - jimhester/lintr
   - MangoTheCat/goodpractice
 
+before_script:
+  - if [[ "$INSTALL_PURESEQTM" == true ]]; then ./scripts/install_mhcnuggets.sh; fi
+
 after_success:
-  - Rscript -e 'lintr::lint_package()'
-  - Rscript -e 'covr::codecov()'
-  - Rscript -e 'goodpractice::gp()'
+  - if [[ "$INSTALL_PURESEQTM" == false ]]; then Rscript -e 'lintr::lint_package()'; fi
+  - if [[ "$INSTALL_PURESEQTM" == true ]]; then Rscript -e 'covr::codecov()'; fi
+  - if [[ "$INSTALL_PURESEQTM" == true ]]; then Rscript -e 'goodpractice::gp()'; fi
   - # No local files created
   - if [[ $(egrep -R "\"~" --include={*.R,*.Rmd}) ]]; then echo "Local file created"; exit 1; fi;
 
