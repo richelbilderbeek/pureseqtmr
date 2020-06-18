@@ -3,6 +3,7 @@
 #'   where the PureseqTM files are installed.
 #'   The name of the PureseqTM binary file will be at
 #'   \code{[folder_name]/PureseqTM_Package}
+#' @return Nothing.
 #' @author Richèl J.C. Bilderbeek
 #' @export
 uninstall_pureseqtm <- function(

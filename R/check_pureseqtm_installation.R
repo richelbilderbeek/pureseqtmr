@@ -2,7 +2,8 @@
 #' Throws a helpful error message if incomplete,
 #' else does nothing
 #' @inheritParams default_params_doc
-#' @return Nothing
+#' @return Nothing. Will \link{stop} with a helpful error message if
+#' PureseqTM is not installed.
 #' @examples
 #' library(testthat)
 #'

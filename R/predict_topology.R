@@ -1,6 +1,8 @@
 #' Predict the topology of a proteome
 #' @inheritParams default_params_doc
-#' @return a \link[tibble]{tibble}
+#' @return a \link[tibble]{tibble} with the columns 'name'
+#' and 'topology', where the 'name' column hold all the proteins' names,
+#' and 'topology' contains all respective topologies.
 #' @examples
 #' library(testthat)
 #'

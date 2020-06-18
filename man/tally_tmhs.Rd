@@ -2,7 +2,7 @@
 % Please edit documentation in R/tally_tmhs.R
 \name{tally_tmhs}
 \alias{tally_tmhs}
-\title{Count the number of TMHs in a topology}
+\title{Count the number of transmembrane helices in a topology}
 \usage{
 tally_tmhs(topology)
 }
@@ -15,7 +15,7 @@ a \link[tibble]{tibble} with the number of
 TMHs per protein
 }
 \description{
-Count the number of TMHs in a topology
+Count the number of transmembrane helices in a topology
 }
 \examples{
 library(testthat)

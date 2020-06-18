@@ -7,7 +7,7 @@
 is_on_ci()
 }
 \value{
-TRUE if run on AppVeyor or Travis CI, FALSE otherwise
+\link{TRUE} if run on AppVeyor or Travis CI, \link{FALSE} otherwise
 }
 \description{
 Determines if the environment is a continuous integration service

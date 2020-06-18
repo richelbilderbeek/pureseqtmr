@@ -1,5 +1,15 @@
 #' Plot the topology
 #' @inheritParams default_params_doc
+#' @return a \link[ggplot2]{ggplot} that displays the topology of
+#' one or more proteins
+#' @examples
+#' library(testthat)
+#'
+#' if (is_pureseqtm_installed()) {
+#'   fasta_filename <- get_example_filename("test_proteome.fasta")
+#'   topology <- predict_topology(fasta_filename)
+#'   expect_silent(plot_topology(topology))
+#' }
 #' @author Richèl J.C. Bilderbeek
 #' @export
 plot_topology <- function(topology) {

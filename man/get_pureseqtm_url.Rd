@@ -6,6 +6,9 @@
 \usage{
 get_pureseqtm_url()
 }
+\value{
+a URL as a character vector of one element
+}
 \description{
 Get the URL of the PureseqTM source code
 }

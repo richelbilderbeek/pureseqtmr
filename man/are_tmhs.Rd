@@ -2,7 +2,7 @@
 % Please edit documentation in R/are_tmhs.R
 \name{are_tmhs}
 \alias{are_tmhs}
-\title{Are the sequences TMHs?}
+\title{Are the sequences transmembrance helices?}
 \usage{
 are_tmhs(protein_sequences, folder_name = get_default_pureseqtm_folder())
 }
@@ -14,8 +14,13 @@ The superfolder's name is \code{/home/[user_name]/.local/share}
 by default, as can be obtained by
 \link{get_default_pureseqtm_folder}}
 }
+\value{
+a vector of booleans of the same length as the
+number of sequences. The ith element is \link{TRUE} if
+the ith protein sequence is a transmembrane helix
+}
 \description{
-Are the sequences TMHs?
+Are the sequences transmembrance helices?
 }
 \examples{
 library(testthat)

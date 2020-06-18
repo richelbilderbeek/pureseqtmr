@@ -15,7 +15,8 @@ by default, as can be obtained by
 \link{get_default_pureseqtm_folder}}
 }
 \value{
-Nothing
+Nothing. Will \link{stop} with a helpful error message if
+PureseqTM is not installed.
 }
 \description{
 Checks the installation of PureseqTM.

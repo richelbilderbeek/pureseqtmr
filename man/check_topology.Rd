@@ -2,8 +2,7 @@
 % Please edit documentation in R/check_topology.R
 \name{check_topology}
 \alias{check_topology}
-\title{Check if the topology is valid.
-Will \link{stop} if not.}
+\title{Check if the topology is valid.}
 \usage{
 check_topology(topology)
 }
@@ -11,8 +10,13 @@ check_topology(topology)
 \item{topology}{the topology as a \link[tibble]{tibble}
 as returned by \link{predict_topology}}
 }
+\value{
+Nothing. Will \link{stop} with a helpful error message if
+the topology is invalid.
+}
 \description{
-Check if the topology is valid.
+Check if the argument is of the same type as a predicted topology,
+as can be created with \link{predict_topology}.
 Will \link{stop} if not.
 }
 \examples{

@@ -10,9 +10,15 @@ is_topology_line(line)
 \arguments{
 \item{line}{line of text from a FASTA filename}
 }
+\value{
+\link{TRUE} if the line can be the text of a topology in a
+FASTA file.
+}
 \description{
 Is the line of text the topology, as used within
-a FASTA filename?
+a FASTA filename? In this context, a topology is a string of zeroes
+and ones, in which a one denotes that that amino acid is within
+the membrane.
 }
 \examples{
 library(testthat)

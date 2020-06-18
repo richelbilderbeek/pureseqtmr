@@ -7,7 +7,7 @@
 is_on_appveyor()
 }
 \value{
-TRUE if run on AppVeyor, FALSE otherwise
+\link{TRUE} if run on AppVeyor, \link{FALSE} otherwise
 }
 \description{
 Determines if the environment is AppVeyor

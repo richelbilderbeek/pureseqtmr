@@ -1,4 +1,4 @@
-#' Count the number of TMHs in a topology
+#' Count the number of transmembrane helices in a topology
 #' @inheritParams default_params_doc
 #' @return a \link[tibble]{tibble} with the number of
 #' TMHs per protein

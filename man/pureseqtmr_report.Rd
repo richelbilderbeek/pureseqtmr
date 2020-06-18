@@ -12,6 +12,9 @@ The superfolder's name is \code{/home/[user_name]/.local/share}
 by default, as can be obtained by
 \link{get_default_pureseqtm_folder}}
 }
+\value{
+Nothing.
+}
 \description{
 Create a \link{pureseqtmr} report, to be used when reporting bugs
 }

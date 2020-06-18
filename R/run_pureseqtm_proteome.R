@@ -1,7 +1,7 @@
 #' Run PureseqTM on a proteome
 #' @inheritParams default_params_doc
 #' @return the topology of the proteome, using the same output as PureseqTM.
-#' Use \link{predict_topology} to get the topology as a
+#' Use \link{predict_topology} to get the topology as a \link[tibble]{tibble}
 #' @examples
 #' library(testthat)
 #'

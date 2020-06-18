@@ -1,5 +1,8 @@
-#' Determine if the protein sequence contains at least one TMH.
+#' Determine if the protein sequence contains at least one
+#' transmembrane helix.
 #' @inheritParams default_params_doc
+#' @return \link{TRUE} if the protein sequence contains at least one
+#' transmembrane helix
 #' @examples
 #' library(testthat)
 #'

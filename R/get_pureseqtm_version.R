@@ -1,6 +1,8 @@
 #' Get the PureseqTM version
 #' @author Richèl J.C. Bilderbeek
 #' @inheritParams default_params_doc
+#' @return a version number as a character vector of one element,
+#'   for example \code{v0.10}
 #' @examples
 #' library(testthat)
 #'

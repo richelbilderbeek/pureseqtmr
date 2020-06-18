@@ -13,8 +13,8 @@ by default, as can be obtained by
 \link{get_default_pureseqtm_folder}}
 }
 \value{
-TRUE is PureseqTM is installed locally,
-FALSE otherwise
+\link{TRUE} is PureseqTM is installed locally,
+\link{FALSE} otherwise
 }
 \description{
 Measure if PureseqTM is installed locally

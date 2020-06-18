@@ -10,8 +10,21 @@ plot_topology(topology)
 \item{topology}{the topology as a \link[tibble]{tibble}
 as returned by \link{predict_topology}}
 }
+\value{
+a \link[ggplot2]{ggplot} that displays the topology of
+one or more proteins
+}
 \description{
 Plot the topology
+}
+\examples{
+library(testthat)
+
+if (is_pureseqtm_installed()) {
+  fasta_filename <- get_example_filename("test_proteome.fasta")
+  topology <- predict_topology(fasta_filename)
+  expect_silent(plot_topology(topology))
+}
 }
 \author{
 Richèl J.C. Bilderbeek

@@ -3,7 +3,8 @@
 #'   the amino acids as capitals, for
 #'   example `MEILCEDNTSLSSIPNSL`
 #' @inheritParams default_params_doc
-#' @return a topology as a string of zeroes and ones
+#' @return a topology as a string of zeroes and ones, where a one denotes
+#' that the corresponding amino acid is located within the membrane.
 #' @examples
 #' library(testthat)
 #'

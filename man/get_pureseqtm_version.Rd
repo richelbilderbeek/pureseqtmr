@@ -12,6 +12,10 @@ The superfolder's name is \code{/home/[user_name]/.local/share}
 by default, as can be obtained by
 \link{get_default_pureseqtm_folder}}
 }
+\value{
+a version number as a character vector of one element,
+for example \code{v0.10}
+}
 \description{
 Get the PureseqTM version
 }

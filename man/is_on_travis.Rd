@@ -7,7 +7,7 @@
 is_on_travis()
 }
 \value{
-TRUE if run on Travis CI, FALSE otherwise
+\link{TRUE} if run on Travis CI, \link{FALSE} otherwise
 }
 \description{
 Determines if the environment is Travis CI

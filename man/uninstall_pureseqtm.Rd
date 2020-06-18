@@ -12,6 +12,9 @@ where the PureseqTM files are installed.
 The name of the PureseqTM binary file will be at
 \code{[folder_name]/PureseqTM_Package}}
 }
+\value{
+Nothing.
+}
 \description{
 Uninstall PureseqTM
 }

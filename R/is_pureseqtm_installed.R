@@ -1,7 +1,7 @@
 #' Measure if PureseqTM is installed locally
 #' @inheritParams default_params_doc
-#' @return TRUE is PureseqTM is installed locally,
-#'   FALSE otherwise
+#' @return \link{TRUE} is PureseqTM is installed locally,
+#'   \link{FALSE} otherwise
 #' @examples
 #' library(testthat)
 #'

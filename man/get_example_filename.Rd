@@ -2,7 +2,7 @@
 % Please edit documentation in R/get_example_filename.R
 \name{get_example_filename}
 \alias{get_example_filename}
-\title{Get the full path to a PureseqTM example files}
+\title{Get the full path to a PureseqTM example file.}
 \usage{
 get_example_filename(filename, folder_name = get_default_pureseqtm_folder())
 }
@@ -14,8 +14,13 @@ The superfolder's name is \code{/home/[user_name]/.local/share}
 by default, as can be obtained by
 \link{get_default_pureseqtm_folder}}
 }
+\value{
+the full path to a PureseqTM example file
+}
 \description{
-Get the full path to a PureseqTM example files
+Get the full path to a PureseqTM example file.
+If the filename specified is not a PureseqTM example file,
+this function will \link{stop}
 }
 \examples{
 library(testthat)

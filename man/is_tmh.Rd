@@ -2,7 +2,8 @@
 % Please edit documentation in R/is_tmh.R
 \name{is_tmh}
 \alias{is_tmh}
-\title{Determine if the protein sequence contains at least one TMH.}
+\title{Determine if the protein sequence contains at least one
+transmembrane helix.}
 \usage{
 is_tmh(protein_sequence, folder_name = get_default_pureseqtm_folder())
 }
@@ -14,8 +15,13 @@ The superfolder's name is \code{/home/[user_name]/.local/share}
 by default, as can be obtained by
 \link{get_default_pureseqtm_folder}}
 }
+\value{
+\link{TRUE} if the protein sequence contains at least one
+transmembrane helix
+}
 \description{
-Determine if the protein sequence contains at least one TMH.
+Determine if the protein sequence contains at least one
+transmembrane helix.
 }
 \examples{
 library(testthat)

@@ -1,6 +1,7 @@
 #' Is the line of text the name of a protein, as used within
 #' a FASTA filename?
 #' @param line line of text from a FASTA filename
+#' @return \link{TRUE} if the line can be the name of a protein in a FASTA file
 #' @examples
 #' library(testthat)
 #'

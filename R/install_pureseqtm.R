@@ -1,5 +1,6 @@
 #' Install PureseqTM to a local folder
 #' @inheritParams default_params_doc
+#' @return Nothing.
 #' @examples
 #' library(testthat)
 #'

@@ -1,6 +1,11 @@
-#' Get the full path to a PureseqTM example files
+#' Get the full path to a PureseqTM example file.
+#'
+#' Get the full path to a PureseqTM example file.
+#' If the filename specified is not a PureseqTM example file,
+#' this function will \link{stop}
 #' @param filename name of the example file, without the path
 #' @inheritParams default_params_doc
+#' @return the full path to a PureseqTM example file
 #' @examples
 #' library(testthat)
 #'

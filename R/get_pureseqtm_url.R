@@ -1,4 +1,5 @@
 #' Get the URL of the PureseqTM source code
+#' @return a URL as a character vector of one element
 #' @examples
 #' library(testthat)
 #'

@@ -17,6 +17,9 @@ by default, as can be obtained by
 
 \item{pureseqtm_url}{URL of the PureseqTM git repository}
 }
+\value{
+Nothing.
+}
 \description{
 Install PureseqTM to a local folder
 }

@@ -20,7 +20,8 @@ by default, as can be obtained by
 \link{get_default_pureseqtm_folder}}
 }
 \value{
-a topology as a string of zeroes and ones
+a topology as a string of zeroes and ones, where a one denotes
+that the corresponding amino acid is located within the membrane.
 }
 \description{
 Run PureseqTM directy on a protein sequence

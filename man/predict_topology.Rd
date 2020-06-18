@@ -22,7 +22,9 @@ by default, as can be obtained by
 topology to}
 }
 \value{
-a \link[tibble]{tibble}
+a \link[tibble]{tibble} with the columns 'name'
+and 'topology', where the 'name' column hold all the proteins' names,
+and 'topology' contains all respective topologies.
 }
 \description{
 Predict the topology of a proteome

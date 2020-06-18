@@ -1,5 +1,6 @@
 #' Create a \link{pureseqtmr} report, to be used when reporting bugs
 #' @inheritParams default_params_doc
+#' @return Nothing.
 #' @examples
 #' library(testthat)
 #'

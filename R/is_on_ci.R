@@ -1,5 +1,5 @@
 #' Determines if the environment is AppVeyor
-#' @return TRUE if run on AppVeyor, FALSE otherwise
+#' @return \link{TRUE} if run on AppVeyor, \link{FALSE} otherwise
 #' @author Richèl J.C. Bilderbeek
 #' @examples
 #'   if (is_on_appveyor()) {
@@ -11,7 +11,7 @@ is_on_appveyor <- function() {
 }
 
 #' Determines if the environment is Travis CI
-#' @return TRUE if run on Travis CI, FALSE otherwise
+#' @return \link{TRUE} if run on Travis CI, \link{FALSE} otherwise
 #' @author Richèl J.C. Bilderbeek
 #' @examples
 #'   if (is_on_travis()) {
@@ -23,7 +23,7 @@ is_on_travis <- function() {
 }
 
 #' Determines if the environment is a continuous integration service
-#' @return TRUE if run on AppVeyor or Travis CI, FALSE otherwise
+#' @return \link{TRUE} if run on AppVeyor or Travis CI, \link{FALSE} otherwise
 #' @author Richèl J.C. Bilderbeek
 #' @examples
 #'   if (is_on_ci()) {

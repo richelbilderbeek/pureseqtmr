@@ -1,5 +1,8 @@
-#' Are the sequences TMHs?
+#' Are the sequences transmembrance helices?
 #' @inheritParams default_params_doc
+#' @return a vector of booleans of the same length as the
+#'   number of sequences. The ith element is \link{TRUE} if
+#'   the ith protein sequence is a transmembrane helix
 #' @examples
 #' library(testthat)
 #'
