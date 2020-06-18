@@ -20,7 +20,7 @@ r_github_packages:
   - MangoTheCat/goodpractice
 
 before_script:
-  - if [[ "$INSTALL_PURESEQTM" == true ]]; then ./scripts/install_mhcnuggets.sh; fi
+  - if [[ "$INSTALL_PURESEQTM" == true ]]; then ./scripts/install_pureseqtm.sh; fi
 
 after_success:
   - if [[ "$INSTALL_PURESEQTM" == false ]]; then Rscript -e 'lintr::lint_package()'; fi
