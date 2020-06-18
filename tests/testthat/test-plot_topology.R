@@ -6,15 +6,6 @@ test_that("single protein", {
   expect_silent(plot_topology(topology))
 })
 
-test_that("two proteins", {
-  if (!is_pureseqtm_installed()) return()
-  fasta_filename <- system.file(
-    "extdata", "two_test_proteins.fasta", package = "pureseqtmr"
-  )
-  topology <- predict_topology(fasta_filename)
-  expect_silent(plot_topology(topology))
-})
-
 test_that("three proteins", {
   if (!is_pureseqtm_installed()) return()
   if (!is_on_ci()) return()
