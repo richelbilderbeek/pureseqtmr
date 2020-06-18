@@ -20,7 +20,7 @@ Plot the topology
 \examples{
 library(testthat)
 
-if (is_pureseqtm_installed()) {
+if (is_pureseqtm_installed() && is_on_ci()) {
   fasta_filename <- get_example_filename("test_proteome.fasta")
   topology <- predict_topology(fasta_filename)
   expect_silent(plot_topology(topology))
