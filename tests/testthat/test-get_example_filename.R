@@ -7,6 +7,8 @@ test_that("use", {
 })
 
 test_that("abuse", {
+  if (!is_pureseqtm_installed()) return()
+
   expect_error(
     get_example_filename("nonsense"),
     "'filename' not found"
