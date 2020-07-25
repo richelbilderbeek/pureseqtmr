@@ -8,17 +8,12 @@
 #' package predicts which parts of the protein are TMHs
 #'
 #' @examples
-#' library(testthat)
-#'
 #' if (is_pureseqtm_installed()) {
 #'   # Obtain an example filename
 #'   fasta_filename <- get_example_filename("1bhaA.fasta")
 #'
 #'   # Get the topology as a tibble
 #'   topology <- predict_topology(fasta_filename)
-#'   expect_true("name" %in% names(topology))
-#'   expect_true("topology" %in% names(topology))
-#'   expect_equal(1, nrow(topology))
 #'
 #'   # show the topology
 #'   plot_topology(topology)

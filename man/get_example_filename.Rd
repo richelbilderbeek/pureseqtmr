@@ -23,10 +23,8 @@ If the filename specified is not a PureseqTM example file,
 this function will \link{stop}
 }
 \examples{
-library(testthat)
-
 if (is_pureseqtm_installed()) {
-  expect_true(file.exists(get_example_filename("1bhaA.fasta")))
+  get_example_filename("1bhaA.fasta"))
 }
 }
 \seealso{

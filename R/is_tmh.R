@@ -4,11 +4,12 @@
 #' @return \link{TRUE} if the protein sequence contains at least one
 #' transmembrane helix
 #' @examples
-#' library(testthat)
-#'
 #' if (is_pureseqtm_installed()) {
-#'   expect_true(is_tmh("QEKNWSALLTAVVIILTIAGNILVIMAVSLEKKLQNATNYFLM"))
-#'   expect_false(is_tmh("VVIILTIRGNILVIMAVSLE"))
+#'   # This sequence is a TMH
+#'   is_tmh("QEKNWSALLTAVVIILTIAGNILVIMAVSLEKKLQNATNYFLM")
+#'
+#'   # This sequence is not a TMH
+#'   is_tmh("VVIILTIRGNILVIMAVSLE")
 #' }
 #' @author Richèl J.C. Bilderbeek
 #' @export

@@ -21,14 +21,11 @@ and ones, in which a one denotes that that amino acid is within
 the membrane.
 }
 \examples{
-library(testthat)
+# This is a valid topology
+is_topology_line("000010101011")
 
-expect_true(is_topology_line("000010101011"))
-expect_false(is_topology_line(">5H2A_CRIGR"))
-expect_false(is_topology_line("5H2A_CRIGR"))
-expect_false(is_topology_line(NA))
-expect_false(is_topology_line(NULL))
-expect_false(is_topology_line(""))
+# This is an invalid topology
+is_topology_line("invalid")
 }
 \author{
 Richèl J.C. Bilderbeek

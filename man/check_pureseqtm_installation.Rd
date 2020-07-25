@@ -24,12 +24,8 @@ Throws a helpful error message if incomplete,
 else does nothing
 }
 \examples{
-library(testthat)
-
 if (is_pureseqtm_installed()) {
-  expect_silent(check_pureseqtm_installation())
-} else {
-  expect_error(check_pureseqtm_installation())
+  check_pureseqtm_installation()
 }
 }
 \author{

@@ -7,10 +7,8 @@
 #' @inheritParams default_params_doc
 #' @return the full path to a PureseqTM example file
 #' @examples
-#' library(testthat)
-#'
 #' if (is_pureseqtm_installed()) {
-#'   expect_true(file.exists(get_example_filename("1bhaA.fasta")))
+#'   get_example_filename("1bhaA.fasta"))
 #' }
 #' @seealso use \link{get_example_filenames} to get all PureseqTM
 #'   example filenames

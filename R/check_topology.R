@@ -7,12 +7,10 @@
 #' @return Nothing. Will \link{stop} with a helpful error message if
 #' the topology is invalid.
 #' @examples
-#' library(testthat)
-#'
 #' if (is_pureseqtm_installed()) {
 #'   fasta_filename <- get_example_filename("1bhaA.fasta")
 #'   topology <- predict_topology(fasta_filename)
-#'   expect_silent(check_topology(topology))
+#'   check_topology(topology)
 #' }
 #' @author Richèl J.C. Bilderbeek
 #' @export

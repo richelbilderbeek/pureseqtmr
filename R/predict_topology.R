@@ -4,14 +4,9 @@
 #' and 'topology', where the 'name' column hold all the proteins' names,
 #' and 'topology' contains all respective topologies.
 #' @examples
-#' library(testthat)
-#'
 #' if (is_pureseqtm_installed()) {
 #'   fasta_filename <- get_example_filename("1bhaA.fasta")
-#'   topology <- predict_topology(fasta_filename)
-#'   expect_true("name" %in% names(topology))
-#'   expect_true("topology" %in% names(topology))
-#'   expect_equal(1, nrow(topology))
+#'   predict_topology(fasta_filename)
 #' }
 #' @author Richèl J.C. Bilderbeek
 #' @export

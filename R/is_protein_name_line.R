@@ -3,14 +3,7 @@
 #' @param line line of text from a FASTA filename
 #' @return \link{TRUE} if the line can be the name of a protein in a FASTA file
 #' @examples
-#' library(testthat)
-#'
-#' expect_true(is_protein_name_line(">5H2A_CRIGR"))
-#' expect_false(is_protein_name_line("5H2A_CRIGR"))
-#' expect_false(is_protein_name_line("000001111100000"))
-#' expect_false(is_protein_name_line(NA))
-#' expect_false(is_protein_name_line(NULL))
-#' expect_false(is_protein_name_line(""))
+#' is_protein_name_line(">5H2A_CRIGR")
 #' @author Richèl J.C. Bilderbeek
 #' @export
 is_protein_name_line <- function(line) {

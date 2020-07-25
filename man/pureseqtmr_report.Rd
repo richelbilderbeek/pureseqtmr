@@ -19,9 +19,7 @@ Nothing.
 Create a \link{pureseqtmr} report, to be used when reporting bugs
 }
 \examples{
-library(testthat)
-
-expect_output(pureseqtmr_report())
+pureseqtmr_report()
 }
 \author{
 Richèl J.C. Bilderbeek

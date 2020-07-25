@@ -4,14 +4,12 @@
 #'   number of sequences. The ith element is \link{TRUE} if
 #'   the ith protein sequence is a transmembrane helix
 #' @examples
-#' library(testthat)
-#'
 #' if (is_pureseqtm_installed()) {
 #'   sequences <- c(
 #'     "QEKNWSALLTAVVIILTIAGNILVIMAVSLEKKLQNATNYFLM",
 #'     "VVIILTIRGNILVIMAVSLE"
 #'   )
-#'   expect_equal(c(TRUE, FALSE), are_tmhs(sequences))
+#'   are_tmhs(sequences)
 #' }
 #' @author Richèl J.C. Bilderbeek
 #' @export

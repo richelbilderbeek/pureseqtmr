@@ -2,11 +2,8 @@
 #' @inheritParams default_params_doc
 #' @return a character vector with all PureseqTM example files
 #' @examples
-#' library(testthat)
-#'
 #' if (is_pureseqtm_installed()) {
-#'   filenames <- get_example_filenames()
-#'   expect_true(all(file.exists(filenames)))
+#'   get_example_filenames()
 #' }
 #' @seealso use \link{get_example_filename} to get the full
 #'   path to a PureseqTM example file

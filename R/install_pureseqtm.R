@@ -2,11 +2,8 @@
 #' @inheritParams default_params_doc
 #' @return Nothing.
 #' @examples
-#' library(testthat)
-#'
-#' if (is_on_ci() && !is_pureseqtm_installed()) {
+#' \dontrun{
 #'   install_pureseqtm()
-#'   expect_true(is_pureseqtm_installed())
 #' }
 #' @author Richèl J.C. Bilderbeek
 #' @export

@@ -6,15 +6,12 @@
 #' @return a topology as a string of zeroes and ones, where a one denotes
 #' that the corresponding amino acid is located within the membrane.
 #' @examples
-#' library(testthat)
-#'
 #' if (is_pureseqtm_installed()) {
 #'   protein_sequence <- paste0(
 #'     "QEKNWSALLTAVVIILTIAGNILVIMAVSLEKKLQNATNYFLM",
 #'     "SLAIADMLLGFLVMPVSMLTILYGYRWP"
 #'   )
-#'   topology <- predict_topology_from_sequence(protein_sequence)
-#'   expect_true(is_topology_line(topology))
+#'   predict_topology_from_sequence(protein_sequence)
 #' }
 #' @author Richèl J.C. Bilderbeek
 #' @export

@@ -20,12 +20,8 @@ for example \code{v0.10}
 Get the PureseqTM version
 }
 \examples{
-library(testthat)
-
 if (is_pureseqtm_installed()) {
-  version <- get_pureseqtm_version()
-  expect_equal("character", class(version))
-  expect_true(nchar(version) > 1)
+  get_pureseqtm_version()
 }
 }
 \author{

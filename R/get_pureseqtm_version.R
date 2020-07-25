@@ -4,12 +4,8 @@
 #' @return a version number as a character vector of one element,
 #'   for example \code{v0.10}
 #' @examples
-#' library(testthat)
-#'
 #' if (is_pureseqtm_installed()) {
-#'   version <- get_pureseqtm_version()
-#'   expect_equal("character", class(version))
-#'   expect_true(nchar(version) > 1)
+#'   get_pureseqtm_version()
 #' }
 #' @author Richèl J.C. Bilderbeek
 #' @export

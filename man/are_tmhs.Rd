@@ -23,14 +23,12 @@ the ith protein sequence is a transmembrane helix
 Are the sequences transmembrance helices?
 }
 \examples{
-library(testthat)
-
 if (is_pureseqtm_installed()) {
   sequences <- c(
     "QEKNWSALLTAVVIILTIAGNILVIMAVSLEKKLQNATNYFLM",
     "VVIILTIRGNILVIMAVSLE"
   )
-  expect_equal(c(TRUE, FALSE), are_tmhs(sequences))
+  are_tmhs(sequences)
 }
 }
 \author{

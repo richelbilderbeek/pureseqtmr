@@ -3,23 +3,9 @@
 #' @return the topology of the proteome, using the same output as PureseqTM.
 #' Use \link{predict_topology} to get the topology as a \link[tibble]{tibble}
 #' @examples
-#' library(testthat)
-#'
 #' if (is_pureseqtm_installed()) {
 #'   fasta_filename <- get_example_filename("1bhaA.fasta")
-#'   topology <- run_pureseqtm_proteome(fasta_filename)
-#'
-#'   expect_true(is_protein_name_line(topology[1]))
-#'
-#'   # Second line is the protein's amino acid sequence
-#'   expect_equal(
-#'     topology[2],
-#'     paste0(
-#'       "QAQITGRPEWIWLALGTALMGLGTLYFLVKGMGVS",
-#'       "DPDAKKFYAITTLVPAIAFTMYLSMLLGYGLTMVPF"
-#'     )
-#'   )
-#'   expect_true(is_topology_line(topology[3]))
+#'   run_pureseqtm_proteome(fasta_filename)
 #' }
 #' @seealso
 #' \itemize{

@@ -2,13 +2,9 @@
 #' @inheritParams default_params_doc
 #' @return full path to the files created
 #' @examples
-#' library(testthat)
-#'
 #' if (is_pureseqtm_installed()) {
 #'   fasta_filename <- get_example_filename("1bhaA.fasta")
-#'   filenames <- create_pureseqtm_files(fasta_filename)
-#'   expect_equal(5, length(filenames))
-#"   expect_true(all(file.exists((filenames))))
+#'   create_pureseqtm_files(fasta_filename)
 #' }
 #' @author Richèl J.C. Bilderbeek
 #' @export

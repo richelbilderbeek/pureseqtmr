@@ -13,10 +13,7 @@ a URL as a character vector of one element
 Get the URL of the PureseqTM source code
 }
 \examples{
-library(testthat)
-
-url <- get_pureseqtm_url()
-expect_equal(1, length(url))
+get_pureseqtm_url()
 }
 \author{
 Richèl J.C. Bilderbeek

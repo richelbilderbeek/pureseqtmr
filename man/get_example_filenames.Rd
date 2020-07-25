@@ -19,11 +19,8 @@ a character vector with all PureseqTM example files
 Get the full path to all PureseqTM example files
 }
 \examples{
-library(testthat)
-
 if (is_pureseqtm_installed()) {
-  filenames <- get_example_filenames()
-  expect_true(all(file.exists(filenames)))
+  get_example_filenames()
 }
 }
 \seealso{

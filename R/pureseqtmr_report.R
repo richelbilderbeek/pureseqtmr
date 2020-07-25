@@ -2,9 +2,7 @@
 #' @inheritParams default_params_doc
 #' @return Nothing.
 #' @examples
-#' library(testthat)
-#'
-#' expect_output(pureseqtmr_report())
+#' pureseqtmr_report()
 #' @author Richèl J.C. Bilderbeek
 #' @export
 pureseqtmr_report <- function(

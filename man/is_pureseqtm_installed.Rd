@@ -20,10 +20,7 @@ by default, as can be obtained by
 Measure if PureseqTM is installed locally
 }
 \examples{
-library(testthat)
-
-is_installed <- is_pureseqtm_installed()
-expect_true(is_installed == TRUE || is_installed == FALSE)
+is_pureseqtm_installed()
 }
 \author{
 Richèl J.C. Bilderbeek

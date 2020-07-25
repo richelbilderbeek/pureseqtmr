@@ -3,18 +3,12 @@
 #' @return a \link[tibble]{tibble} with the number of
 #' TMHs per protein
 #' @examples
-#' library(testthat)
-#'
 #' if (is_pureseqtm_installed()) {
-#'   topology <- predict_topology(
-#'     get_example_filename("1bhaA.fasta")
+#'   tally_tmhs(
+#'     predict_topology(
+#'       get_example_filename("1bhaA.fasta")
+#'     )
 #'   )
-#'   tally <- tally_tmhs(topology)
-#'   expect_true("name" %in% names(tally))
-#'   expect_true("n_tmhs" %in% names(tally))
-#'   expect_equal(nrow(topology), nrow(tally))
-#'   expect_equal(1, nrow(tally))
-#'   expect_equal(2, tally$n_tmhs[1])
 #' }
 #' @export
 tally_tmhs <- function(
