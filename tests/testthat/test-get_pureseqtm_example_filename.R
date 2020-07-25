@@ -1,4 +1,6 @@
 test_that("use", {
+  if (!is_pureseqtm_installed()) return()
+
   expect_true(
     file.exists(get_example_filename("1bhaA.fasta")))
   expect_true(

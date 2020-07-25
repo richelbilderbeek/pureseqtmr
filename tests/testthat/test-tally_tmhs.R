@@ -1,4 +1,6 @@
 test_that("one protein with two TMHs", {
+  if (!is_pureseqtm_installed()) return()
+
   topology <- predict_topology(
     get_example_filename("1bhaA.fasta")
   )
@@ -11,6 +13,8 @@ test_that("one protein with two TMHs", {
 })
 
 test_that("one protein with two TMHs, one at the start", {
+  if (!is_pureseqtm_installed()) return()
+
   topology <- predict_topology(
     get_example_filename("1bhaA.fasta")
   )
@@ -24,6 +28,8 @@ test_that("one protein with two TMHs, one at the start", {
 })
 
 test_that("three non-TMHs", {
+  if (!is_pureseqtm_installed()) return()
+
   topology <- predict_topology(
     get_example_filename("test_proteome.fasta")
   )
