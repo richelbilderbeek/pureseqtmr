@@ -10,7 +10,7 @@ Description: Proteins reside in either the cell plasma or in the
     'PureseqTM' (<https://github.com/PureseqTM/pureseqTM_package>,
     as described in "Efficient And Accurate Prediction Of Transmembrane 
     Topology From Amino acid sequence only.", Wang, Qing, et al (2019), 
-    <bioRxiv:627307>),
+    <https://doi.org/10.1101/627307>),
     can predict the topology of a membrane protein. This package
     allows one to use 'PureseqTM' from R.
 License: GPL-3
