@@ -76,8 +76,8 @@ as downloaded from `https://www.uniprot.org/proteomes/UP000464024`.
 
 ```{r}
 fasta_filename <- system.file(
-  "extdata", 
-  "UP000464024.fasta", 
+  "extdata",
+  "UP000464024.fasta",
   package = "pureseqtmr"
 )
 expect_true(file.exists(fasta_filename))
@@ -104,7 +104,7 @@ if (is_pureseqtm_installed()) {
   topology$name <- stringr::str_match(
     string = topology$name,
     pattern = "..\\|.*\\|(.*)_SARS2"
-  )[,2]
+  )[, 2]
 }
 ```
 
