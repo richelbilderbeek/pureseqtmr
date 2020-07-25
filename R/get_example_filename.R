@@ -8,7 +8,7 @@
 #' @return the full path to a PureseqTM example file
 #' @examples
 #' if (is_pureseqtm_installed()) {
-#'   get_example_filename("1bhaA.fasta"))
+#'   get_example_filename("1bhaA.fasta")
 #' }
 #' @seealso use \link{get_example_filenames} to get all PureseqTM
 #'   example filenames

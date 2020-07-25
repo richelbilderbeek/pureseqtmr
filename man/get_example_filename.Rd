@@ -24,7 +24,7 @@ this function will \link{stop}
 }
 \examples{
 if (is_pureseqtm_installed()) {
-  get_example_filename("1bhaA.fasta"))
+  get_example_filename("1bhaA.fasta")
 }
 }
 \seealso{
