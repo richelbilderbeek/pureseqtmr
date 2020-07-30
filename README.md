@@ -1,5 +1,9 @@
 # `pureseqtmr`
 
+[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/pureseqtmr)](https://cran.r-project.org/package=pureseqtmr)
+[![](http://cranlogs.r-pkg.org/badges/grand-total/pureseqtmr)]( https://CRAN.R-project.org/package=pureseqtmr)
+[![](http://cranlogs.r-pkg.org/badges/pureseqtmr)](https://CRAN.R-project.org/package=pureseqtmr)
+
 Branch   |[![Travis CI logo](man/figures/TravisCI.png)](https://travis-ci.org)                                                                      |[![Travis CI logo](man/figures/AppVeyor.png)](https://appveyor.com)                                                                                                                |[![Codecov logo](man/figures/Codecov.png)](https://www.codecov.io)
 ---------|------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 `master `|[![Build Status](https://travis-ci.org/richelbilderbeek/pureseqtmr.svg?branch=master)](https://travis-ci.org/richelbilderbeek/pureseqtmr) |[![Build status](https://ci.appveyor.com/api/projects/status/33mty2r5hlryv54k/branch/master?svg=true)](https://ci.appveyor.com/project/richelbilderbeek/pureseqtmr/branch/master)  |[![codecov.io](https://codecov.io/github/richelbilderbeek/pureseqtmr/coverage.svg?branch=master)](https://codecov.io/github/richelbilderbeek/pureseqtmr/branch/master)
