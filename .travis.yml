@@ -28,6 +28,9 @@ after_success:
   - if [[ "$INSTALL_PURESEQTM" == true ]]; then Rscript -e 'goodpractice::gp()'; fi
   - # No local files created
   - if [[ $(egrep -R "\"~" --include={*.R,*.Rmd}) ]]; then echo "Local file created"; exit 1; fi;
+  - # Report
+  - Rscript -e 'pureseqtmr::pureseqtmr_report()'
 
 after_failure:
-  - ls
+  - Rscript -e 'pureseqtmr::pureseqtmr_report()'
+
