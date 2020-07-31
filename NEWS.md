@@ -2,6 +2,24 @@
 
 Newest versions at top.
 
+## pureseqtmr 1.2 (2020-07-31)
+
+### NEW FEATURES
+
+  * First version on CRAN
+
+### MINOR IMPROVEMENTS
+
+  * Process feedback CRAN, thanks Swetlana Herbrandt
+
+### BUG FIXES
+
+  * None
+
+### DEPRECATED AND DEFUNCT
+
+  * None
+
 ## pureseqtmr 1.1 (2020-06-18)
 
 ### NEW FEATURES
