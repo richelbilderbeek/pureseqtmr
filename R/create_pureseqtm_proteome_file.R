@@ -2,7 +2,6 @@
 #' @inheritParams default_params_doc
 #' @return the filename
 #' @examples
-#' library(testthat)
 #'
 #' if (is_pureseqtm_installed()) {
 #'   fasta_filename <- get_example_filename("1bhaA.fasta")
