@@ -24,8 +24,9 @@ Emails with code will not be accepted.
 
 Awesome. These are your options:
 
- * Add an Issue, with the test that fails
- * Submit a Pull Request, where the test is added to the `tests/testthat` folder
+ * Add an Issue, with [a reprex](https://community.rstudio.com/t/faq-whats-a-reproducible-example-reprex-and-how-do-i-do-one/5219)
+ * Submit a Pull Request, where the test is added to the `tests/testthat` folder.
+   Fork from the `develop` branch
  * Send @richelbilderbeek an email (@richelbilderbeek will make an Issue of it)
 
 Pull Requests should follow the same guidelines as 'Submitting code'.
