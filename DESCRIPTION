@@ -28,7 +28,7 @@ Suggests:
     testthat,
     knitr,
     rmarkdown
-URL: https://github.com/richelbilderbeek/pureseqtmr
+URL: https://github.com/richelbilderbeek/pureseqtmr/
 BugReports: https://github.com/richelbilderbeek/pureseqtmr
 VignetteBuilder: knitr
 SystemRequirements: PureseqTM (https://github.com/PureseqTM/pureseqTM_package)
