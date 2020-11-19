@@ -38,7 +38,7 @@ topology$name <- stringr::str_match(
 plot_topology(topology)
 ```
 
-![COVID-19 topology](man/figures/covid_19_topology.png)
+![SARS-CoV-2 topology](man/figures/sars_cov_2_topology.png)
 
 ## Install
 
