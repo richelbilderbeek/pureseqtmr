@@ -14,7 +14,7 @@ Determines if the environment is Travis CI
 }
 \examples{
   if (is_on_travis()) {
-    print("Running on Travis CI")
+    message("Running on Travis CI")
   }
 }
 \author{

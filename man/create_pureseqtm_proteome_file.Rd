@@ -28,7 +28,6 @@ the filename
 Create the output file of a PureseqTM proteome run
 }
 \examples{
-library(testthat)
 
 if (is_pureseqtm_installed()) {
   fasta_filename <- get_example_filename("1bhaA.fasta")
