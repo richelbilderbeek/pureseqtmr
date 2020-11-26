@@ -45,3 +45,27 @@ test_that("fasta file -> tibble -> fasta file", {
     readr::read_lines(fasta_filename_2)
   )
 })
+
+test_that("empy FASTA file", {
+  text <- c()
+  fasta_filename <- tempfile()
+  readr::write_lines(x = text, file = fasta_filename)
+  t <- load_fasta_file_as_tibble(fasta_filename)
+  expect_true(tibble::is_tibble(t))
+  expect_equal(0, nrow(t))
+  expect_equal(2, ncol(t))
+  expect_equal(names(t), c("name", "sequence"))
+})
+
+test_that("empty fasta file -> tibble -> empty fasta file", {
+  text <- c()
+  fasta_filename_1 <- tempfile()
+  fasta_filename_2 <- tempfile()
+  readr::write_lines(x = text, file = fasta_filename_1)
+  t <- load_fasta_file_as_tibble(fasta_filename_1)
+  save_tibble_as_fasta_file(t = t, fasta_filename = fasta_filename_2)
+  expect_equal(
+    readr::read_lines(fasta_filename_1),
+    readr::read_lines(fasta_filename_2)
+  )
+})

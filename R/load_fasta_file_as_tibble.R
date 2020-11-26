@@ -6,6 +6,14 @@
 #' @export
 load_fasta_file_as_tibble <- function(fasta_filename) {
   text <- readr::read_lines(fasta_filename)
+  if (length(text) == 0) {
+    return(
+      tibble::tibble(
+        name = character(0),
+        sequence = character(0)
+      )
+    )
+  }
   t <- tibble::tibble(
     name = stringr::str_sub(
       stringr::str_subset(text, "^>.*"),
@@ -51,5 +59,4 @@ load_fasta_file_as_tibble <- function(fasta_filename) {
   }
   t$sequence[table_index] <- sequence
   t
-
 }

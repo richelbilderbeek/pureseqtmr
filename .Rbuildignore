@@ -2,8 +2,8 @@
 ^\.Rproj\.user$
 ^\.travis\.yml$
 ^LICENSE$
-^.github/$
-^scripts/$
+^scripts$
+^\.github$
 ^CONTRIBUTING.md$
 ^NEWS.md$
 ^\.appveyor\.yml$
