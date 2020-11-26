@@ -2,9 +2,9 @@
 ^\.Rproj\.user$
 ^\.travis\.yml$
 ^LICENSE$
-.github/
-scripts/
-scripts/
-CONTRIBUTING.md
-NEWS.md
-.appveyor.yml
+^.github/$
+^scripts/$
+^CONTRIBUTING.md$
+^NEWS.md$
+^\.appveyor\.yml$
+^CODE_OF_CONDUCT\.md$
