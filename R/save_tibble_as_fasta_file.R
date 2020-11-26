@@ -1,5 +1,5 @@
 #' Save the first two columns of a tibble as a FASTA file
-#' @param a \link[tibble]{tibble}
+#' @param t a \link[tibble]{tibble}
 #' @inheritParams default_params_doc
 #' @author Richèl J.C. Bilderbeek
 #' @export

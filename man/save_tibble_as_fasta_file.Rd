@@ -7,9 +7,9 @@
 save_tibble_as_fasta_file(t, fasta_filename)
 }
 \arguments{
-\item{fasta_filename}{path to a FASTA file}
+\item{t}{a \link[tibble]{tibble}}
 
-\item{a}{\link[tibble]{tibble}}
+\item{fasta_filename}{path to a FASTA file}
 }
 \description{
 Save the first two columns of a tibble as a FASTA file
