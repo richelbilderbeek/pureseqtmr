@@ -20,9 +20,11 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 Imports:
     devtools,
+    dplyr,
     ggplot2,
     plyr,
     rappdirs,
+    readr,
     stringr,
     tibble
 Suggests: 
