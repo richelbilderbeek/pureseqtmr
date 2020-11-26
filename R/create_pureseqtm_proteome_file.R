@@ -19,14 +19,28 @@ create_pureseqtm_proteome_file <- function(
   testthat::expect_true(dir.exists(pureseqtm_folder))
   bin_filename <- file.path(pureseqtm_folder, "PureseqTM_proteome.sh")
   testthat::expect_true(file.exists(bin_filename))
-  system2(
-    command = bin_filename,
-    args = c(
-      "-i", fasta_filename,
-      "-o", topology_filename
-    ),
-    stdout = NULL,
-    stderr = NULL
+  cmds <- c(
+    bin_filename,
+    "-i", fasta_filename,
+    "-o", topology_filename
   )
+  result <- NA
+  suppressWarnings({
+    result <- system2(
+      command = cmds[1],
+      args = cmds[-1],
+      stdout = TRUE,
+      stderr = TRUE
+    )
+  })
+  status <- attr(x = result, which = "status")
+  if (!is.null(status) && status  != 0) {
+    stop(
+      "PureseqTM error when running commands '",
+      paste(cmds, collapse = " "), "'\n",
+      "PureseqTM error message: ", result
+    )
+  }
+  testthat::expect_true(file.exists(topology_filename))
   topology_filename
 }

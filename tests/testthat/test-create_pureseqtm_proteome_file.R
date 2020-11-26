@@ -17,3 +17,14 @@ test_that("multiple proteins", {
   expect_true(file.exists((topology_filename)))
   expect_equal(0, length(readLines(topology_filename)) %% 3)
 })
+
+test_that("no proteins", {
+  if (!is_pureseqtm_installed()) return()
+
+  fasta_filename <- tempfile()
+  readr::write_lines(x = c(), file = fasta_filename)
+  expect_error(
+    create_pureseqtm_proteome_file(fasta_filename),
+    "in_proteome.*not found"
+  )
+})

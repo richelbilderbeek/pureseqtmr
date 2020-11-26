@@ -2,7 +2,7 @@
 % Please edit documentation in R/predict_topology.R
 \name{predict_topology}
 \alias{predict_topology}
-\title{Predict the topology of a proteome}
+\title{Predict the topology of proteins}
 \usage{
 predict_topology(
   fasta_filename,
@@ -27,7 +27,8 @@ and 'topology', where the 'name' column hold all the proteins' names,
 and 'topology' contains all respective topologies.
 }
 \description{
-Predict the topology of a proteome
+Predict the topology of zero, one or more proteins,
+of which the names and sequences are stored in the FASTA format
 }
 \examples{
 if (is_pureseqtm_installed()) {

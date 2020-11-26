@@ -16,3 +16,12 @@ test_that("multiple proteins", {
   expect_true("topology" %in% names(topology))
   expect_equal(3, nrow(topology))
 })
+
+test_that("no proteins", {
+  fasta_filename <- tempfile()
+  readr::write_lines(x = c(), file = fasta_filename)
+  topology <- predict_topology(fasta_filename)
+  expect_true("name" %in% names(topology))
+  expect_true("topology" %in% names(topology))
+  expect_equal(0, nrow(topology))
+})
