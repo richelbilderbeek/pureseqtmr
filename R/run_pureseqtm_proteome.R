@@ -25,7 +25,7 @@ run_pureseqtm_proteome <- function(
   folder_name = get_default_pureseqtm_folder(),
   topology_filename = tempfile(fileext = ".top")
 ) {
-  pureseqtmr::check_pureseqtm_installation(folder_name)
+  pureseqtmr::check_pureseqtm_installation(folder_name = folder_name)
 
   filename <- pureseqtmr::create_pureseqtm_proteome_file(
     fasta_filename = fasta_filename,

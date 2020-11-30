@@ -13,6 +13,7 @@ default_params_doc(
   protein_sequence,
   protein_sequences,
   pureseqtm_filename,
+  pureseqtm_proteome_text,
   pureseqtm_result,
   pureseqtm_url,
   temp_folder_name,
@@ -38,6 +39,9 @@ by default, as can be obtained by
 \item{protein_sequences}{one or more protein sequences}
 
 \item{pureseqtm_filename}{filename to write the PureseqTM results to}
+
+\item{pureseqtm_proteome_text}{the output of a call
+to \code{PureseqTM_proteome.sh}}
 
 \item{pureseqtm_result}{the result of a PureseqTM run}
 

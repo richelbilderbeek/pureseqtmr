@@ -10,6 +10,8 @@
 #' @param protein_sequence a protein sequence
 #' @param protein_sequences one or more protein sequences
 #' @param pureseqtm_filename filename to write the PureseqTM results to
+#' @param pureseqtm_proteome_text the output of a call
+#'   to \code{PureseqTM_proteome.sh}
 #' @param pureseqtm_result the result of a PureseqTM run
 #' @param pureseqtm_url URL of the PureseqTM git repository
 #' @param temp_folder_name path of a temporary folder.
@@ -35,6 +37,7 @@ default_params_doc <- function(
   protein_sequence,
   protein_sequences,
   pureseqtm_filename,
+  pureseqtm_proteome_text,
   pureseqtm_result,
   pureseqtm_url,
   temp_folder_name,

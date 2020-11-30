@@ -28,7 +28,7 @@ test_that("no proteins", {
 
 test_that("Names should be in the same order", {
 
-  skip("WIP")
+  if (!is_on_travis()) return()
   # This is bug in PureseqTM, reported at
   # https://github.com/PureseqTM/PureseqTM_Package/issues/11
   #
@@ -42,11 +42,11 @@ test_that("Names should be in the same order", {
 
   # Predict the topology
   t_topology <- pureseqtmr::predict_topology(fasta_filename = fasta_filename)
-  testthat::expect_equal(
+  expect_equal(
     t_fasta$name,
     t_topology$name
   )
-  testthat::expect_equal(
+  expect_equal(
     nchar(t_fasta$sequence),
     nchar(t_topology$topology)
   )

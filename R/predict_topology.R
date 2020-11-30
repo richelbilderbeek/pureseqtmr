@@ -30,7 +30,6 @@ predict_topology <- function(
 
   if (1 == 1) {
     # Use the tibble with the correctly ordered genes
-    HIERO
     t_fasta <- pureseqtmr::load_fasta_file_as_tibble(fasta_filename)
     t_topology <- tibble::tibble(
       name = t_fasta$name,
@@ -38,38 +37,34 @@ predict_topology <- function(
     )
     for (i in seq_len(nrow(t_fasta))) {
       # Create a FASTA file only for the sequence
-      fasta_filename
-      topology_text <- pureseqtmr::run_pureseqtm_proteome(
-        fasta_filename,
-        folder_name = get_default_pureseqtm_folder(),
-        topology_filename = tempfile(fileext = ".top")
+      this_fasta_filename <- tempfile(
+        pattern = paste0("pureseqtmr_", i, "_"),
+        fileext = ".fasta"
       )
-
-      t_topology$topology[i] <-
-        pureseqtmr::predict_topology_from_sequence(
-          t_fasta$sequence[i]
-        )
+      save_tibble_as_fasta_file(
+        t = t_fasta[i, ],
+        fasta_filename = this_fasta_filename
+      )
+      pureseqtm_proteome_text <- pureseqtmr::run_pureseqtm_proteome(
+        fasta_filename = this_fasta_filename,
+        folder_name = folder_name,
+        topology_filename = topology_filename
+      )
+      t_this_topology <- pureseqtmr::parse_pureseqtm_proteome_text(
+        pureseqtm_proteome_text
+      )
+      testthat::expect_equal(1, nrow(t_this_topology))
+      t_topology$topology[i] <- t_this_topology$topology[1]
     }
   } else {
     # Workaround, abandoned approach
-    topology_text <- pureseqtmr::run_pureseqtm_proteome(
+    pureseqtm_proteome_text <- pureseqtmr::run_pureseqtm_proteome(
       fasta_filename,
       folder_name = get_default_pureseqtm_folder(),
       topology_filename = tempfile(fileext = ".top")
     )
     # Only select the lines that have a gene name and a topolgy
-    n_lines <- length(topology_text)
-    testthat::expect_equal(n_lines %% 3, 0)
-    gene_line_indices <- seq(from = 1, to = n_lines, by = 3)
-    topology_line_indices <- seq(from = 3, to = n_lines, by = 3)
-    testthat::expect_equal(
-      length(gene_line_indices), length(topology_line_indices)
-    )
-
-    t_topology <- tibble::tibble(
-      name = substring(topology_text[gene_line_indices], 2),
-      topology = topology_text[topology_line_indices]
-    )
+    t_topology <- parse_pureseqtm_proteome_text(pureseqtm_proteome_text)
     # PureseqTM does not preserve the order of genes in the FASTA file.
     # This is bug in PureseqTM, reported at
     # https://github.com/PureseqTM/PureseqTM_Package/issues/11
