@@ -18,6 +18,7 @@ test_that("simple use", {
 })
 
 test_that("use output of run_pureseqtm_proteome", {
+  if (!is_pureseqtm_installed()) return()
   expect_silent(
     parse_pureseqtm_proteome_text(
       pureseqtm_proteome_text = run_pureseqtm_proteome(
