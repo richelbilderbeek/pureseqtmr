@@ -7,6 +7,8 @@ Newest versions at top.
 ### NEW FEATURES
 
   * `predict_topology` works on empty FASTA files
+  * `predict_topology` returns topologies in the same order as the sequences,
+    a workaround for https://github.com/PureseqTM/PureseqTM_Package/issues/11
   * `create_pureseqtm_proteome_file` shows PureseqTM error messages
 
 ### MINOR IMPROVEMENTS
