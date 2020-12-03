@@ -7,7 +7,7 @@
 #'   }
 #' @export
 is_on_appveyor <- function() {
-  Sys.getenv("APPVEYOR") != "" # nolint internal function
+  Sys.getenv("APPVEYOR") != ""
 }
 
 #' Determines if the environment is GitHub Actions
@@ -19,7 +19,7 @@ is_on_appveyor <- function() {
 #'   }
 #' @export
 is_on_github_actions <- function() {
-  Sys.getenv("GITHUB_ACTIONS") != "" # nolint internal function
+  Sys.getenv("GITHUB_ACTIONS") != ""
 }
 
 #' Determines if the environment is Travis CI
@@ -31,7 +31,7 @@ is_on_github_actions <- function() {
 #'   }
 #' @export
 is_on_travis <- function() {
-  Sys.getenv("TRAVIS") != "" # nolint internal function
+  Sys.getenv("TRAVIS") != ""
 }
 
 #' Determines if the environment is a continuous integration service
