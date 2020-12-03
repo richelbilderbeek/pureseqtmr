@@ -45,5 +45,5 @@ is_on_travis <- function() {
 is_on_ci <- function() {
   pureseqtmr::is_on_appveyor() ||
   pureseqtmr::is_on_github_actions() ||
-  pureseqtmr::is_on_travis() 
+  pureseqtmr::is_on_travis()
 }
