@@ -10,6 +10,18 @@ is_on_appveyor <- function() {
   Sys.getenv("APPVEYOR") != "" # nolint internal function
 }
 
+#' Determines if the environment is GitHub Actions
+#' @return \link{TRUE} if run on GitHub Actions, \link{FALSE} otherwise
+#' @author Richèl J.C. Bilderbeek
+#' @examples
+#'   if (is_on_github_actions()) {
+#'     message("Running on GitHub Actions")
+#'   }
+#' @export
+is_on_github_actions <- function() {
+  Sys.getenv("GITHUB_ACTIONS") != "" # nolint internal function
+}
+
 #' Determines if the environment is Travis CI
 #' @return \link{TRUE} if run on Travis CI, \link{FALSE} otherwise
 #' @author Richèl J.C. Bilderbeek
@@ -31,5 +43,7 @@ is_on_travis <- function() {
 #'   }
 #' @export
 is_on_ci <- function() {
-  is_on_appveyor() || is_on_travis() # nolint internal function
+  pureseqtmr::is_on_appveyor() ||
+  pureseqtmr::is_on_github_actions() ||
+  pureseqtmr::is_on_travis() 
 }

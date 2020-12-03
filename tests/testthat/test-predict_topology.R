@@ -28,7 +28,7 @@ test_that("no proteins", {
 
 test_that("Names should be in the same order", {
 
-  if (!is_on_travis()) return()
+  if (!is_on_ci()) return()
   if (!is_pureseqtm_installed()) return()
   # This is bug in PureseqTM, reported at
   # https://github.com/PureseqTM/PureseqTM_Package/issues/11
