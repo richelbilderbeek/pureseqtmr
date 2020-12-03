@@ -26,7 +26,7 @@ is_on_github_actions <- function() {
 #' @return \link{TRUE} if run on Travis CI, \link{FALSE} otherwise
 #' @author Richèl J.C. Bilderbeek
 #' @examples
-#'   if (is_on_travis()) {
+#'   if (is_on_ci()) {
 #'     message("Running on Travis CI")
 #'   }
 #' @export
