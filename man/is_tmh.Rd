@@ -8,7 +8,9 @@ transmembrane helix.}
 is_tmh(protein_sequence, folder_name = get_default_pureseqtm_folder())
 }
 \arguments{
-\item{protein_sequence}{a protein sequence}
+\item{protein_sequence}{a protein sequence, with
+the amino acids as capitals, for
+example \code{MEILCEDNTSLSSIPNSL}}
 
 \item{folder_name}{superfolder of PureseqTM.
 The superfolder's name is \code{/home/[user_name]/.local/share}

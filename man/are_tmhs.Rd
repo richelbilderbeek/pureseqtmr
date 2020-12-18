@@ -7,7 +7,9 @@
 are_tmhs(protein_sequences, folder_name = get_default_pureseqtm_folder())
 }
 \arguments{
-\item{protein_sequences}{one or more protein sequences}
+\item{protein_sequences}{one ore more protein sequence,
+each sequence with the amino acids as capitals, for
+example \code{MEILCEDNTSLSSIPNSL}}
 
 \item{folder_name}{superfolder of PureseqTM.
 The superfolder's name is \code{/home/[user_name]/.local/share}

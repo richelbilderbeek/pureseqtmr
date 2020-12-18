@@ -6,6 +6,8 @@ Newest versions at top.
 
 ### NEW FEATURES
 
+  * Add `predict_topologies_from_sequences` to predict topologies 
+    directly from one or more sequences
   * `predict_topology` works on empty FASTA files
   * `predict_topology` returns topologies in the same order as the sequences,
     a workaround for https://github.com/PureseqTM/PureseqTM_Package/issues/11

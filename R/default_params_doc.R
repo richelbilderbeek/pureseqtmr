@@ -7,13 +7,19 @@
 #'   The superfolder's name is \code{/home/[user_name]/.local/share}
 #'   by default, as can be obtained by
 #'   \link{get_default_pureseqtm_folder}
-#' @param protein_sequence a protein sequence
-#' @param protein_sequences one or more protein sequences
+#' @param protein_sequence a protein sequence, with
+#'   the amino acids as capitals, for
+#'   example `MEILCEDNTSLSSIPNSL`
+#' @param protein_sequences one ore more protein sequence,
+#'   each sequence with the amino acids as capitals, for
+#'   example `MEILCEDNTSLSSIPNSL`
 #' @param pureseqtm_filename filename to write the PureseqTM results to
 #' @param pureseqtm_proteome_text the output of a call
 #'   to \code{PureseqTM_proteome.sh}
 #' @param pureseqtm_result the result of a PureseqTM run
 #' @param pureseqtm_url URL of the PureseqTM git repository
+#' @param temp_fasta_filename temporary FASTA filename,
+#'   which will deleted after usage
 #' @param temp_folder_name path of a temporary folder.
 #'   The folder does not need to exist.
 #'   Files that are out in this folder are not automatically

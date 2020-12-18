@@ -34,9 +34,13 @@ The superfolder's name is \code{/home/[user_name]/.local/share}
 by default, as can be obtained by
 \link{get_default_pureseqtm_folder}}
 
-\item{protein_sequence}{a protein sequence}
+\item{protein_sequence}{a protein sequence, with
+the amino acids as capitals, for
+example \code{MEILCEDNTSLSSIPNSL}}
 
-\item{protein_sequences}{one or more protein sequences}
+\item{protein_sequences}{one ore more protein sequence,
+each sequence with the amino acids as capitals, for
+example \code{MEILCEDNTSLSSIPNSL}}
 
 \item{pureseqtm_filename}{filename to write the PureseqTM results to}
 
@@ -61,6 +65,9 @@ as returned by \link{predict_topology}}
 topology to}
 
 \item{verbose}{set to TRUE for more output}
+
+\item{temp_fasta_filename}{temporary FASTA filename,
+which will deleted after usage}
 }
 \description{
 This function does nothing. It is intended to inherit is parameters'
