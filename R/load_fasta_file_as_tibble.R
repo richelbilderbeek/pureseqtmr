@@ -31,7 +31,6 @@ load_fasta_file_as_tibble <- function(fasta_filename) {
   while (line_index <= n_lines) {
     line <- text[line_index]
     line_index <- line_index + 1
-    if (line == "") next
     if (state == "need_name") {
       testthat::expect_equal(">", stringr::str_sub(line, 1, 1))
       sequence <- "" # Reset

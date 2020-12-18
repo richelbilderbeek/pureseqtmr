@@ -69,3 +69,42 @@ test_that("empty fasta file -> tibble -> empty fasta file", {
     readr::read_lines(fasta_filename_2)
   )
 })
+
+test_that("Allow empty sequences", {
+  fasta_filename <- system.file(
+    "extdata", "100507436.topo",
+    package = "pureseqtmr"
+  )
+  t <- load_fasta_file_as_tibble(fasta_filename)
+  expect_true(tibble::is_tibble(t))
+  expect_true("name" %in% names(t))
+  expect_true("sequence" %in% names(t))
+  expect_equal(12, nrow(t))
+  expect_true(all(!is.na(t$sequence)))
+})
+
+test_that("FASTA file with empty sequences -> tibble -> FASTA file", {
+  fasta_filename <- system.file(
+    "extdata", "100507436.topo",
+    package = "pureseqtmr"
+  )
+  t <- load_fasta_file_as_tibble(fasta_filename)
+  fasta_filename_2 <- tempfile()
+  save_tibble_as_fasta_file(t = t, fasta_filename = fasta_filename_2)
+  expect_equal(
+    readr::read_lines(fasta_filename),
+    readr::read_lines(fasta_filename_2)
+  )
+})
+
+test_that("tibble with empty sequences -> FASTA file -> tibble", {
+  t <- tibble::tibble(
+    name = c("A", "B"),
+    sequence = c("", "")
+  )
+  fasta_filename <- tempfile()
+  save_tibble_as_fasta_file(t = t, fasta_filename = fasta_filename)
+  t_again <- load_fasta_file_as_tibble(fasta_filename = fasta_filename)
+  expect_equal(t$name, t_again$name)
+  expect_equal(t$sequence, t_again$sequence)
+})
