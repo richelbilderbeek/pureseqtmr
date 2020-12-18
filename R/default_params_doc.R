@@ -46,6 +46,7 @@ default_params_doc <- function(
   pureseqtm_proteome_text,
   pureseqtm_result,
   pureseqtm_url,
+  temp_fasta_filename,
   temp_folder_name,
   topology,
   topology_filename,

@@ -16,6 +16,7 @@ default_params_doc(
   pureseqtm_proteome_text,
   pureseqtm_result,
   pureseqtm_url,
+  temp_fasta_filename,
   temp_folder_name,
   topology,
   topology_filename,
@@ -51,6 +52,9 @@ to \code{PureseqTM_proteome.sh}}
 
 \item{pureseqtm_url}{URL of the PureseqTM git repository}
 
+\item{temp_fasta_filename}{temporary FASTA filename,
+which will deleted after usage}
+
 \item{temp_folder_name}{path of a temporary folder.
 The folder does not need to exist.
 Files that are out in this folder are not automatically
@@ -65,9 +69,6 @@ as returned by \link{predict_topology}}
 topology to}
 
 \item{verbose}{set to TRUE for more output}
-
-\item{temp_fasta_filename}{temporary FASTA filename,
-which will deleted after usage}
 }
 \description{
 This function does nothing. It is intended to inherit is parameters'
