@@ -12,7 +12,7 @@
 #' }
 #' @author Richèl J.C. Bilderbeek
 #' @export
-predict_topologies_from_sequences <- function(
+predict_topologies_from_sequences <- function(# nolint indeed a long function name
   protein_sequences,
   folder_name = get_default_pureseqtm_folder(),
   temp_fasta_filename = tempfile(fileext = ".fasta")
