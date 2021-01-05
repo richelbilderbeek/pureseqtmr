@@ -12,7 +12,8 @@ Newest versions at top.
   * `predict_topology` returns topologies in the same order as the sequences,
     a workaround for https://github.com/PureseqTM/PureseqTM_Package/issues/11
   * `create_pureseqtm_proteome_file` shows PureseqTM error messages
-  * Add `mock_predict_topologies` to mock the prediction of topologies,
+  * Add `mock_predict_topologies` and `mock_predict_topologies_from_sequences`
+    to mock the prediction of topologies,
     as can be useful in testing
 
 ### MINOR IMPROVEMENTS

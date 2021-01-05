@@ -2,6 +2,9 @@
 #' @inheritParams default_params_doc
 #' @return a topology as a string of zeroes and ones, where a one denotes
 #' that the corresponding amino acid is located within the membrane.
+#' @seealso use \link{mock_predict_topologies_from_sequences}
+#' to mock the prediction of protein sequences, as can be useful
+#' in testing
 #' @examples
 #' if (is_pureseqtm_installed()) {
 #'   protein_sequence <- paste0(

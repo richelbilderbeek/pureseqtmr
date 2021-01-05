@@ -39,6 +39,11 @@ if (is_pureseqtm_installed()) {
   predict_topology_from_sequence(protein_sequence)
 }
 }
+\seealso{
+use \link{mock_predict_topologies_from_sequences}
+to mock the prediction of protein sequences, as can be useful
+in testing
+}
 \author{
 Richèl J.C. Bilderbeek
 }
