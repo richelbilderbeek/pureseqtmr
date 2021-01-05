@@ -1,5 +1,12 @@
 test_that("single protein", {
-  fasta_filename <- get_example_filename("1bhaA.fasta")
+  fasta_filename <- tempfile()
+  pureseqtmr::save_tibble_as_fasta_file(
+    t = tibble::tibble(
+      name = "A",
+      sequence = "FAMILY"
+    ),
+    fasta_filename = fasta_filename
+  )
   topology <- mock_predict_topology(fasta_filename)
   expect_true("name" %in% names(topology))
   expect_true("topology" %in% names(topology))
@@ -7,17 +14,38 @@ test_that("single protein", {
 })
 
 test_that("multiple proteins", {
-  fasta_filename <- get_example_filename("test_proteome.fasta")
-  readLines(fasta_filename)
+  fasta_filename <- tempfile()
+  pureseqtmr::save_tibble_as_fasta_file(
+    t = tibble::tibble(
+      name = c("A", "B"),
+      sequence = c("FAMILY", "VW")
+    ),
+    fasta_filename = fasta_filename
+  )
   topology <- mock_predict_topology(fasta_filename)
   expect_true("name" %in% names(topology))
   expect_true("topology" %in% names(topology))
-  expect_equal(3, nrow(topology))
+  expect_equal(2, nrow(topology))
 })
 
 test_that("no proteins", {
   fasta_filename <- tempfile()
   readr::write_lines(x = c(), file = fasta_filename)
+  topology <- mock_predict_topology(fasta_filename)
+  expect_true("name" %in% names(topology))
+  expect_true("topology" %in% names(topology))
+  expect_equal(0, nrow(topology))
+})
+
+test_that("no sequences", {
+  fasta_filename <- tempfile()
+  pureseqtmr::save_tibble_as_fasta_file(
+    t = tibble::tibble(
+      name = "A",
+      sequence = character(0)
+    ),
+    fasta_filename = fasta_filename
+  )
   topology <- mock_predict_topology(fasta_filename)
   expect_true("name" %in% names(topology))
   expect_true("topology" %in% names(topology))
