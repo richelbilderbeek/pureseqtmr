@@ -36,6 +36,10 @@ if (is_pureseqtm_installed()) {
   predict_topology(fasta_filename)
 }
 }
+\seealso{
+use \link{mock_predict_topology} to do a mock prediction,
+as can be useful in testing
+}
 \author{
 Richèl J.C. Bilderbeek
 }

@@ -6,6 +6,8 @@
 #' @return a \link[tibble]{tibble} with the columns 'name'
 #' and 'topology', where the 'name' column hold all the proteins' names,
 #' and 'topology' contains all respective topologies.
+#' @seealso use \link{mock_predict_topology} to do a mock prediction,
+#'   as can be useful in testing
 #' @examples
 #' if (is_pureseqtm_installed()) {
 #'   fasta_filename <- get_example_filename("1bhaA.fasta")
