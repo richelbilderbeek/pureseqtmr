@@ -9,7 +9,7 @@
 #'   "QEKNWSALLTAVVIILTIAGNILVIMAVSLEKKLQNATNYFLM",
 #'   "SLAIADMLLGFLVMPVSMLTILYGYRWP"
 #' )
-#' mock_predict_topology_from_sequence(protein_sequence)
+#' mock_predict_topology_from_sequences(protein_sequence)
 #' @author Richèl J.C. Bilderbeek
 #' @export
 mock_predict_topologies_from_sequences <- function(# nolint indeed a long function name

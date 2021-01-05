@@ -27,7 +27,7 @@ protein_sequence <- paste0(
   "QEKNWSALLTAVVIILTIAGNILVIMAVSLEKKLQNATNYFLM",
   "SLAIADMLLGFLVMPVSMLTILYGYRWP"
 )
-mock_predict_topology_from_sequence(protein_sequence)
+mock_predict_topology_from_sequences(protein_sequence)
 }
 \author{
 Richèl J.C. Bilderbeek
