@@ -27,9 +27,13 @@
 #'   path given by \link{tempdir} is automatically cleaned
 #'   by the operating system
 #' @param topology the topology as a \link[tibble]{tibble}
-#'   as returned by \link{predict_topology}
+#'   with the columns 'name' and 'topology',
+#'   where the 'name' column hold all the proteins' names,
+#'   and 'topology' contains the respective topologies as strings.
 #' @param topology_filename name of the file to save a protein's
 #'   topology to
+#' @param topology_str the topolgy as a string,
+#'   for example \code{000000111100000}
 #' @param verbose set to TRUE for more output
 #' @author Richèl J.C. Bilderbeek
 #' @note This is an internal function, so it should be marked with
@@ -50,6 +54,7 @@ default_params_doc <- function(
   temp_folder_name,
   topology,
   topology_filename,
+  topology_str,
   verbose
 ) {
   # Nothing

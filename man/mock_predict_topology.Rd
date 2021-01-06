@@ -18,7 +18,14 @@ and 'topology' contains all respective topologies.
 Uses \link{predict_topology} for doing a real prediction
 }
 \examples{
-fasta_filename <- get_example_filename("1bhaA.fasta")
+fasta_filename <- tempfile()
+save_tibble_as_fasta_file(
+  t = tibble::tibble(
+    name = c("A", "B"),
+    sequence = c("FAMILY", "VW")
+  ),
+  fasta_filename = fasta_filename
+)
 mock_predict_topology(fasta_filename)
 }
 \author{

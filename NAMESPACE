@@ -3,6 +3,7 @@
 export(are_tmhs)
 export(check_pureseqtm_installation)
 export(check_topology)
+export(count_n_tmhs)
 export(create_pureseqtm_files)
 export(create_pureseqtm_proteome_file)
 export(get_default_pureseqtm_folder)

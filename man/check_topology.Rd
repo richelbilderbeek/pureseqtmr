@@ -8,7 +8,9 @@ check_topology(topology)
 }
 \arguments{
 \item{topology}{the topology as a \link[tibble]{tibble}
-as returned by \link{predict_topology}}
+with the columns 'name' and 'topology',
+where the 'name' column hold all the proteins' names,
+and 'topology' contains the respective topologies as strings.}
 }
 \value{
 Nothing. Will \link{stop} with a helpful error message if

@@ -20,6 +20,7 @@ default_params_doc(
   temp_folder_name,
   topology,
   topology_filename,
+  topology_str,
   verbose
 )
 }
@@ -63,10 +64,15 @@ path given by \link{tempdir} is automatically cleaned
 by the operating system}
 
 \item{topology}{the topology as a \link[tibble]{tibble}
-as returned by \link{predict_topology}}
+with the columns 'name' and 'topology',
+where the 'name' column hold all the proteins' names,
+and 'topology' contains the respective topologies as strings.}
 
 \item{topology_filename}{name of the file to save a protein's
 topology to}
+
+\item{topology_str}{the topolgy as a string,
+for example \code{000000111100000}}
 
 \item{verbose}{set to TRUE for more output}
 }

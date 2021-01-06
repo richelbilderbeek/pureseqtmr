@@ -8,7 +8,9 @@ tally_tmhs(topology)
 }
 \arguments{
 \item{topology}{the topology as a \link[tibble]{tibble}
-as returned by \link{predict_topology}}
+with the columns 'name' and 'topology',
+where the 'name' column hold all the proteins' names,
+and 'topology' contains the respective topologies as strings.}
 }
 \value{
 a \link[tibble]{tibble} with the number of
