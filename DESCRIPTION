@@ -28,7 +28,8 @@ Imports:
     rappdirs,
     readr,
     stringr,
-    tibble
+    tibble,
+    Rcpp
 Suggests: 
     testthat,
     knitr,
@@ -37,3 +38,5 @@ URL: https://github.com/richelbilderbeek/pureseqtmr/
 BugReports: https://github.com/richelbilderbeek/pureseqtmr
 VignetteBuilder: knitr
 SystemRequirements: PureseqTM (https://github.com/PureseqTM/pureseqTM_package)
+LinkingTo: 
+    Rcpp
