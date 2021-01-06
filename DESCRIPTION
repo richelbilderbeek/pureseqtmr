@@ -33,7 +33,8 @@ Imports:
 Suggests: 
     testthat,
     knitr,
-    rmarkdown
+    rmarkdown,
+    profvis
 URL: https://github.com/richelbilderbeek/pureseqtmr/
 BugReports: https://github.com/richelbilderbeek/pureseqtmr
 VignetteBuilder: knitr

@@ -122,6 +122,5 @@ test_that("Compare speed", {
       t <- load_fasta_file_as_tibble_cpp(fasta_filename)
       t <- load_fasta_file_as_tibble(fasta_filename)
     }
-  }
-  )
+  })
 })

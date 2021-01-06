@@ -34,7 +34,7 @@
 #'   topology to
 #' @param topology_str the topology as a string,
 #'   for example \code{000000111100000}
-#' @param topology_str the topologies as zero, one oor more strings,
+#' @param topology_strs the topologies as zero, one oor more strings,
 #'   for example \code{c("0", "1")}
 #' @param verbose set to TRUE for more output
 #' @author Richèl J.C. Bilderbeek

@@ -6,6 +6,10 @@
 \usage{
 count_n_tmhs(topology_strs)
 }
+\arguments{
+\item{topology_strs}{the topologies as zero, one oor more strings,
+for example \code{c("0", "1")}}
+}
 \description{
 Count the number of TMHs in a topology
 }
