@@ -32,8 +32,10 @@
 #'   and 'topology' contains the respective topologies as strings.
 #' @param topology_filename name of the file to save a protein's
 #'   topology to
-#' @param topology_str the topolgy as a string,
+#' @param topology_str the topology as a string,
 #'   for example \code{000000111100000}
+#' @param topology_str the topologies as zero, one oor more strings,
+#'   for example \code{c("0", "1")}
 #' @param verbose set to TRUE for more output
 #' @author Richèl J.C. Bilderbeek
 #' @note This is an internal function, so it should be marked with
@@ -55,6 +57,7 @@ default_params_doc <- function(
   topology,
   topology_filename,
   topology_str,
+  topology_strs,
   verbose
 ) {
   # Nothing

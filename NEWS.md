@@ -15,6 +15,7 @@ Newest versions at top.
   * Add `mock_predict_topologies` and `mock_predict_topologies_from_sequences`
     to mock the prediction of topologies,
     as can be useful in testing
+  * Add `count_n_tmhs` to count the number of TMHs
 
 ### MINOR IMPROVEMENTS
 

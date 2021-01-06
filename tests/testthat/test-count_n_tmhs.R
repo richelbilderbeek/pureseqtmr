@@ -1,4 +1,4 @@
-test_that("use", {
+test_that("use, single string", {
   expect_equal(0, count_n_tmhs(""))
   expect_equal(0, count_n_tmhs("0"))
   expect_equal(1, count_n_tmhs("1"))
@@ -19,4 +19,8 @@ test_that("use", {
   expect_equal(2, count_n_tmhs("01100110"))
   expect_equal(2, count_n_tmhs("01100110"))
   expect_equal(2, count_n_tmhs("0110011000000"))
+})
+
+test_that("use, multiple string", {
+  expect_equal(c(0, 1), count_n_tmhs(c("0", "1")))
 })

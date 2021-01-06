@@ -21,6 +21,7 @@ default_params_doc(
   topology,
   topology_filename,
   topology_str,
+  topology_strs,
   verbose
 )
 }
@@ -71,8 +72,8 @@ and 'topology' contains the respective topologies as strings.}
 \item{topology_filename}{name of the file to save a protein's
 topology to}
 
-\item{topology_str}{the topolgy as a string,
-for example \code{000000111100000}}
+\item{topology_str}{the topologies as zero, one oor more strings,
+for example \code{c("0", "1")}}
 
 \item{verbose}{set to TRUE for more output}
 }

@@ -4,11 +4,7 @@
 \alias{count_n_tmhs}
 \title{Count the number of TMHs in a topology}
 \usage{
-count_n_tmhs(topology_str)
-}
-\arguments{
-\item{topology_str}{the topolgy as a string,
-for example \code{000000111100000}}
+count_n_tmhs(topology_strs)
 }
 \description{
 Count the number of TMHs in a topology
@@ -16,4 +12,5 @@ Count the number of TMHs in a topology
 \examples{
 count_n_tmhs("00000000000000000000000000")
 count_n_tmhs("00000000001111100000000000")
+count_n_tmhs(c("0", "1"))
 }
