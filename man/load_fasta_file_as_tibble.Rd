@@ -5,10 +5,13 @@
 \title{Parse a FASTA file to a table
 with a \code{name} and \code{sequence} column}
 \usage{
-load_fasta_file_as_tibble(fasta_filename)
+load_fasta_file_as_tibble(fasta_filename, check_if_equal = TRUE)
 }
 \arguments{
 \item{fasta_filename}{path to a FASTA file}
+
+\item{check_if_equal}{set if the C++ and R version
+of this algorithm is compared to obtain the same results}
 }
 \value{
 a \link[tibble]{tibble}
@@ -17,4 +20,10 @@ with a \code{name} and \code{sequence} column
 \description{
 Parse a FASTA file to a table
 with a \code{name} and \code{sequence} column
+}
+\seealso{
+use \link{load_fasta_file_as_tibble_cpp}
+to directly call the C++ function that does the actual
+work. Use \link{load_fasta_file_as_tibble_r} to call
+the (approx tenthousand times slower) R function
 }

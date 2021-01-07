@@ -8,3 +8,5 @@
 ^NEWS.md$
 ^\.appveyor\.yml$
 ^CODE_OF_CONDUCT\.md$
+cpp/
+build-pureseqtmr-Desktop-Debug/

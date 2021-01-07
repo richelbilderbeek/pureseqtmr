@@ -1,61 +1,21 @@
 #' Parse a FASTA file to a table
 #' with a \code{name} and \code{sequence} column
 #' @inheritParams default_params_doc
+#' @param check_if_equal set if the C++ and R version
+#'   of this algorithm is compared to obtain the same results
 #' @return a \link[tibble]{tibble}
 #'   with a \code{name} and \code{sequence} column
+#' @seealso use \link{load_fasta_file_as_tibble_cpp}
+#'  to directly call the C++ function that does the actual
+#'  work. Use \link{load_fasta_file_as_tibble_r} to call
+#'  the (approx tenthousand times slower) R function
 #' @export
-load_fasta_file_as_tibble <- function(fasta_filename) {
-  text <- readr::read_lines(fasta_filename)
-  if (length(text) == 0) {
-    return(
-      tibble::tibble(
-        name = character(0),
-        sequence = character(0)
-      )
-    )
-  }
-  t <- tibble::tibble(
-    name = stringr::str_sub(
-      stringr::str_subset(text, "^>.*"),
-      start = 2
-    ),
-    sequence = NA
-  )
-  n_lines <- length(text)
-
-  table_index <- 1
-  line_index <- 1
-  state <- "need_name"
-  sequence <- NA
-
-  while (line_index <= n_lines) {
-    line <- text[line_index]
-    line_index <- line_index + 1
-    if (state == "need_name") {
-      testthat::expect_equal(">", stringr::str_sub(line, 1, 1))
-      sequence <- "" # Reset
-      state <- "need_sequence"
-      next
-    } else if (state == "need_sequence") {
-      testthat::expect_false(stringr::str_sub(line, 1, 1) == ">")
-      testthat::expect_false(is.na(sequence))
-      testthat::expect_equal("", sequence)
-      sequence <- line
-      state <- "reading_sequence"
-    } else {
-      testthat::expect_true(state == "reading_sequence")
-      if (">" == stringr::str_sub(line, 1, 1)) {
-        # Found a new gene
-        t$sequence[table_index] <- sequence
-        sequence <- ""
-        table_index <- table_index + 1
-        state <- "need_sequence"
-      } else {
-        # Add to sequence
-        sequence <- paste0(sequence, line)
-      }
-    }
-  }
-  t$sequence[table_index] <- sequence
-  t
+load_fasta_file_as_tibble <- function(
+  fasta_filename,
+  check_if_equal = TRUE
+) {
+  t_r <- pureseqtmr::load_fasta_file_as_tibble_r(fasta_filename)
+  t_cpp <- pureseqtmr::load_fasta_file_as_tibble_cpp(fasta_filename)
+  testthat::expect_true(dplyr::all_equal(t_r, t_cpp))
+  t_r
 }
