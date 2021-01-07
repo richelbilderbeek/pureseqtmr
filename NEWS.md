@@ -16,6 +16,11 @@ Newest versions at top.
     to mock the prediction of topologies,
     as can be useful in testing
   * Add `count_n_tmhs` to count the number of TMHs
+  * `load_fasta_file_as_tibble_cpp` (which uses C++) 
+    is approximately ten thousand
+    times as fast as `load_fasta_file_as_tibble_r` (which uses R)
+  * `load_fasta_file_as_tibble` runs C++ and R version
+    and checks if the results are equal. Will be removed later
 
 ### MINOR IMPROVEMENTS
 
