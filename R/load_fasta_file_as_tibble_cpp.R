@@ -1,8 +1,3 @@
-# Keep the next three lines for RCpp
-#' @useDynLib pureseqtmr
-#' @importFrom Rcpp sourceCpp
-NULL
-
 #' Parse a FASTA file to a table
 #' with a \code{name} and \code{sequence} column
 #' @inheritParams default_params_doc

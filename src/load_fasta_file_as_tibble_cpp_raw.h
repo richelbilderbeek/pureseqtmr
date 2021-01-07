@@ -3,9 +3,10 @@
 
 #include <Rcpp.h>
 
-//' Do it
+//' Use Rcpp to load a FASTA file
 //' @param fasta_filename FASTA filename
-//' @return characters in each element of the vector
+//' @return a list with two character vectors,
+//'   named 'name' and 'sequence'
 // [[Rcpp::export]]
 Rcpp::List load_fasta_file_as_tibble_cpp_raw(
   const Rcpp::String& fasta_filename

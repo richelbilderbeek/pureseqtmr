@@ -2,7 +2,7 @@
 % Please edit documentation in R/RcppExports.R
 \name{load_fasta_file_as_tibble_cpp_raw}
 \alias{load_fasta_file_as_tibble_cpp_raw}
-\title{Do it}
+\title{Use Rcpp to load a FASTA file}
 \usage{
 load_fasta_file_as_tibble_cpp_raw(fasta_filename)
 }
@@ -10,8 +10,9 @@ load_fasta_file_as_tibble_cpp_raw(fasta_filename)
 \item{fasta_filename}{FASTA filename}
 }
 \value{
-characters in each element of the vector
+a list with two character vectors,
+named 'name' and 'sequence'
 }
 \description{
-Do it
+Use Rcpp to load a FASTA file
 }
