@@ -1,4 +1,4 @@
-#' Predict the topology of proteins
+#' Predict the topology of proteins from file
 #'
 #' Predict the topology of zero, one or more proteins,
 #' of which the names and sequences are stored in the FASTA format

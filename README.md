@@ -40,6 +40,7 @@ plot_topology(topology)
 
 ![SARS-CoV-2 topology](man/figures/sars_cov_2_topology.png)
 
+
 ## Install
 
 Install the package:
@@ -52,6 +53,19 @@ Install PureseqTM to a default folder:
 
 ```
 pureseqtmr::install_pureseqtm()
+```
+
+## How to convert a FASTA file to a PureseqTM topolgy file?
+
+Combine `predict_topology` and `save_tibble_as_fasta_file`:
+
+```
+library(pureseqtmr)
+
+save_tibble_as_fasta_file(
+  predict_topology(fasta_filename = "my.fasta"),
+  fasta_filename = "my.topo"
+)
 ```
 
 ## There is a feature I miss

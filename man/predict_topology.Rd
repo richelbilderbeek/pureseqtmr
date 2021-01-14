@@ -2,7 +2,7 @@
 % Please edit documentation in R/predict_topology.R
 \name{predict_topology}
 \alias{predict_topology}
-\title{Predict the topology of proteins}
+\title{Predict the topology of proteins from file}
 \usage{
 predict_topology(
   fasta_filename,
