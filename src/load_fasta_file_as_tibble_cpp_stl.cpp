@@ -2,6 +2,7 @@
 
 #include <cassert>
 #include <fstream>
+#include <stdexcept>
 
 std::pair<std::vector<std::string>, std::vector<std::string>>
   load_fasta_file_as_tibble_cpp_stl(const std::string& fasta_filename)
@@ -23,13 +24,23 @@ std::pair<std::vector<std::string>, std::vector<std::string>>
     if (state == state_type::need_name)
     {
       if (s.empty()) continue;
-      assert(s[0] == '>');
+      if (s[0] != '>')
+      {
+        throw std::runtime_error(
+          "Invalid FASTA file: expected a line starting with '>' in line " + std::to_string(i + 1)
+        );
+      }
       sequence = ""; // Reset
       state = state_type::need_sequence;
       protein_names.push_back(s.substr(1, s.size() - 1));
       continue;
     } else if (state == state_type::need_sequence) {
-      assert(s[0] != '>');
+      if (s[0] == '>')
+      {
+        throw std::runtime_error(
+          "Invalid FASTA file: second consecutive line starting with '>' in line " + std::to_string(i + 1)
+        );
+      }
       assert(sequence == "");
       sequence = s;
       state = state_type::reading_sequence;
