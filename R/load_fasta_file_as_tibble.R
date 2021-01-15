@@ -8,14 +8,10 @@
 #' @seealso use \link{load_fasta_file_as_tibble_cpp}
 #'  to directly call the C++ function that does the actual
 #'  work. Use \link{load_fasta_file_as_tibble_r} to call
-#'  the (approx tenthousand times slower) R function
+#'  the (approx ten thousand times slower) R function
 #' @export
 load_fasta_file_as_tibble <- function(
-  fasta_filename,
-  check_if_equal = TRUE
+  fasta_filename
 ) {
-  t_r <- pureseqtmr::load_fasta_file_as_tibble_r(fasta_filename)
-  t_cpp <- pureseqtmr::load_fasta_file_as_tibble_cpp(fasta_filename)
-  testthat::expect_true(dplyr::all_equal(t_r, t_cpp))
-  t_r
+  pureseqtmr::load_fasta_file_as_tibble_cpp(fasta_filename)
 }

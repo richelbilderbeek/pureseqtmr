@@ -28,6 +28,23 @@ test_that("detailed use", {
   expect_equal(t$sequence[2], "CG")
 })
 
+test_that("allow empty lines", {
+  text <- c(
+    ">1",
+    "A",
+    ">2",
+    ""
+  )
+  fasta_filename <- tempfile()
+  readr::write_lines(x = text, file = fasta_filename)
+  t <- load_fasta_file_as_tibble_cpp(fasta_filename)
+  expect_true(tibble::is_tibble(t))
+  expect_equal(t$name[1], "1")
+  expect_equal(t$name[2], "2")
+  expect_equal(t$sequence[1], "A")
+  expect_equal(t$sequence[2], "")
+})
+
 test_that("fasta file -> tibble -> fasta file", {
   text <- c(
     ">1",
@@ -107,6 +124,34 @@ test_that("tibble with empty sequences -> FASTA file -> tibble", {
   t_again <- load_fasta_file_as_tibble_cpp(fasta_filename = fasta_filename)
   expect_equal(t$name, t_again$name)
   expect_equal(t$sequence, t_again$sequence)
+})
+
+test_that("error on two consecutive names", {
+  text <- c(
+    ">1",
+    ">2",
+    "A"
+  )
+  fasta_filename <- tempfile()
+  readr::write_lines(x = text, file = fasta_filename)
+  expect_error(
+    load_fasta_file_as_tibble_cpp(fasta_filename),
+    "Invalid FASTA file: second consecutive line starting with '>' in line 2"
+  )
+})
+
+test_that("error on start with sequence", {
+  text <- c(
+    "A",
+    ">1",
+    "A"
+  )
+  fasta_filename <- tempfile()
+  readr::write_lines(x = text, file = fasta_filename)
+  expect_error(
+    load_fasta_file_as_tibble_cpp(fasta_filename),
+    "Invalid FASTA file: expected a line starting with '>' in line 1"
+  )
 })
 
 test_that("Compare speed", {
