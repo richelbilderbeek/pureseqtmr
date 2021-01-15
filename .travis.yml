@@ -19,8 +19,12 @@ r_github_packages:
   - jimhester/lintr
   - MangoTheCat/goodpractice
 
+
 before_script:
   - if [[ "$INSTALL_PURESEQTM" == true ]]; then ./scripts/install_pureseqtm.sh; fi
+  # libgit2-dev
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt install libgit2-dev; fi
+
 
 after_success:
   - if [[ "$INSTALL_PURESEQTM" == false ]]; then Rscript -e 'lintr::lint_package()'; fi
