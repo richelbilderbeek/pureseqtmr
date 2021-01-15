@@ -5,7 +5,7 @@
 \title{Parse a FASTA file to a table
 with a \code{name} and \code{sequence} column}
 \usage{
-load_fasta_file_as_tibble(fasta_filename, check_if_equal = TRUE)
+load_fasta_file_as_tibble(fasta_filename)
 }
 \arguments{
 \item{fasta_filename}{path to a FASTA file}
@@ -25,5 +25,5 @@ with a \code{name} and \code{sequence} column
 use \link{load_fasta_file_as_tibble_cpp}
 to directly call the C++ function that does the actual
 work. Use \link{load_fasta_file_as_tibble_r} to call
-the (approx tenthousand times slower) R function
+the (approx ten thousand times slower) R function
 }
