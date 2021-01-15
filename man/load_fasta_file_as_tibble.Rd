@@ -9,9 +9,6 @@ load_fasta_file_as_tibble(fasta_filename)
 }
 \arguments{
 \item{fasta_filename}{path to a FASTA file}
-
-\item{check_if_equal}{set if the C++ and R version
-of this algorithm is compared to obtain the same results}
 }
 \value{
 a \link[tibble]{tibble}
