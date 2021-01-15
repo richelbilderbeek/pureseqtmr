@@ -2,6 +2,7 @@
 
 #include <cassert>
 #include <fstream>
+#include <iostream>
 
 void test()
 {
@@ -226,7 +227,51 @@ void test()
   }
 }
 
+void create_random_fasta_file(
+  const std::string fasta_filename = "tmp.fasta"
+)
+{
+  std::ofstream os(fasta_filename);
+  const int n_lines = std::rand() % 10;
+  for (int i = 0; i != n_lines; ++i)
+  {
+    switch (std::rand() % 11)
+    {
+      case 0: os << '\n'; break;
+      case 1: os << "" << '\n'; break;
+      case 2: os << " " << '\n'; break;
+      case 3: os << ">" << '\n'; break;
+      case 4: os << "> " << '\n'; break;
+      case 5: os << "> X" << '\n'; break;
+      case 6: os << " > X" << '\n'; break;
+      case 7: os << "A" << '\n'; break;
+      case 8: os << "AC" << '\n'; break;
+      case 9: os << "ACG" << '\n'; break;
+      default: os << " ACG" << '\n'; break;
+    }
+  }
+  os.close();
+}
+
 int main()
 {
   test();
+
+  // Try random combinations
+  {
+    const std::string fasta_filename = "tmp.fasta";
+    for (int i = 0; i!=100000; ++i)
+    {
+      std::cout << i << '\n';
+      create_random_fasta_file(fasta_filename);
+      try
+      {
+        load_fasta_file_as_tibble_cpp_stl(fasta_filename);
+      }
+      catch (const std::exception& e)
+      {
+        // No worries
+      }
+    }
+  }
 }
