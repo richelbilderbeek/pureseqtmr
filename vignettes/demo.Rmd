@@ -54,7 +54,7 @@ if (is_pureseqtm_installed()) {
 
 Getting the topology of this protein:
 
-```{r cache=TRUE}
+```{r}
 if (is_pureseqtm_installed()) {
   topology <- predict_topology(fasta_filename)
   kable(topology)
@@ -90,7 +90,7 @@ head(readLines(fasta_filename))
 
 Getting the topology of this protein:
 
-```{r cache=TRUE}
+```{r}
 if (is_pureseqtm_installed()) {
   topology <- predict_topology(fasta_filename)
 }
@@ -123,3 +123,4 @@ if (is_pureseqtm_installed()) {
   kable(tally_tmhs(topology))
 }
 ```
+
