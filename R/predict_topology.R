@@ -56,7 +56,7 @@ predict_topology <- function(
       pattern = paste0("pureseqtmr_", i, "_"),
       fileext = ".fasta"
     )
-    save_tibble_as_fasta_file(
+    pureseqtmr::save_tibble_as_fasta_file(
       t = t_fasta[i, ],
       fasta_filename = this_fasta_filename
     )
@@ -76,9 +76,23 @@ predict_topology <- function(
     t_fasta$name,
     t_topology$name
   )
-  testthat::expect_equal(
-    nchar(t_fasta$sequence),
-    nchar(t_topology$topology)
-  )
+
+  if (!all(nchar(t_fasta$sequence) == nchar(t_topology$topology))) {
+    bad_indices <- which(nchar(t_fasta$sequence) != nchar(t_topology$topology))
+    warning(
+      paste0(
+        "Protein sequence and topology has a different length for indices: ",
+        paste(bad_indices, collapse = " ")
+      )
+    )
+    for (i in bad_indices) {
+      warning(
+        "index ", i, ": ",
+        "sequence length: ", nchar(t_fasta$sequence[i]),
+        ", topology length: ", nchar(t_topology$topology[i])
+      )
+    }
+
+  }
   t_topology
 }
