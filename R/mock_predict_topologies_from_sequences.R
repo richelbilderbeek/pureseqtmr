@@ -17,7 +17,10 @@ mock_predict_topologies_from_sequences <- function(# nolint indeed a long functi
 ) {
   topologies <- rep("", times = length(protein_sequences))
   for (i in seq_along(protein_sequences)) {
-    topologies[i] <- paste0(rep(0, times = nchar(protein_sequences[i])), collapse = "")
+    topologies[i] <- paste0(
+      rep(0, times = nchar(protein_sequences[i])),
+      collapse = ""
+    )
   }
   topologies
 }

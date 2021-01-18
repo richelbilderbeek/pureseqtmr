@@ -5,7 +5,7 @@
 #'   with a \code{name} and \code{sequence} column
 #' @export
 load_fasta_file_as_tibble_cpp <- function(fasta_filename) {
-  dt <- load_fasta_file_as_tibble_cpp_raw(fasta_filename) # internal function
+  dt <- load_fasta_file_as_tibble_cpp_raw(fasta_filename) # nolint internal function
   dt <- data.table::setalloccol(dt)
   tibble::as_tibble(dt)
 }

@@ -65,7 +65,9 @@ test_that("Names should be in the same order", {
   t_fasta  <- pureseqtmr::load_fasta_file_as_tibble(fasta_filename)
 
   # Predict the topology
-  t_topology <- pureseqtmr::mock_predict_topology(fasta_filename = fasta_filename)
+  t_topology <- pureseqtmr::mock_predict_topology(
+    fasta_filename = fasta_filename
+  )
   expect_equal(
     t_fasta$name,
     t_topology$name

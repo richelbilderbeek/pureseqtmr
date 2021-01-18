@@ -18,5 +18,3 @@ test_that("use on human selenoproteins", {
   expect_equal(6, length(topology_text))
   expect_equal(proteome_text[1], topology_text[1])
 })
-
-
