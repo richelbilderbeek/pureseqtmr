@@ -30,6 +30,12 @@ and 'topology' contains all respective topologies.
 Predict the topology of zero, one or more proteins,
 of which the names and sequences are stored in the FASTA format
 }
+\note{
+unlike PureseqTM, the topologies predicted are returned in
+the same order as the original sequences.
+A bugreport is posted at the PureseqTM GitHub repository
+at \url{https://github.com/PureseqTM/PureseqTM_Package/issues/11}
+}
 \examples{
 if (is_pureseqtm_installed()) {
   fasta_filename <- get_example_filename("1bhaA.fasta")

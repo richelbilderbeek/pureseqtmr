@@ -28,7 +28,8 @@ a topology as a string of zeroes and ones, where a one denotes
 that the corresponding amino acid is located within the membrane.
 }
 \description{
-Run PureseqTM directy on a protein sequence
+Will \link{stop} if the protein sequence is shorter than three
+amino acids.
 }
 \examples{
 if (is_pureseqtm_installed()) {

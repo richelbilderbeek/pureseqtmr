@@ -10,7 +10,9 @@ is_tmh(protein_sequence, folder_name = get_default_pureseqtm_folder())
 \arguments{
 \item{protein_sequence}{a protein sequence, with
 the amino acids as capitals, for
-example \code{MEILCEDNTSLSSIPNSL}}
+example \code{MEILCEDNTSLSSIPNSL}.
+Use \link{check_protein_sequence} to check if
+a protein sequence is valid.}
 
 \item{folder_name}{superfolder of PureseqTM.
 The superfolder's name is \code{/home/[user_name]/.local/share}

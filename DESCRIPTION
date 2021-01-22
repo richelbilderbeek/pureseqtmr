@@ -25,6 +25,7 @@ Imports:
     devtools,
     dplyr,
     ggplot2,
+    Peptides,
     plyr,
     rappdirs,
     readr,

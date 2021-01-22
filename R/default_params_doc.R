@@ -9,7 +9,9 @@
 #'   \link{get_default_pureseqtm_folder}
 #' @param protein_sequence a protein sequence, with
 #'   the amino acids as capitals, for
-#'   example `MEILCEDNTSLSSIPNSL`
+#'   example `MEILCEDNTSLSSIPNSL`.
+#'   Use \link{check_protein_sequence} to check if
+#'   a protein sequence is valid.
 #' @param protein_sequences one ore more protein sequence,
 #'   each sequence with the amino acids as capitals, for
 #'   example `MEILCEDNTSLSSIPNSL`

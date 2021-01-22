@@ -39,7 +39,9 @@ by default, as can be obtained by
 
 \item{protein_sequence}{a protein sequence, with
 the amino acids as capitals, for
-example \code{MEILCEDNTSLSSIPNSL}}
+example \code{MEILCEDNTSLSSIPNSL}.
+Use \link{check_protein_sequence} to check if
+a protein sequence is valid.}
 
 \item{protein_sequences}{one ore more protein sequence,
 each sequence with the amino acids as capitals, for

@@ -17,6 +17,7 @@ is_tmh <- function(
   protein_sequence,
   folder_name = get_default_pureseqtm_folder()
 ) {
+  pureseqtmr::check_protein_sequence(protein_sequence)
   pureseqtmr::check_pureseqtm_installation(folder_name)
 
   topology <- pureseqtmr::predict_topology_from_sequence(

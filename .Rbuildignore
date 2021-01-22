@@ -8,7 +8,8 @@
 ^NEWS.md$
 ^\.appveyor\.yml$
 ^CODE_OF_CONDUCT\.md$
-^doc/$
-^cpp/$
-^build-pureseqtmr-Desktop-Debug/$
+^doc$
+^cpp$
+^build-pureseqtmr-Desktop-Debug$
 ..Rcheck
+

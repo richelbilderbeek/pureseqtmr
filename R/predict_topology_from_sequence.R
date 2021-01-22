@@ -1,4 +1,7 @@
 #' Run PureseqTM directy on a protein sequence
+#'
+#' Will \link{stop} if the protein sequence is shorter than three
+#' amino acids.
 #' @param protein_sequence a protein sequence, with
 #'   the amino acids as capitals, for
 #'   example `MEILCEDNTSLSSIPNSL`
@@ -20,6 +23,7 @@ predict_topology_from_sequence <- function(
   folder_name = get_default_pureseqtm_folder(),
   temp_fasta_filename = tempfile(fileext = ".fasta")
 ) {
+  pureseqtmr::check_protein_sequence(protein_sequence)
   pureseqtmr::predict_topologies_from_sequences(
     protein_sequences = protein_sequence,
     folder_name = folder_name,
