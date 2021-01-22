@@ -23,6 +23,7 @@ Newest versions at top.
     and checks if the results are equal. Will be removed later
   * Give error on selenoproteins, garbage sequences and very short
     proteins
+  * Add `is_valid_protein_sequence` and `are_valid_protein_sequences`
 
 ### MINOR IMPROVEMENTS
 
