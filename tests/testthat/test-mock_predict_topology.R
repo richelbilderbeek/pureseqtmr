@@ -18,7 +18,7 @@ test_that("multiple proteins", {
   pureseqtmr::save_tibble_as_fasta_file(
     t = tibble::tibble(
       name = c("A", "B"),
-      sequence = c("FAMILY", "VW")
+      sequence = c("FAMILYVW", "VWFAMILY")
     ),
     fasta_filename = fasta_filename
   )
@@ -75,5 +75,42 @@ test_that("Names should be in the same order", {
   expect_equal(
     nchar(t_fasta$sequence),
     nchar(t_topology$topology)
+  )
+})
+
+
+test_that("Cannot do selenoproteins", {
+
+  fasta_filename <- system.file(
+    "extdata", "human_selenoproteins.fasta",
+    package = "pureseqtmr"
+  )
+  expect_error(
+    mock_predict_topology(fasta_filename = fasta_filename),
+    "Character 'U' is not a valid amino acid symbol"
+  )
+})
+
+test_that("Cannot do garbage", {
+
+  fasta_filename <- system.file(
+    "extdata", "garbage.fasta",
+    package = "pureseqtmr"
+  )
+  expect_error(
+    mock_predict_topology(fasta_filename = fasta_filename),
+    "Character '!' is not a valid amino acid symbol"
+  )
+})
+
+test_that("Cannot do too short proteins", {
+
+  fasta_filename <- system.file(
+    "extdata", "short.fasta",
+    package = "pureseqtmr"
+  )
+  expect_error(
+    mock_predict_topology(fasta_filename = fasta_filename),
+    "A protein sequence must contain at least three amino acids"
   )
 })

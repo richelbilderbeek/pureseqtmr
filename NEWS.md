@@ -21,6 +21,8 @@ Newest versions at top.
     times as fast as `load_fasta_file_as_tibble_r` (which uses R)
   * `load_fasta_file_as_tibble` runs C++ and R version
     and checks if the results are equal. Will be removed later
+  * Give error on selenoproteins, garbage sequences and very short
+    proteins
 
 ### MINOR IMPROVEMENTS
 

@@ -15,6 +15,7 @@
 mock_predict_topologies_from_sequences <- function(# nolint indeed a long function name
   protein_sequences
 ) {
+  pureseqtmr::check_protein_sequences(protein_sequences)
   topologies <- rep("", times = length(protein_sequences))
   for (i in seq_along(protein_sequences)) {
     topologies[i] <- paste0(

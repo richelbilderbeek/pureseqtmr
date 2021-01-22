@@ -30,6 +30,7 @@ mock_predict_topology <- function(
     )
   }
   t_fasta <- pureseqtmr::load_fasta_file_as_tibble(fasta_filename)
+  pureseqtmr::check_protein_sequences(t_fasta$sequence)
   t_topology <- tibble::tibble(
     name = t_fasta$name,
     topology = NA
