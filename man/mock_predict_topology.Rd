@@ -22,7 +22,7 @@ fasta_filename <- tempfile()
 save_tibble_as_fasta_file(
   t = tibble::tibble(
     name = c("A", "B"),
-    sequence = c("FAMILY", "VW")
+    sequence = c("FAMILYVW", "VWFAMILY")
   ),
   fasta_filename = fasta_filename
 )

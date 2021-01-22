@@ -42,6 +42,7 @@ predict_topology <- function(
   # Use the tibble with the correctly ordered genes
   # Contains the protein names and sequences
   t_fasta <- pureseqtmr::load_fasta_file_as_tibble(fasta_filename)
+  pureseqtmr::check_protein_sequences(t_fasta$sequence)
   # Contains the protein names and topologies in the same
   # sequence as t_fasta
   t_topology <- tibble::tibble(
