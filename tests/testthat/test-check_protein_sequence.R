@@ -1,5 +1,5 @@
 test_that("use", {
-  expect_silent(check_protein_sequence("FAMILY"))
+  expect_silent(check_protein_sequence(protein_sequence = "FAMILY"))
 
   # I assume PureseqTM ignores selenocysteines,
   # better to give an error message,
@@ -39,7 +39,7 @@ test_that("use", {
     "'protein_sequence' must be exactly one element"
   )
   expect_error(
-    check_protein_sequence(NA),
+    check_protein_sequence(protein_sequence = NA),
     "'protein_sequence' must be of type character"
   )
 })

@@ -84,27 +84,38 @@ test_that("Names should be in the same order", {
   )
 })
 
-test_that("Use on selenoproteins", {
+test_that("Cannot do selenoproteins", {
 
-  if (!is_on_ci()) return()
-  if (!is_pureseqtm_installed()) return()
-
-  # The FASTA filename
   fasta_filename <- system.file(
     "extdata", "human_selenoproteins.fasta",
     package = "pureseqtmr"
   )
-  expect_true(file.exists(fasta_filename))
-  t_fasta  <- load_fasta_file_as_tibble(fasta_filename)
-
-  # Predict the topology
-  t_topology <- predict_topology(fasta_filename = fasta_filename)
-  expect_equal(
-    t_fasta$name,
-    t_topology$name
+  expect_error(
+    predict_topology(fasta_filename = fasta_filename),
+    "Character 'U' is not a valid amino acid symbol"
   )
-  expect_equal(
-    nchar(t_fasta$sequence),
-    nchar(t_topology$topology)
+})
+
+test_that("Cannot do garbage", {
+
+  fasta_filename <- system.file(
+    "extdata", "garbage.fasta",
+    package = "pureseqtmr"
+  )
+  expect_error(
+    predict_topology(fasta_filename = fasta_filename),
+    "Character '!' is not a valid amino acid symbol"
+  )
+})
+
+test_that("Cannot do too short proteins", {
+
+  fasta_filename <- system.file(
+    "extdata", "short.fasta",
+    package = "pureseqtmr"
+  )
+  expect_error(
+    predict_topology(fasta_filename = fasta_filename),
+    "A protein sequence must contain at least three amino acids"
   )
 })

@@ -28,30 +28,10 @@ check_protein_sequence <- function(protein_sequence) {
     stop(
       "'protein_sequence' must be of type character\n",
       "protein_sequence: ", protein_sequence, "\n",
-      "class(protein_sequence): ", class(protein_sequence)
+      "class(protein_sequences): ", class(protein_sequence)
     )
   }
-  alphabet <- Peptides::aaList()
-  pattern <- paste0(alphabet, collapse = "")
-  matches <- stringr::str_locate(
-    string = protein_sequence,
-    pattern = paste0("[^", pattern, "]")
+  pureseqtmr::check_protein_sequences(
+    protein_sequences = protein_sequence
   )
-  if (!is.na(matches[1][1])) {
-    invalid_character <- stringr::str_sub(
-      protein_sequence, matches[1][1], matches[1][1]
-    )
-    stop(
-      "Character '", invalid_character, "' is not a valid amino acid symbol\n",
-      "Valid amino acid symbols: ", pattern, "\n",
-      "Protein sequence: ", protein_sequence, "\n",
-      "Position: ", matches[1][1]
-    )
-  }
-  if (nchar(protein_sequence) < 3) {
-    stop(
-      "A protein sequence must contain at least three amino acids\n",
-      "Protein sequence: ", protein_sequence
-    )
-  }
 }

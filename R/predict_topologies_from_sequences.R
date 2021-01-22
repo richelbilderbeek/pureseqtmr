@@ -20,6 +20,7 @@ predict_topologies_from_sequences <- function(# nolint indeed a long function na
   folder_name = get_default_pureseqtm_folder(),
   temp_fasta_filename = tempfile(fileext = ".fasta")
 ) {
+  pureseqtmr::check_protein_sequences(protein_sequences)
   pureseqtmr::check_pureseqtm_installation(folder_name)
   t_sequences <- tibble::tibble(
     name = paste0("protein_", seq_along(protein_sequences)),

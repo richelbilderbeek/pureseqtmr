@@ -2,6 +2,7 @@
 
 export(are_tmhs)
 export(check_protein_sequence)
+export(check_protein_sequences)
 export(check_pureseqtm_installation)
 export(check_topology)
 export(count_n_tmhs)

@@ -76,11 +76,19 @@ These are the ones I use:
    predict membrane protein topology at three levels (inside, outside, membrane),  
    do need registration form, as it is for academic users only.
    See [here](doc/speed_comparison.md) for a run-time speed comparison.
-   Spoiler: PureseqTM is approximately 100x slower than TMHMM
+   Spoiler: PureseqTM is approximately 20x slower than TMHMM
 
 ### What happens to a selenocystein (`U`) in the sequence?
 
-PureseqTM can deal with this.
+`pureseqtmr` gives an error.
+
+PureseqTM ignores the selenocystein, as it does with any character.
+
+### What happens to short sequences?
+
+`pureseqtmr` package gives an error.
+
+PureseqTM prints out a message and returns a zero-length topology.
 
 ## There is a feature I miss
 
