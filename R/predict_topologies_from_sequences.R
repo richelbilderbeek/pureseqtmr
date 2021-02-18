@@ -26,7 +26,7 @@ predict_topologies_from_sequences <- function(# nolint indeed a long function na
     name = paste0("protein_", seq_along(protein_sequences)),
     sequence = protein_sequences
   )
-  save_tibble_as_fasta_file(
+  pureseqtmr::save_tibble_as_fasta_file(
     t = t_sequences,
     fasta_filename = temp_fasta_filename
   )

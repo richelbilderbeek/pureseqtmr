@@ -9,7 +9,7 @@
 uninstall_pureseqtm <- function(
   folder_name = get_default_pureseqtm_folder()
 ) {
-  if (!is_pureseqtm_installed(folder_name = folder_name)
+  if (!pureseqtmr::is_pureseqtm_installed(folder_name = folder_name)
   ) {
     stop("Cannot uninstall absent PureseqTM at folder '", folder_name, "'")
   }
