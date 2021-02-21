@@ -42,7 +42,7 @@ install_pureseqtm <- function(
   testthat::expect_true(file.exists(bin_filename))
 
   # Binaries are made for Linux, recompile on other OSes
-  if (rappdirs::app_dir()$os != "linux") {
+  if (rappdirs::app_dir()$os != "unix") {
     make_foldername <- file.path(pureseqtm_folder, "source_code")
     make_filename <- file.path(make_foldername, "Makefile")
     testthat::expect_true(file.exists(make_filename))
