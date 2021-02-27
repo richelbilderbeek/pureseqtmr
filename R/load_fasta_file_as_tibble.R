@@ -11,5 +11,10 @@
 load_fasta_file_as_tibble <- function(
   fasta_filename
 ) {
-  pureseqtmr::load_fasta_file_as_tibble_cpp(fasta_filename)
+  if (!file.exists(fasta_filename)) {
+    stop("FASTA file not found at path ", fasta_filename)
+  }
+  pureseqtmr::load_fasta_file_as_tibble_cpp(
+    normalizePath(fasta_filename)
+  )
 }

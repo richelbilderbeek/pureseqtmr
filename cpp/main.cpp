@@ -13,6 +13,16 @@ void test()
     assert(p.first.size() == 14);
     assert(p.second.size() == 14);
   }
+  {
+    const std::string fasta_filename{
+      "/home/richel/.local/share/PureseqTM_Package/example/test_proteome.fasta"
+    };
+    if (file_exists(fasta_filename)) {
+      const auto p = load_fasta_file_as_tibble_cpp_stl(fasta_filename);
+      assert(p.first.size() == 3);
+      assert(p.second.size() == 3);
+    }
+  }
   // detailed use
   {
     const std::string fasta_filename = "tmp.fasta";

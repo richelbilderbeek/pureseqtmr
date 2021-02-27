@@ -4,9 +4,21 @@
 #include <fstream>
 #include <stdexcept>
 
+bool file_exists(const std::string& filename)
+{
+  std::fstream f;
+  f.open(filename.c_str(),std::ios::in);
+  return f.is_open();
+}
+
 std::pair<std::vector<std::string>, std::vector<std::string>>
   load_fasta_file_as_tibble_cpp_stl(const std::string& fasta_filename)
 {
+  if (!file_exists(fasta_filename)) {
+    throw std::runtime_error(
+      "FASTA file not found at path " + fasta_filename
+    );
+  }
   std::vector<std::string> protein_names;
   std::vector<std::string> sequences;
 

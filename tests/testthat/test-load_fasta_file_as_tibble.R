@@ -11,6 +11,18 @@ test_that("SARS-CoV-2", {
   expect_true(all(!is.na(t$sequence)))
 })
 
+test_that("PureseqTM example file", {
+  fasta_filename <- get_example_filename("test_proteome.fasta")
+  t <- load_fasta_file_as_tibble(fasta_filename)
+  expect_true(tibble::is_tibble(t))
+  expect_true("name" %in% names(t))
+  expect_true("sequence" %in% names(t))
+  expect_equal(14, nrow(t))
+  expect_true(all(!is.na(t$sequence)))
+})
+
+
+
 test_that("detailed use", {
   text <- c(
     ">1",
@@ -107,4 +119,13 @@ test_that("tibble with empty sequences -> FASTA file -> tibble", {
   t_again <- load_fasta_file_as_tibble(fasta_filename = fasta_filename)
   expect_equal(t$name, t_again$name)
   expect_equal(t$sequence, t_again$sequence)
+})
+
+test_that("error on absent file", {
+  absent_file <- "abs.ent"
+  expect_true(!file.exists(absent_file))
+  expect_error(
+    load_fasta_file_as_tibble(fasta_filename = absent_file),
+    "FASTA file not found at path abs.ent"
+  )
 })
