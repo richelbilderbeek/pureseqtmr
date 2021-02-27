@@ -17,7 +17,7 @@ test_that("PureseqTM example file", {
   expect_true(tibble::is_tibble(t))
   expect_true("name" %in% names(t))
   expect_true("sequence" %in% names(t))
-  expect_equal(14, nrow(t))
+  expect_equal(3, nrow(t))
   expect_true(all(!is.na(t$sequence)))
 })
 
