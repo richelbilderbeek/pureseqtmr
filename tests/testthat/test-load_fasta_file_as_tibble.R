@@ -12,6 +12,7 @@ test_that("SARS-CoV-2", {
 })
 
 test_that("PureseqTM example file", {
+  if (!is_pureseqtm_installed()) return()
   fasta_filename <- get_example_filename("test_proteome.fasta")
   t <- load_fasta_file_as_tibble(fasta_filename)
   expect_true(tibble::is_tibble(t))
