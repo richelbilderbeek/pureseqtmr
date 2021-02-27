@@ -20,7 +20,7 @@ get_pureseqtm_version <- function(
   text <- NA
   suppressWarnings(
     text <- system2(
-      command = bin_filename,
+      command = normalizePath(bin_filename),
       stdout = TRUE,
       stderr = FALSE
     )

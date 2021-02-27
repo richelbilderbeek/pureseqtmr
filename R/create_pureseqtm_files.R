@@ -25,7 +25,7 @@ create_pureseqtm_files <- function(
   testthat::expect_true(dir.exists(temp_folder_name))
 
   system2(
-    command = bin_filename,
+    command = normalizePath(bin_filename),
     args = c(
       "-i", fasta_filename,
       "-o", temp_folder_name

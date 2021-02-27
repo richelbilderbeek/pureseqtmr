@@ -40,7 +40,7 @@ create_pureseqtm_proteome_file <- function(
   result <- NA
   suppressWarnings({
     result <- system2(
-      command = cmds[1],
+      command = normalizePath(cmds[1]),
       args = cmds[-1],
       stdout = TRUE,
       stderr = TRUE
