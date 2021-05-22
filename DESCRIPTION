@@ -15,7 +15,6 @@ Description: Proteins reside in either the cell plasma or in the
     allows one to use 'PureseqTM' from R.
 License: GPL-3
 Encoding: UTF-8
-LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 Depends:
