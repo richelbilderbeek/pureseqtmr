@@ -40,33 +40,15 @@ jobs:
           remotes::install_github("MangoTheCat/goodpractice")
         shell: Rscript {0}
 
-      - name: Show PureseqTM
+      - name: Install pureseqtmrinstall
         env:
           INSTALL_PURESEQTM: ${{ matrix.install_pureseqtm }}
-        run: echo "$INSTALL_PURESEQTM"
-
-      - name: If statement on PureseqTM is true
-        env:
-          INSTALL_PURESEQTM: ${{ matrix.install_pureseqtm }}
-        run: if [[ "$INSTALL_PURESEQTM" == true ]]; then echo "Yay!"; fi
-
-      - name: Show location
-        run: pwd
-
-      - name: If statement on PureseqTM is false
-        env:
-          INSTALL_PURESEQTM: ${{ matrix.install_pureseqtm }}
-        run: if [[ "$INSTALL_PURESEQTM" == false ]]; then echo "Nay!"; fi
-
-      - name: Show PureseqTM install script
-        env:
-          INSTALL_PURESEQTM: ${{ matrix.install_pureseqtm }}
-        run: if [[ "$INSTALL_PURESEQTM" == true ]]; then cat scripts/install_pureseqtm.sh; fi
+        run: if [[ "$INSTALL_PURESEQTM" == true ]]; then Rscript -e 'remotes::install_github("richelbilderbeek/pureseqtmrinstall")'; fi
 
       - name: Install PureseqTM
         env:
           INSTALL_PURESEQTM: ${{ matrix.install_pureseqtm }}
-        run: if [[ "$INSTALL_PURESEQTM" == true ]]; then ./scripts/install_pureseqtm.sh; fi
+        run: if [[ "$INSTALL_PURESEQTM" == true ]]; then Rscript -e 'pureseqtmrinstall::install_pureseqtm()'; fi
 
       - name: Check
         run: rcmdcheck::rcmdcheck(args = "--no-manual", error_on = "error")
@@ -78,11 +60,7 @@ jobs:
       - name: Lint
         run: if [[ "$INSTALL_PURESEQTM" == false ]]; then Rscript -e 'lintr::lint_package()'; fi
 
-      - name: Install pureseqtmr
-        run: remotes::install_github("richelbilderbeek/pureseqtmr")
-        shell: Rscript {0}
-
-      - name: Report
-        run: pureseqtmr::pureseqtmr_report()
-        shell: Rscript {0}
+      #- name: Report
+      #  run: pureseqtmr::pureseqtmr_report()
+      #  shell: Rscript {0}
 
