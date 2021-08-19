@@ -15,5 +15,5 @@ topology$name <- stringr::str_match(
   pattern = "..\\|.*\\|(.*)_SARS2"
 )[,2]
 
-plot_topology(topology) + ggplot2::ggsave("../man/figures/covid_19_topology.png")
+plot_topology(topology) ; ggplot2::ggsave("../man/figures/covid_19_topology.png")
 
