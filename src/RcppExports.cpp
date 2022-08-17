@@ -10,6 +10,17 @@ Rcpp::Rostream<true>&  Rcpp::Rcout = Rcpp::Rcpp_cout_get();
 Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
 #endif
 
+// calc_distance_to_tmh_center_from_topology_str_cpp_stl
+std::vector<double> calc_distance_to_tmh_center_from_topology_str_cpp_stl(const std::string& topology_str);
+RcppExport SEXP _pureseqtmr_calc_distance_to_tmh_center_from_topology_str_cpp_stl(SEXP topology_strSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const std::string& >::type topology_str(topology_strSEXP);
+    rcpp_result_gen = Rcpp::wrap(calc_distance_to_tmh_center_from_topology_str_cpp_stl(topology_str));
+    return rcpp_result_gen;
+END_RCPP
+}
 // load_fasta_file_as_tibble_cpp_raw
 Rcpp::List load_fasta_file_as_tibble_cpp_raw(const Rcpp::String& fasta_filename);
 RcppExport SEXP _pureseqtmr_load_fasta_file_as_tibble_cpp_raw(SEXP fasta_filenameSEXP) {
@@ -23,6 +34,7 @@ END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
+    {"_pureseqtmr_calc_distance_to_tmh_center_from_topology_str_cpp_stl", (DL_FUNC) &_pureseqtmr_calc_distance_to_tmh_center_from_topology_str_cpp_stl, 1},
     {"_pureseqtmr_load_fasta_file_as_tibble_cpp_raw", (DL_FUNC) &_pureseqtmr_load_fasta_file_as_tibble_cpp_raw, 1},
     {NULL, NULL, 0}
 };

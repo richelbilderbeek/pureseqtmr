@@ -1,0 +1,13 @@
+test_that("use", {
+  expect_silent(check_topology_str("0001000"))
+  expect_silent(check_topology_str("000111000"))
+  expect_silent(check_topology_str("000000"))
+  expect_silent(check_topology_str("111"))
+  expect_silent(check_topology_str(""))
+  expect_error(check_topology_str("nonsense"))
+  expect_error(check_topology_str(NA))
+  expect_error(check_topology_str(NULL))
+  expect_error(check_topology_str(Inf))
+  expect_error(check_topology_str(3.14))
+  expect_error(check_topology_str(c("", "")))
+})

@@ -2,10 +2,13 @@
 
 export(are_tmhs)
 export(are_valid_protein_sequences)
+export(calc_distance_to_tmh_center_from_topology)
+export(calc_distance_to_tmh_center_from_topology_str)
 export(check_protein_sequence)
 export(check_protein_sequences)
 export(check_pureseqtm_installation)
 export(check_topology)
+export(check_topology_str)
 export(count_n_tmhs)
 export(create_pureseqtm_files)
 export(create_pureseqtm_proteome_file)
