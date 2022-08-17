@@ -13,6 +13,14 @@ calc_distance_to_tmh_center_from_topology_str <- function(
       calc_distance_to_tmh_center_from_topology_str_cpp_stl(
     topology_str
   )
+  if (length(distance_to_tmh_center) == 0) {
+    return(
+      tibble::tibble(
+        position = numeric(0),
+        distance_to_tmh_center = numeric(0)
+      )
+    )
+  }
   tibble::tibble(
     position = seq(1, length(distance_to_tmh_center)),
     distance_to_tmh_center = distance_to_tmh_center
