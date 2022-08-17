@@ -5,7 +5,11 @@
 \title{Parse a topology (\code{.topo}) file to a table
 with a \code{name} and \code{topology} column}
 \usage{
-load_topology_file_as_tibble(topo_filename)
+load_topology_file_as_tibble(topology_filename)
+}
+\arguments{
+\item{topology_filename}{name of the file to save a protein's
+topology to}
 }
 \value{
 a \link[tibble]{tibble}
@@ -17,8 +21,8 @@ Parse a topology (\code{.topo}) file to a table
 with a \code{name} and \code{topology} column
 }
 \examples{
-topo_filename <- system.file(
+topology_filename <- system.file(
  "extdata", "100507436.topo", package = "pureseqtmr"
 )
-load_topology_file_as_tibble(topo_filename)
+load_topology_file_as_tibble(topology_filename)
 }
