@@ -1,10 +1,180 @@
 #include "load_fasta_file_as_tibble_cpp_stl.h"
+#include "calc_distance_to_tmh_center_from_topology_str_cpp_stl.h"
 
 #include <cassert>
+#include <cmath>
 #include <fstream>
 #include <iostream>
+#include <string>
 
-void test()
+void test_calc_distance_to_tmh_center_from_topology_str_cpp_stl()
+{
+  // empty input, empty output
+  {
+    const std::string s{""};
+    const auto v{
+      calc_distance_to_tmh_center_from_topology_str_cpp_stl(s)
+    };
+    assert(s.size() == v.size());
+  }
+  // same amount of elements in the output as characters in the input
+  {
+    const std::string s{"1"};
+    const auto v{
+      calc_distance_to_tmh_center_from_topology_str_cpp_stl(s)
+    };
+    assert(s.size() == v.size());
+  }
+  // no TMHs means only NANs, 1 AA
+  {
+    const std::string s{"0"};
+    const auto v{
+      calc_distance_to_tmh_center_from_topology_str_cpp_stl(s)
+    };
+    assert(are_all_nan(v));
+  }
+  // no TMHs means only NANs, 2 AA
+  {
+    const std::string s{"00"};
+    const auto v{
+      calc_distance_to_tmh_center_from_topology_str_cpp_stl(s)
+    };
+    assert(are_all_nan(v));
+  }
+  // simple distances, 2 AA
+  {
+    const std::string s{"01"};
+    const auto v{
+      calc_distance_to_tmh_center_from_topology_str_cpp_stl(s)
+    };
+    assert(!are_all_nan(v));
+    assert(v[0] == -1.0);
+    assert(v[1] == 0.0);
+  }
+  // simple distances, 2 AA
+  {
+    const std::string s{"10"};
+    const auto v{
+      calc_distance_to_tmh_center_from_topology_str_cpp_stl(s)
+    };
+    assert(!are_all_nan(v));
+    assert(v[0] == 0.0);
+    assert(v[1] == 1.0);
+  }
+  // simple distances, 3 AA
+  {
+    const std::string s{"010"};
+    const std::vector<int> start_indices{collect_tmh_start_indices(s)};
+    const std::vector<int> stop_indices{collect_tmh_stop_indices(s)};
+    assert(start_indices.size() == 1);
+    assert(start_indices[0] == 1);
+    assert(stop_indices.size() == 1);
+    assert(stop_indices[0] == 2);
+    const std::vector<double> center_indices{collect_tmh_center_indices(s)};
+    assert(center_indices.size() == 1);
+    assert(center_indices[0] == 1.0);
+    const auto v{
+      calc_distance_to_tmh_center_from_topology_str_cpp_stl(s)
+    };
+    assert(!are_all_nan(v));
+    assert(v[0] == -1.0);
+    assert(v[1] == 0.0);
+    assert(v[2] == 1.0);
+  }
+  // simple distances, 3 AA
+  {
+    const std::string s{"001"};
+    const auto v{
+      calc_distance_to_tmh_center_from_topology_str_cpp_stl(s)
+    };
+    assert(!are_all_nan(v));
+    assert(v[0] == -2.0);
+    assert(v[1] == -1.0);
+    assert(v[2] == 0.0);
+  }
+  // simple distances, 3 AA
+  {
+    const std::string s{"100"};
+    const auto v{
+      calc_distance_to_tmh_center_from_topology_str_cpp_stl(s)
+    };
+    assert(!are_all_nan(v));
+    assert(v[0] == 0.0);
+    assert(v[1] == 1.0);
+    assert(v[2] == 2.0);
+  }
+  // simple distances, 4 AA
+  {
+    const std::string s{"0110"};
+    const auto v{
+      calc_distance_to_tmh_center_from_topology_str_cpp_stl(s)
+    };
+    assert(!are_all_nan(v));
+    assert(v[0] == -1.5);
+    assert(v[1] == -0.5);
+    assert(v[2] == 0.5);
+    assert(v[3] == 1.5);
+  }
+  // simple distances, 4 AA
+  {
+    const std::string s{"0011"};
+    const auto v{
+      calc_distance_to_tmh_center_from_topology_str_cpp_stl(s)
+    };
+    assert(!are_all_nan(v));
+    assert(v[0] == -2.5);
+    assert(v[1] == -1.5);
+    assert(v[2] == -0.5);
+    assert(v[3] ==  0.5);
+  }
+  // simple distances, 4 AA
+  {
+    const std::string s{"1100"};
+    const auto v{
+      calc_distance_to_tmh_center_from_topology_str_cpp_stl(s)
+    };
+    assert(!are_all_nan(v));
+    assert(v[0] == -0.5);
+    assert(v[1] ==  0.5);
+    assert(v[2] ==  1.5);
+    assert(v[3] ==  2.5);
+  }
+  // simple distances, 5 AAs
+  {
+    const std::string s{"01110"};
+    const auto v{
+      calc_distance_to_tmh_center_from_topology_str_cpp_stl(s)
+    };
+    assert(v[0] == -2.0);
+    assert(v[1] == -1.0);
+    assert(v[2] == 0.0);
+    assert(v[3] == 1.0);
+    assert(v[4] == 2.0);
+  }
+  // one TMH
+  {
+    const std::string s{"0000000000001110000000000000000000"};
+    const auto v{
+      calc_distance_to_tmh_center_from_topology_str_cpp_stl(s)
+    };
+    assert(!are_all_nan(v));
+  }
+  // two TMH
+  {
+    const std::string s{"01010"};
+    const auto v{
+      calc_distance_to_tmh_center_from_topology_str_cpp_stl(s)
+    };
+    assert(!are_all_nan(v));
+    assert(v[0] == -1.0);
+    assert(v[1] == -0.0);
+    assert(v[2] == -1.0); // We assume this rarely happens in reality
+    assert(v[3] == 0.0);
+    assert(v[4] == 1.0);
+  }
+}
+
+void test_load_fasta_file_as_tibble_cpp_stl()
 {
   // SARS-CoV-2
   {
@@ -265,7 +435,8 @@ void create_random_fasta_file(
 
 int main()
 {
-  test();
+  test_calc_distance_to_tmh_center_from_topology_str_cpp_stl();
+  test_load_fasta_file_as_tibble_cpp_stl();
 
   // Try random combinations
   {
