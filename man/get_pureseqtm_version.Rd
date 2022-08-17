@@ -26,6 +26,4 @@ if (is_pureseqtm_installed()) {
 }
 \author{
 Richèl J.C. Bilderbeek
-
-Richèl J.C. Bilderbeek
 }
