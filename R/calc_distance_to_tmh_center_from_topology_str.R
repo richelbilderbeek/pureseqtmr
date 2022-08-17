@@ -14,7 +14,7 @@ calc_distance_to_tmh_center_from_topology_str <- function(
     topology_str
   )
   tibble::tibble(
-    postion = seq(1, length(distance_to_tmh_center)),
+    position = seq(1, length(distance_to_tmh_center)),
     distance_to_tmh_center = distance_to_tmh_center
   )
 }
