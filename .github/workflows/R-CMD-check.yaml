@@ -66,6 +66,10 @@ jobs:
       - name: Lint
         run: if [[ "$INSTALL_PURESEQTM" == false ]]; then Rscript -e 'lintr::lint_package()'; fi
 
+      - name: Install pureseqtmr
+        run: remotes::install_github("richelbilderbeek/pureseqtmr")
+        shell: Rscript {0}
+
       - name: Report
         run: pureseqtmr::pureseqtmr_report()
         shell: Rscript {0}
