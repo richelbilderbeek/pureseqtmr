@@ -5,6 +5,11 @@
 
 using namespace Rcpp;
 
+#ifdef RCPP_USE_GLOBAL_ROSTREAM
+Rcpp::Rostream<true>&  Rcpp::Rcout = Rcpp::Rcpp_cout_get();
+Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
+#endif
+
 // load_fasta_file_as_tibble_cpp_raw
 Rcpp::List load_fasta_file_as_tibble_cpp_raw(const Rcpp::String& fasta_filename);
 RcppExport SEXP _pureseqtmr_load_fasta_file_as_tibble_cpp_raw(SEXP fasta_filenameSEXP) {

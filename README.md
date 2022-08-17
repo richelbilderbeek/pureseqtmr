@@ -4,10 +4,10 @@
 [![](http://cranlogs.r-pkg.org/badges/grand-total/pureseqtmr)]( https://CRAN.R-project.org/package=pureseqtmr)
 [![](http://cranlogs.r-pkg.org/badges/pureseqtmr)](https://CRAN.R-project.org/package=pureseqtmr)
 
-Branch   |[![GitHub Actions logo](man/figures/GitHubActions.png)](https://github.com/richelbilderbeek/pureseqtmr/actions)|[![Codecov logo](man/figures/Codecov.png)](https://www.codecov.io)
----------|---------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-`master` |![R-CMD-check](https://github.com/richelbilderbeek/pureseqtmr/workflows/R-CMD-check/badge.svg?branch=master)   |[![codecov.io](https://codecov.io/github/richelbilderbeek/pureseqtmr/coverage.svg?branch=master)](https://codecov.io/github/richelbilderbeek/pureseqtmr/branch/master)
-`develop`|![R-CMD-check](https://github.com/richelbilderbeek/pureseqtmr/workflows/R-CMD-check/badge.svg?branch=develop)  |[![codecov.io](https://codecov.io/github/richelbilderbeek/pureseqtmr/coverage.svg?branch=develop)](https://codecov.io/github/richelbilderbeek/pureseqtmr/branch/develop)
+Branch   |[![GitHub Actions logo](man/figures/GitHubActions.png)](https://github.com/richelbilderbeek/pureseqtmr/actions)                                                                                                |[![Codecov logo](man/figures/Codecov.png)](https://www.codecov.io)
+---------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+`master` |[![R-CMD-check](https://github.com/richelbilderbeek/pureseqtmr/actions/workflows/R-CMD-check.yaml/badge.svg?branch=master)](https://github.com/richelbilderbeek/pureseqtmr/actions/workflows/R-CMD-check.yaml) |[![codecov.io](https://codecov.io/github/richelbilderbeek/pureseqtmr/coverage.svg?branch=master)](https://codecov.io/github/richelbilderbeek/pureseqtmr/branch/master)
+`develop`|[![R-CMD-check](https://github.com/richelbilderbeek/pureseqtmr/actions/workflows/R-CMD-check.yaml/badge.svg?branch=develop)](https://github.com/richelbilderbeek/pureseqtmr/actions/workflows/R-CMD-check.yaml)|[![codecov.io](https://codecov.io/github/richelbilderbeek/pureseqtmr/coverage.svg?branch=develop)](https://codecov.io/github/richelbilderbeek/pureseqtmr/branch/develop)
 
 R package to work with PureseqTM.
 
