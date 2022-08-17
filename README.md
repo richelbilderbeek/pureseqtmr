@@ -41,18 +41,18 @@ plot_topology(topology)
 ![SARS-CoV-2 topology](man/figures/sars_cov_2_topology.png)
 
 
-## Install
+## Install PureseqTM
 
-Install the package:
+Due to CRAN policy, `pureseqtmr` cannot install PureseqTM.
+As a workaround, the non-CRAN 
+[`pureseqtmrinstall`](https://github.com/richelbilderbeek/pureseqtmrinstall) 
+can be used.
 
-```
-remotes::install_github("richelbilderbeek/pureseqtmr")
-```
+To install PureseqTM:
 
-Install PureseqTM to a default folder:
-
-```
-pureseqtmr::install_pureseqtm()
+```r
+remotes::install_github("richelbilderbeek/pureseqtmrinstall")
+pureseqtmrinstall::install_pureseqtm()
 ```
 
 ## How to convert a FASTA file to a PureseqTM topolgy file?
