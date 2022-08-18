@@ -5,6 +5,7 @@
 #include <fstream>
 #include <stdexcept>
 #include <cmath>
+#include <limits>
 
 bool are_all_nan(const std::vector<double>& values)
 {
