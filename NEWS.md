@@ -2,6 +2,24 @@
 
 Newest versions at top.
 
+## pureseqtmr 1.4 (2023-04-06)
+
+### NEW FEATURES
+
+  * None
+
+### MINOR IMPROVEMENTS
+
+  * None
+
+### BUG FIXES
+
+  * None
+
+### DEPRECATED AND DEFUNCT
+
+  * None
+
 ## pureseqtmr 1.3 (unreleased)
 
 ### NEW FEATURES
