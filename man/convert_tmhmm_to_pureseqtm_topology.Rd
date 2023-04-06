@@ -6,6 +6,9 @@
 \usage{
 convert_tmhmm_to_pureseqtm_topology(tmhmm_topology)
 }
+\arguments{
+\item{tmhmm_topology}{topology as used by \code{TMHMM}}
+}
 \value{
 a \link[tibble]{tibble} with column names
 \code{name} and \code{topology}, as can be checked by \link{check_topology}

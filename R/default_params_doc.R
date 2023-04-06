@@ -28,6 +28,7 @@
 #'   deleted, which is not a problem, as the default
 #'   path given by \link{tempdir} is automatically cleaned
 #'   by the operating system
+#' @param tmhmm_topology topology as used by `TMHMM`
 #' @param topology the topology as a \link[tibble]{tibble}
 #'   with the columns 'name' and 'topology',
 #'   where the 'name' column hold all the proteins' names,

@@ -81,6 +81,8 @@ for example \code{000000111100000}}
 for example \code{c("0", "1")}}
 
 \item{verbose}{set to TRUE for more output}
+
+\item{tmhmm_topology}{topology as used by \code{TMHMM}}
 }
 \description{
 This function does nothing. It is intended to inherit is parameters'
