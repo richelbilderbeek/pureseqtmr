@@ -18,6 +18,7 @@ default_params_doc(
   pureseqtm_url,
   temp_fasta_filename,
   temp_folder_name,
+  tmhmm_topology,
   topology,
   topology_filename,
   topology_str,
@@ -66,6 +67,8 @@ deleted, which is not a problem, as the default
 path given by \link{tempdir} is automatically cleaned
 by the operating system}
 
+\item{tmhmm_topology}{topology as used by \code{TMHMM}}
+
 \item{topology}{the topology as a \link[tibble]{tibble}
 with the columns 'name' and 'topology',
 where the 'name' column hold all the proteins' names,
@@ -81,8 +84,6 @@ for example \code{000000111100000}}
 for example \code{c("0", "1")}}
 
 \item{verbose}{set to TRUE for more output}
-
-\item{tmhmm_topology}{topology as used by \code{TMHMM}}
 }
 \description{
 This function does nothing. It is intended to inherit is parameters'

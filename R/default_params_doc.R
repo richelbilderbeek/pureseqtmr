@@ -57,6 +57,7 @@ default_params_doc <- function(
   pureseqtm_url,
   temp_fasta_filename,
   temp_folder_name,
+  tmhmm_topology,
   topology,
   topology_filename,
   topology_str,
