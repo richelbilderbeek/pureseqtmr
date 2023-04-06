@@ -8,7 +8,7 @@ cp -r ../R build
 cp -r ../inst build
 cp -r ../man build
 cp -r ../vignettes build
-cp -r ../cpp build
+#cp -r ../cpp build
 cp -r ../man build
 cp -r ../src build
 
