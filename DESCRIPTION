@@ -2,7 +2,7 @@ Package: pureseqtmr
 Title: Predict Transmembrane Protein Topology
 Version: 1.5
 Authors@R: c(
-    person("Richèl J.C.", "Bilderbeek", email = "richel@richelbilderbeek.nl", role = c("aut", "cre"), comment = c(ORCID = "0000-0003-1107-7049")))
+    person("Richèl J.C.", "Bilderbeek", email = "rjcbilderbeek@gmail.com", role = c("aut", "cre"), comment = c(ORCID = "0000-0003-1107-7049")))
 Description: Proteins reside in either the cell plasma or in the
     cell membrane. A membrane protein goes through the 
     membrane at least once. Given the amino acid sequence of a
