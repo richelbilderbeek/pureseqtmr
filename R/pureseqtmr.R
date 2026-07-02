@@ -19,6 +19,5 @@
 #'   plot_topology(topology)
 #' }
 #' @author Richèl J.C. Bilderbeek
-#' @docType package
 #' @name pureseqtmr
 NULL
